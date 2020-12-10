@@ -1,0 +1,14 @@
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\bin\Debug\AudioPeak.exe.config
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\bin\Debug\AudioPeak.exe
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\bin\Debug\AudioPeak.pdb
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\bin\Debug\NAudio.dll
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\bin\Debug\ScottPlot.dll
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\bin\Debug\NAudio.xml
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\obj\Debug\AudioPeak.csprojAssemblyReference.cache
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\obj\Debug\AudioPeak.Form1.resources
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\obj\Debug\AudioPeak.Properties.Resources.resources
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\obj\Debug\AudioPeak.csproj.GenerateResource.cache
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\obj\Debug\AudioPeak.csproj.CoreCompileInputs.cache
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\obj\Debug\AudioPeak.csproj.CopyComplete
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\obj\Debug\AudioPeak.exe
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\doc\Csharp-Data-Visualization-master\Csharp-Data-Visualization-master\examples\2019-06-06-audio-level-monitor\obj\Debug\AudioPeak.pdb

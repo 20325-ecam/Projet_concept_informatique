@@ -1,0 +1,10 @@
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test interface\WindowsFormsApp_test\WindowsFormsApp_test\bin\Debug\WindowsFormsApp_test.exe.config
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test interface\WindowsFormsApp_test\WindowsFormsApp_test\bin\Debug\WindowsFormsApp_test.exe
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test interface\WindowsFormsApp_test\WindowsFormsApp_test\bin\Debug\WindowsFormsApp_test.pdb
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test interface\WindowsFormsApp_test\WindowsFormsApp_test\obj\Debug\WindowsFormsApp_test.csprojAssemblyReference.cache
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test interface\WindowsFormsApp_test\WindowsFormsApp_test\obj\Debug\WindowsFormsApp_test.Form1.resources
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test interface\WindowsFormsApp_test\WindowsFormsApp_test\obj\Debug\WindowsFormsApp_test.Properties.Resources.resources
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test interface\WindowsFormsApp_test\WindowsFormsApp_test\obj\Debug\WindowsFormsApp_test.csproj.GenerateResource.cache
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test interface\WindowsFormsApp_test\WindowsFormsApp_test\obj\Debug\WindowsFormsApp_test.csproj.CoreCompileInputs.cache
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test interface\WindowsFormsApp_test\WindowsFormsApp_test\obj\Debug\WindowsFormsApp_test.exe
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test interface\WindowsFormsApp_test\WindowsFormsApp_test\obj\Debug\WindowsFormsApp_test.pdb

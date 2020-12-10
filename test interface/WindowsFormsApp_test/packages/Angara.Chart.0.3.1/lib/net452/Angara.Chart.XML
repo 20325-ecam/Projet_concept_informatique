@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Angara.Chart</name></assembly>
+<members>
+<member name="M:Angara.Charting.Titles.line(Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
+<summary>
+Allows to set titles for line chart axes
+</summary>
+</member>
+<member name="M:Angara.Charting.Titles.heatmap(Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
+<summary>
+Allows to set titles for heatmap chart axes
+</summary>
+</member>
+<member name="M:Angara.Charting.Titles.area(Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
+<summary>
+Allows to set titles for band chart axes
+</summary>
+</member>
+<member name="T:Angara.Charting.AreaTitles">
+<summary>
+ Defines names of area chart axes
+</summary>
+</member>
+<member name="T:Angara.Charting.LineTitles">
+<summary>
+ Defines names of line chart axes
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersTitles">
+<summary>
+ Defines names of marker chart axes
+</summary>
+</member>
+<member name="T:Angara.Charting.HeatmapTitles">
+<summary>
+ Defines names of heatmap axes
+</summary>
+</member>
+<member name="T:Angara.Charting.Chart">
+<summary>
+ Defines a chart as a collection plot definitions.
+</summary>
+</member>
+<member name="T:Angara.Charting.PlotInfo">
+<summary>
+ Defines a plot as a collection of properties.
+</summary>
+</member>
+<member name="M:Angara.Charting.Plot.markers(System.Double[],System.Double[],Microsoft.FSharp.Core.FSharpOption{Angara.Charting.MarkersColor},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Angara.Charting.MarkersSize},Microsoft.FSharp.Core.FSharpOption{Angara.Charting.MarkersSizePalette},Microsoft.FSharp.Core.FSharpOption{Angara.Charting.MarkersShape},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Angara.Charting.MarkersTitles})">
+<summary>
+ Displays data as a collection of points, each having the value of one variable determining the position on the horizontal axis and the value of the other variable determining the position on the vertical axis. 
+</summary>
+</member>
+<member name="M:Angara.Charting.Plot.markers(Angara.Charting.MarkersX,Angara.Charting.MarkersY,Microsoft.FSharp.Core.FSharpOption{Angara.Charting.MarkersColor},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Angara.Charting.MarkersSize},Microsoft.FSharp.Core.FSharpOption{Angara.Charting.MarkersSizePalette},Microsoft.FSharp.Core.FSharpOption{Angara.Charting.MarkersShape},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Angara.Charting.MarkersTitles})">
+<summary>
+ Displays data as a collection of points, each having the value of one variable determining the position on the horizontal axis and the value of the other variable determining the position on the vertical axis. 
+</summary>
+</member>
+<member name="T:Angara.Charting.HeatmapTreatAs">
+<summary>
+ Determines whether color within each heatmap cell is interpolated or solid.
+</summary>
+</member>
+<member name="T:Angara.Charting.HeatmapValues.TabularUncertainValues">
+<summary>
+ Uncertian values are represented as 1d-array; and corresponding items of the series &quot;x&quot; and &quot;y&quot;  are considered as pairs of coordinates of a grid point,
+ i.e. x[i], y[i], and i-th element of this array together define a grid point.
+</summary>
+</member>
+<member name="T:Angara.Charting.HeatmapValues.TabularValues">
+<summary>
+ Values are represented as 1d-array; and corresponding items of the series &quot;x&quot; and &quot;y&quot; are considered as pairs of coordinates of a grid point,
+ i.e. x[i], y[i], and i-th element of this array together define a grid point.
+</summary>
+</member>
+<member name="T:Angara.Charting.HeatmapValues">
+<summary>
+ Defines the values to be displayed as colors.
+</summary>
+</member>
+<member name="T:Angara.Charting.HeatmapY.Values">
+<summary>
+ Coordinates of grid points on vertical axis.
+</summary>
+</member>
+<member name="T:Angara.Charting.HeatmapY">
+<summary>
+ Defines positions of points on vertical axis.
+</summary>
+</member>
+<member name="T:Angara.Charting.HeatmapX.Values">
+<summary>
+ Coordinates of grid points on horizontal axis.
+</summary>
+</member>
+<member name="T:Angara.Charting.HeatmapX">
+<summary>
+ Defines positions of points on horizontal axis.
+</summary>
+</member>
+<member name="T:Angara.Charting.LineTreatAs.Trajectory">
+<summary>
+ The data points are rendered in the original order.
+</summary>
+</member>
+<member name="T:Angara.Charting.LineTreatAs.Function">
+<summary>
+ The data points are ordered prior to rendering by increasing &apos;x&apos;.
+</summary>
+</member>
+<member name="T:Angara.Charting.LineTreatAs">
+<summary>
+ Determines whether the data points must be ordered or not.
+</summary>
+</member>
+<member name="T:Angara.Charting.LineY.UncertainValues">
+<summary>
+ Values are uncertain and represented as array of quantiles.
+ Quantiles will be displayed as colored bands.
+</summary>
+</member>
+<member name="T:Angara.Charting.LineY.Values">
+<summary>
+ An array of real values.
+</summary>
+</member>
+<member name="T:Angara.Charting.LineY">
+<summary>
+ Defines positions of data points on vertical axis.
+ It is either an exact values or uncertain values.
+</summary>
+</member>
+<member name="T:Angara.Charting.LineX.Indices">
+<summary>
+ Indicates that positions are indices of the LineY array.
+</summary>
+</member>
+<member name="T:Angara.Charting.LineX">
+<summary>
+ Defines positions of data points on horizontal axis.
+ It can be an array of real values.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersSizePalette">
+<summary>
+ Defines size palette which can be either normalized or absolute.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersSize.UncertainValues">
+<summary>
+ Markers are rendered as &apos;petals&apos; when shape of a marker indicates level of uncertainty.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersSize.Values">
+<summary>
+ Marker sizes are bound to these values through size range.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersSize.Value">
+<summary>
+ All markers are rendered of this size in pixels.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersSize">
+<summary>
+ Defines sizes of markers. 
+ It can be a single value in screen pixels,
+ or an array of real values bound to a size range in pixels,
+ or an array of uncertain values.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersColor.UncertainValues">
+<summary>
+ Markers are rendered as &apos;bull-eyes&apos; when combination of two colors indicates level of uncertainty.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersColor.Values">
+<summary>
+ Marker colors are bound to these values through color palette.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersColor.Value">
+<summary>
+ All markers are rendered using this color.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersColor">
+<summary>
+ Defines colors of markers.
+ It can be a single color,
+ or an array of real values bound to a color palette,
+ or an array of uncertain values.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersY.UncertainValues">
+<summary>
+ Values are uncertain and represented as array of quantiles.
+ The markers will be rendered as box-and-whisker plots.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersY.Values">
+<summary>
+ An array of real values.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersY">
+<summary>
+ Defines positions of markers on vertical axis.
+ It is either an exact values or uncertain values.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersX.Values">
+<summary>
+ An array of real values.
+</summary>
+</member>
+<member name="T:Angara.Charting.MarkersX">
+<summary>
+ Defines positions of markers on horizontal axis.
+</summary>
+</member>
+<member name="T:Angara.Charting.QuantileArray">
+<summary>
+ Contains quantiles describing a series of continuous probability distributions. 
+</summary>
+</member>
+</members>
+</doc>
