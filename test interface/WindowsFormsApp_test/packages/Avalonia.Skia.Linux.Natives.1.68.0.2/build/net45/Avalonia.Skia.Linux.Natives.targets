@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <ItemGroup Condition=" '$(OS)' != 'Unix' and Exists('$(MSBuildThisFileDirectory)..\..\..\..\SkiaSharp\1.68.0\runtimes\osx\native\libSkiaSharp.dylib')">
+        <!-- This is needed to include dll.config and libSkiaSharp.dylib when building on windows -->
+        <None Include="$(MSBuildThisFileDirectory)..\..\..\..\SkiaSharp\1.68.0\runtimes\osx\native\libSkiaSharp.dylib">
+            <Link>libSkiaSharp.dylib</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="$(MSBuildThisFileDirectory)..\..\..\..\SkiaSharp\1.68.0\build\net45\SkiaSharp.dll.config">
+            <Link>SkiaSharp.dll.config</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileDirectory)..\..\runtimes\linux-x64\native\libSkiaSharp.so">
+            <Link>libSkiaSharp.so</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
+</Project>

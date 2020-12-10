@@ -1,0 +1,5 @@
+<Project>
+<ItemGroup>
+<SharpGenConsumerMapping Include="$(MSBuildThisFileDirectory)/Avalonia.Native.BindMapping.xml"/>
+</ItemGroup>
+</Project>
