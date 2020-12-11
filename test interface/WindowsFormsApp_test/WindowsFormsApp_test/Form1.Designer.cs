@@ -45,22 +45,26 @@
             // 
             // formsPlot1
             // 
-            this.formsPlot1.Location = new System.Drawing.Point(534, 45);
+            this.formsPlot1.AutoScroll = true;
+            this.formsPlot1.AutoScrollMargin = new System.Drawing.Size(0, 1000);
+            this.formsPlot1.AutoSize = true;
+            this.formsPlot1.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.formsPlot1.Location = new System.Drawing.Point(511, 81);
             this.formsPlot1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.formsPlot1.Name = "formsPlot1";
-            this.formsPlot1.Size = new System.Drawing.Size(1385, 359);
+            this.formsPlot1.Size = new System.Drawing.Size(1385, 1106);
             this.formsPlot1.TabIndex = 1;
+            this.formsPlot1.UseWaitCursor = true;
             this.formsPlot1.Load += new System.EventHandler(this.formsPlot1_Load);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2098, 1464);
             this.Controls.Add(this.formsPlot1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
