@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace test_live_graphe
+namespace simulation_reseau_elec
 {
     public partial class View_graphe : Form
     {
         Meteo meteo = new Meteo();
+        Consomateur consomateur = new Consomateur();
+        //Simulation simulation = new Simulation();
         public bool Sun;
         public double[] data = new double[1000_000];
         int nextDataIndex = 1;
@@ -46,17 +48,12 @@ namespace test_live_graphe
                 //   4. plot the new (larger) array
                 //   5. continue to update the new array
             }
-
-            double randomValue = rand.Next(-10, 10);
-            firstValue = data[nextDataIndex - 1] + randomValue;
-            if (firstValue > 0)
-            {
-                latestValue = firstValue;
-            }
-            else
-            {
-                latestValue = 0;
-            }
+            
+            //double randomValue = rand.Next(0, 10);
+            consomateur.void_consomateur();
+            firstValue = consomateur.conso_consomateur;
+            //firstValue =  randomValue; //data[nextDataIndex - 1] + randomValue;
+            latestValue = firstValue;
             //Console.WriteLine(latestValue);
             data[nextDataIndex] = latestValue;
             tbLastValue.Text = (latestValue > 0) ? "+" + latestValue.ToString() : latestValue.ToString(); // affiche la derniere valeur axe "Y"
@@ -64,7 +61,7 @@ namespace test_live_graphe
             formsPlot1.plt.PlotSignal(data, maxRenderIndex: nextDataIndex, color: blueColor);
             nextDataIndex += 1;
 
-            meteo.console_meteo(); // appel la classe Meteo (Meteo.cs)
+            //meteo.console_meteo(); // appel la classe Meteo (Meteo.cs)
         }
         private void renderTimer_Tick(object sender, EventArgs e)
         {
@@ -103,9 +100,6 @@ namespace test_live_graphe
                 
                 //Console.WriteLine(T);
             }
-            
-
-
         }
 
         private void numericUpDownVent_ValueChanged(object sender, EventArgs e)
@@ -115,11 +109,7 @@ namespace test_live_graphe
 
         private void numericUpDownTemperature_ValueChanged(object sender, EventArgs e)
         {
-
+            meteo.temp = numericUpDownTemperature.Value;
         }
-        
-        
-
-        
     }
 }

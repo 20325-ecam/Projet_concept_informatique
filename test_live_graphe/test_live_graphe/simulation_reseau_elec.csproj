@@ -61,35 +61,28 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Centrale.cs" />
+    <Compile Include="Consomateur.cs" />
+    <Compile Include="Entreprise.cs" />
+    <Compile Include="Eolien.cs" />
+    <Compile Include="Gaz.cs" />
+    <Compile Include="Marche.cs" />
     <Compile Include="Meteo.cs" />
+    <Compile Include="Nucleaire.cs" />
+    <Compile Include="Simulation.cs" />
+    <Compile Include="Solaire.cs" />
+    <Compile Include="Vente_achat.cs" />
     <Compile Include="view_graphe.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view_graphe.Designer.cs">
       <DependentUpon>view_graphe.cs</DependentUpon>
     </Compile>
-    <Compile Include="LiveDataIncoming.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LiveDataIncoming.Designer.cs">
-      <DependentUpon>LiveDataIncoming.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LiveDataUpdate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LiveDataUpdate.Designer.cs">
-      <DependentUpon>LiveDataUpdate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ville.cs" />
     <EmbeddedResource Include="view_graphe.resx">
       <DependentUpon>view_graphe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LiveDataIncoming.resx">
-      <DependentUpon>LiveDataIncoming.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LiveDataUpdate.resx">
-      <DependentUpon>LiveDataUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

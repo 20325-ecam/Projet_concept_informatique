@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_live_graphe", "test_live_graphe\test_live_graphe.csproj", "{C9F7B922-7224-432B-81BA-BAA64ED8901F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "simulation_reseau_elec", "test_live_graphe\simulation_reseau_elec.csproj", "{C9F7B922-7224-432B-81BA-BAA64ED8901F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

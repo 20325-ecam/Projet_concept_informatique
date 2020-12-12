@@ -1,5 +1,5 @@
 ﻿
-namespace test_live_graphe
+namespace simulation_reseau_elec
 {
     partial class View_graphe
     {
