@@ -1,5 +1,4 @@
 D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test_live_graphe\test_live_graphe\obj\Debug\test_live_graphe.csprojAssemblyReference.cache
-D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test_live_graphe\test_live_graphe\obj\Debug\test_live_graphe.Form1.resources
 D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test_live_graphe\test_live_graphe\obj\Debug\ScottPlot.Demo.WinForms.WinFormsDemos.LiveDataIncoming.resources
 D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test_live_graphe\test_live_graphe\obj\Debug\ScottPlot.Demo.WinForms.WinFormsDemos.LiveDataUpdate.resources
 D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test_live_graphe\test_live_graphe\obj\Debug\test_live_graphe.Properties.Resources.resources
@@ -14,3 +13,4 @@ D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test_live_gr
 D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test_live_graphe\test_live_graphe\obj\Debug\test_live_graphe.csproj.CopyComplete
 D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test_live_graphe\test_live_graphe\obj\Debug\test_live_graphe.exe
 D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test_live_graphe\test_live_graphe\obj\Debug\test_live_graphe.pdb
+D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\test_live_graphe\test_live_graphe\obj\Debug\test_live_graphe.view_graphe.resources

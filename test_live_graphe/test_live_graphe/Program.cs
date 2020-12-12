@@ -17,9 +17,10 @@ namespace test_live_graphe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.Run(new View_graphe());
             //Application.Run(new LiveDataUpdate());
-            Application.Run(new LiveDataIncoming());
+            //Application.Run(new LiveDataIncoming());
+            
         }
     }
 }

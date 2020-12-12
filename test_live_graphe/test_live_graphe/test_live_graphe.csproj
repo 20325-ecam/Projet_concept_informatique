@@ -61,11 +61,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Meteo.cs" />
+    <Compile Include="view_graphe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="view_graphe.Designer.cs">
+      <DependentUpon>view_graphe.cs</DependentUpon>
     </Compile>
     <Compile Include="LiveDataIncoming.cs">
       <SubType>Form</SubType>
@@ -81,8 +82,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="view_graphe.resx">
+      <DependentUpon>view_graphe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LiveDataIncoming.resx">
       <DependentUpon>LiveDataIncoming.cs</DependentUpon>

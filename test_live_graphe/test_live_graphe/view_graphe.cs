@@ -8,20 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ScottPlot.Demo.WinForms.WinFormsDemos
+namespace test_live_graphe
 {
-    public partial class LiveDataIncoming : Form
+    public partial class View_graphe : Form
     {
- 
+        Meteo meteo = new Meteo();
+        public bool Sun;
         public double[] data = new double[1000_000];
         int nextDataIndex = 1;
         readonly Random rand = new Random(0);
         Color blueColor = Color.FromArgb(0, 128, 255);
-        
-        public LiveDataIncoming()
+
+        public View_graphe()
         {
             InitializeComponent();
-            formsPlot1.plt.PlotSignal(data, maxRenderIndex: 100, color: blueColor); 
+            formsPlot1.plt.PlotSignal(data, maxRenderIndex: 100, color: blueColor);
             formsPlot1.plt.YLabel("Value");
             formsPlot1.plt.XLabel("Sample Number");
             Closed += (sender, args) =>
@@ -29,13 +30,8 @@ namespace ScottPlot.Demo.WinForms.WinFormsDemos
                 dataTimer?.Stop();
                 renderTimer?.Stop();
             };
+            
         }
-
-        private void LiveDataIncoming_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void dataTimer_Tick(object sender, EventArgs e)
         {
             double firstValue = 0;
@@ -51,9 +47,9 @@ namespace ScottPlot.Demo.WinForms.WinFormsDemos
                 //   5. continue to update the new array
             }
 
-            double randomValue = rand.Next(-10,10);
+            double randomValue = rand.Next(-10, 10);
             firstValue = data[nextDataIndex - 1] + randomValue;
-            if (firstValue >0)
+            if (firstValue > 0)
             {
                 latestValue = firstValue;
             }
@@ -67,15 +63,15 @@ namespace ScottPlot.Demo.WinForms.WinFormsDemos
             tbLatestValue.Text = nextDataIndex.ToString();           //affiche la valeur actuel axe "X"
             formsPlot1.plt.PlotSignal(data, maxRenderIndex: nextDataIndex, color: blueColor);
             nextDataIndex += 1;
-        }
 
+            meteo.console_meteo(); // appel la classe Meteo (Meteo.cs)
+        }
         private void renderTimer_Tick(object sender, EventArgs e)
         {
             if (cbAutoAxis.Checked)
                 formsPlot1.plt.AxisAuto();
             formsPlot1.Render();
         }
-
         private void cbAutoAxis_CheckedChanged(object sender, EventArgs e)
         {
             if (cbAutoAxis.Checked == false)
@@ -83,36 +79,47 @@ namespace ScottPlot.Demo.WinForms.WinFormsDemos
                 //formsPlot1.plt.AxisAuto(verticalMargin: .5);
             }
         }
-
         private void formsPlot1_Load(object sender, EventArgs e)
         {
 
         }
-
         private void tbLatestValue_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-
-        private void cbSoleil_CheckedChanged(object sender, EventArgs e)
+        private void tbLastValue_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        public void cbSoleil_CheckedChanged(object sender, EventArgs e)
+        {
+            meteo.Soleil = cbSoleil.Checked;
+            if (cbSoleil.Checked == false)
+            {
+                //Sun = cbSoleil.Checked;
+                //meteo.SUN(Sun);
+                
+                //Console.WriteLine(T);
+            }
+            
+
 
         }
 
         private void numericUpDownVent_ValueChanged(object sender, EventArgs e)
         {
-
+            meteo.vent = numericUpDownVent.Value;
         }
 
         private void numericUpDownTemperature_ValueChanged(object sender, EventArgs e)
         {
 
         }
+        
+        
 
-        private void lTemperature_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
