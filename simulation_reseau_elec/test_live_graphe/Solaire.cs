@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    class Solaire
+    class Solaire : Meteo 
     {
+        public Solaire()
+        {
+            
+        }
         public int prod_solaire()
         {
             return 10;

@@ -6,15 +6,25 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    class Eolien
+    class Eolien : Meteo
     {
+        //public decimal Temp;
         public Eolien()
         {
             
+            //this.temp = Temp;
         }
         public int prod_eolien()
         {
-            return 10;
+            decimal test = Vent();
+            if (test >= 10)
+            {
+                return 10;
+            }
+            else
+            {
+                return 0;
+            }
         }
         public double Prix_eolien()
         {

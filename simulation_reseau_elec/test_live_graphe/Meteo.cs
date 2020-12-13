@@ -10,19 +10,30 @@ namespace simulation_reseau_elec
     {
         DateTime now = DateTime.Now;
         //public View_graphe view_graphe;
-        public bool Soleil;
-        public decimal vent;
-        public decimal temp;
+        public decimal Soleil = 60;
+        public decimal vent = 10;
+        public decimal temp = 15;
 
-        public bool console_meteo()
+        public Meteo()
+        {
+            
+        }
+        /*public bool console_meteo()
         {
             Console.WriteLine("Hour: {0}", now.Hour);
             Console.WriteLine(Soleil);
             Console.WriteLine(vent);
             Console.WriteLine(temp);
             return Soleil;
+        }*/
+        public decimal temperature()
+        {
+            return temp;
         }
-
+        public decimal Vent()
+        {
+            return vent;
+        }
     }
 
 }

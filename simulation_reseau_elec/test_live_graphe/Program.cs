@@ -20,7 +20,6 @@ namespace simulation_reseau_elec
             Application.Run(new View_graphe());
             //Application.Run(new LiveDataUpdate());
             //Application.Run(new LiveDataIncoming());
-            
         }
     }
 }
