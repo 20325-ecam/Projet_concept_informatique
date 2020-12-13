@@ -8,7 +8,10 @@ namespace simulation_reseau_elec
 {
     class Eolien
     {
-
+        public Eolien()
+        {
+            
+        }
         public int prod_eolien()
         {
             return 10;
