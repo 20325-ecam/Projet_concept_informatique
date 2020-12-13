@@ -50,7 +50,7 @@ namespace simulation_reseau_elec
             // 
             // formsPlot1
             // 
-            this.formsPlot1.Location = new System.Drawing.Point(22, 112);
+            this.formsPlot1.Location = new System.Drawing.Point(20, 120);
             this.formsPlot1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.formsPlot1.Name = "formsPlot1";
             this.formsPlot1.Size = new System.Drawing.Size(1226, 431);
@@ -191,7 +191,7 @@ namespace simulation_reseau_elec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 585);
+            this.ClientSize = new System.Drawing.Size(1859, 585);
             this.Controls.Add(this.lTemperature);
             this.Controls.Add(this.numericUpDownTemperature);
             this.Controls.Add(this.lVent);

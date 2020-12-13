@@ -16,9 +16,9 @@ namespace simulation_reseau_elec
         Consomateur consomateur = new Consomateur();
         //Simulation simulation = new Simulation();
         public bool Sun;
-        public double[] data = new double[1000_000];
+        public double[] data = new double[1_000_000];
         int nextDataIndex = 1;
-        readonly Random rand = new Random(0);
+        //readonly Random rand = new Random(0);
         Color blueColor = Color.FromArgb(0, 128, 255);
 
         public View_graphe()
@@ -111,5 +111,7 @@ namespace simulation_reseau_elec
         {
             meteo.temp = numericUpDownTemperature.Value;
         }
+
+        
     }
 }
