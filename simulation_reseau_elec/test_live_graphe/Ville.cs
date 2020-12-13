@@ -9,14 +9,18 @@ namespace simulation_reseau_elec
     class Ville
     {
         public double conso_ville;
-        DateTime now = DateTime.Now;
+        //dave DateTime now = DateTime.Now;
         readonly Random rand = new Random(0);
 
         public void void_ville()
         {
             //int maintenant = now.Hour;
-            int maintenant = now.Minute/3;
-            //int maintenant = now.Second/3;
+            //int maintenant = now.Minute/3;
+            //int maintenant = now.Second /3;
+            int maintenant = DateTime.Now.Second / 3;
+            //int maintenant = DateTime.Now.Minute / 3; 
+            //int maintenant = DateTime.Now.Hour / 3;
+
             int x;
             int y;
             if (maintenant >= 0 && maintenant < 7) //tous le monde dors

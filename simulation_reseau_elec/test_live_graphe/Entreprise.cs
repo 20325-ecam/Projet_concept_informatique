@@ -9,14 +9,19 @@ namespace simulation_reseau_elec
     class Entreprise
     {
         public double conso_entreprise;
-        DateTime now = DateTime.Now;
+        //DateTime now = DateTime.Now;              ->delete
         readonly Random rand = new Random(0);
 
         public void void_entreprise()
         {
-            //int maintenant = now.Hour;
-            int maintenant = now.Minute / 3;
-            //int maintenant = now.Second/3;
+            //utilise l'heure du pc pour simuler le créneau horraire->conso influencée
+            //int maintenant = now.Hour;            ->delete
+            //int maintenant = now.Minute / 3;      ->delete
+            //int maintenant = now.Second/3;        ->delete
+            int maintenant = DateTime.Now.Second / 3;  
+            //int maintenant = DateTime.Now.Minute / 3; 
+            //int maintenant = DateTime.Now.Hour / 3;
+
             int x;
             int y;
             if (maintenant >= 0 && maintenant < 7) //tous le monde dors

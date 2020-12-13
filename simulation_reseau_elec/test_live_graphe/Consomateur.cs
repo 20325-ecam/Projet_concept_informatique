@@ -12,6 +12,7 @@ namespace simulation_reseau_elec
         Ville ville = new Ville();
         Entreprise entreprise = new Entreprise();
 
+
         public void void_consomateur()
         {
             ville.void_ville();

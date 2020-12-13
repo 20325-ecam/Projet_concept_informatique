@@ -50,21 +50,19 @@ namespace simulation_reseau_elec
             // 
             // formsPlot1
             // 
-            this.formsPlot1.Location = new System.Drawing.Point(20, 120);
-            this.formsPlot1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.formsPlot1.Location = new System.Drawing.Point(15, 98);
             this.formsPlot1.Name = "formsPlot1";
-            this.formsPlot1.Size = new System.Drawing.Size(1226, 431);
+            this.formsPlot1.Size = new System.Drawing.Size(920, 350);
             this.formsPlot1.TabIndex = 0;
             this.formsPlot1.Load += new System.EventHandler(this.formsPlot1_Load);
             // 
             // tbLatestValue
             // 
             this.tbLatestValue.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLatestValue.Location = new System.Drawing.Point(96, 59);
-            this.tbLatestValue.Margin = new System.Windows.Forms.Padding(4);
+            this.tbLatestValue.Location = new System.Drawing.Point(72, 48);
             this.tbLatestValue.Name = "tbLatestValue";
             this.tbLatestValue.ReadOnly = true;
-            this.tbLatestValue.Size = new System.Drawing.Size(80, 27);
+            this.tbLatestValue.Size = new System.Drawing.Size(61, 23);
             this.tbLatestValue.TabIndex = 5;
             this.tbLatestValue.Text = "123";
             this.tbLatestValue.TextChanged += new System.EventHandler(this.tbLatestValue_TextChanged);
@@ -72,68 +70,71 @@ namespace simulation_reseau_elec
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 64);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(13, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 17);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "readings: ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(13, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(359, 17);
+            this.label1.Size = new System.Drawing.Size(268, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "This example simulates live display of a growing dataset";
             // 
             // lTemperature
             // 
             this.lTemperature.AutoSize = true;
-            this.lTemperature.Location = new System.Drawing.Point(1145, 60);
+            this.lTemperature.Location = new System.Drawing.Point(859, 49);
+            this.lTemperature.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lTemperature.Name = "lTemperature";
-            this.lTemperature.Size = new System.Drawing.Size(90, 17);
+            this.lTemperature.Size = new System.Drawing.Size(67, 13);
             this.lTemperature.TabIndex = 19;
             this.lTemperature.Text = "Temperature";
             // 
             // numericUpDownTemperature
             // 
-            this.numericUpDownTemperature.Location = new System.Drawing.Point(1019, 59);
+            this.numericUpDownTemperature.Location = new System.Drawing.Point(764, 48);
+            this.numericUpDownTemperature.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownTemperature.Name = "numericUpDownTemperature";
-            this.numericUpDownTemperature.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownTemperature.Size = new System.Drawing.Size(90, 20);
             this.numericUpDownTemperature.TabIndex = 18;
             this.numericUpDownTemperature.ValueChanged += new System.EventHandler(this.numericUpDownTemperature_ValueChanged);
             // 
             // lVent
             // 
             this.lVent.AutoSize = true;
-            this.lVent.Location = new System.Drawing.Point(879, 64);
+            this.lVent.Location = new System.Drawing.Point(659, 52);
+            this.lVent.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lVent.Name = "lVent";
-            this.lVent.Size = new System.Drawing.Size(73, 17);
+            this.lVent.Size = new System.Drawing.Size(56, 13);
             this.lVent.TabIndex = 17;
             this.lVent.Text = "Vent (m/s)";
             // 
             // numericUpDownVent
             // 
-            this.numericUpDownVent.Location = new System.Drawing.Point(752, 59);
+            this.numericUpDownVent.Location = new System.Drawing.Point(564, 48);
+            this.numericUpDownVent.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDownVent.Maximum = new decimal(new int[] {
             130,
             0,
             0,
             0});
             this.numericUpDownVent.Name = "numericUpDownVent";
-            this.numericUpDownVent.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDownVent.Size = new System.Drawing.Size(90, 20);
             this.numericUpDownVent.TabIndex = 16;
             this.numericUpDownVent.ValueChanged += new System.EventHandler(this.numericUpDownVent_ValueChanged);
             // 
             // cbSoleil
             // 
             this.cbSoleil.AutoSize = true;
-            this.cbSoleil.Location = new System.Drawing.Point(682, 60);
+            this.cbSoleil.Location = new System.Drawing.Point(512, 49);
+            this.cbSoleil.Margin = new System.Windows.Forms.Padding(2);
             this.cbSoleil.Name = "cbSoleil";
-            this.cbSoleil.Size = new System.Drawing.Size(64, 21);
+            this.cbSoleil.Size = new System.Drawing.Size(51, 17);
             this.cbSoleil.TabIndex = 15;
             this.cbSoleil.Text = "Soleil";
             this.cbSoleil.UseVisualStyleBackColor = true;
@@ -144,10 +145,9 @@ namespace simulation_reseau_elec
             this.cbAutoAxis.AutoSize = true;
             this.cbAutoAxis.Checked = true;
             this.cbAutoAxis.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbAutoAxis.Location = new System.Drawing.Point(443, 63);
-            this.cbAutoAxis.Margin = new System.Windows.Forms.Padding(4);
+            this.cbAutoAxis.Location = new System.Drawing.Point(332, 51);
             this.cbAutoAxis.Name = "cbAutoAxis";
-            this.cbAutoAxis.Size = new System.Drawing.Size(190, 21);
+            this.cbAutoAxis.Size = new System.Drawing.Size(146, 17);
             this.cbAutoAxis.TabIndex = 14;
             this.cbAutoAxis.Text = "auto-axis on each update";
             this.cbAutoAxis.UseVisualStyleBackColor = true;
@@ -156,11 +156,10 @@ namespace simulation_reseau_elec
             // tbLastValue
             // 
             this.tbLastValue.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLastValue.Location = new System.Drawing.Point(298, 60);
-            this.tbLastValue.Margin = new System.Windows.Forms.Padding(4);
+            this.tbLastValue.Location = new System.Drawing.Point(224, 49);
             this.tbLastValue.Name = "tbLastValue";
             this.tbLastValue.ReadOnly = true;
-            this.tbLastValue.Size = new System.Drawing.Size(97, 27);
+            this.tbLastValue.Size = new System.Drawing.Size(74, 23);
             this.tbLastValue.TabIndex = 13;
             this.tbLastValue.Text = "+123.4";
             this.tbLastValue.TextChanged += new System.EventHandler(this.tbLastValue_TextChanged);
@@ -168,30 +167,29 @@ namespace simulation_reseau_elec
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(192, 65);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(144, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 17);
+            this.label3.Size = new System.Drawing.Size(64, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "latest value:";
             // 
             // dataTimer
             // 
             this.dataTimer.Enabled = true;
-            this.dataTimer.Interval = 1000;
+            this.dataTimer.Interval = 500;
             this.dataTimer.Tick += new System.EventHandler(this.dataTimer_Tick);
             // 
             // renderTimer
             // 
             this.renderTimer.Enabled = true;
-            this.renderTimer.Interval = 1000;
+            this.renderTimer.Interval = 500;
             this.renderTimer.Tick += new System.EventHandler(this.renderTimer_Tick);
             // 
             // View_graphe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1859, 585);
+            this.ClientSize = new System.Drawing.Size(1394, 475);
             this.Controls.Add(this.lTemperature);
             this.Controls.Add(this.numericUpDownTemperature);
             this.Controls.Add(this.lVent);
@@ -204,6 +202,7 @@ namespace simulation_reseau_elec
             this.Controls.Add(this.tbLatestValue);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.formsPlot1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "View_graphe";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTemperature)).EndInit();

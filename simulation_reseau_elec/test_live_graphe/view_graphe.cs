@@ -29,6 +29,7 @@ namespace simulation_reseau_elec
         int nextDataIndex = 1;
         //readonly Random rand = new Random(0);
         Color blueColor = Color.FromArgb(0, 128, 255);
+        Color redColor = Color.FromArgb(255, 0, 0);
         private bool last = false;
         public View_graphe()
         {
@@ -62,6 +63,7 @@ namespace simulation_reseau_elec
             //double randomValue = rand.Next(0, 10);
             consomateur.void_consomateur();
             firstValue = consomateur.conso_consomateur;
+            
             //firstValue =  randomValue; //data[nextDataIndex - 1] + randomValue;
             latestValue = firstValue;
             //Console.WriteLine(latestValue);
