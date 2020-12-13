@@ -178,13 +178,13 @@ namespace simulation_reseau_elec
             // dataTimer
             // 
             this.dataTimer.Enabled = true;
-            this.dataTimer.Interval = 1;
+            this.dataTimer.Interval = 1000;
             this.dataTimer.Tick += new System.EventHandler(this.dataTimer_Tick);
             // 
             // renderTimer
             // 
             this.renderTimer.Enabled = true;
-            this.renderTimer.Interval = 20;
+            this.renderTimer.Interval = 1000;
             this.renderTimer.Tick += new System.EventHandler(this.renderTimer_Tick);
             // 
             // View_graphe
