@@ -9,5 +9,6 @@ namespace simulation_reseau_elec
     class Centrale
     {
         int f;
+        int g;
     }
 }
