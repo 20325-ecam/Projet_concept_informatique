@@ -17,7 +17,7 @@ namespace simulation_reseau_elec
         public int prod_eolien()
         {
             decimal test = Vent();
-            if (test >= 10)
+            if (test <= 10)
             {
                 return 10;
             }
