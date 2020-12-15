@@ -4,15 +4,46 @@ using System.Text;
 
 namespace test
 {
-    public class Consommateur_random : Consommateur
+    public class Consommateur_random : Consommateur //​​Terminé!!!!!!!!
 
     {
-        public Consommateur_random(int max_conso) : base(max_conso)
+         static readonly Random rand = new Random();
+        public Consommateur_random(float max_conso) : base(max_conso)
         {
         }
-        public override int Get_conso()
+
+        public override float Get_conso()
         {
-            return 200;
+            //return base.Get_conso();
+            //code pour conso
+
+            int maintenant = DateTime.Now.Second / 3;
+            int x, y;
+            float r;
+            if ((maintenant >= 0 && maintenant < 7) || (maintenant >= 19 && maintenant < 24))
+            {
+                x = 1; y = 20;
+                r = rand.Next(x, y);
+                //Console.WriteLine(r + " est le random");
+                r = (r / 100) * max_conso;
+                Console.WriteLine("conso nuit");
+                //Console.WriteLine(r + " est la conso random");
+                return r ;
+            }
+            else if (maintenant>=7 && maintenant<19)
+            {
+                x = 21; y = 100;
+                r = rand.Next(x, y);
+                //Console.WriteLine(r + " est le random");
+                r = (r / 100) * max_conso;
+                Console.WriteLine("conso jour");
+                //Console.WriteLine(r + " est la conso random");
+                return r;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }

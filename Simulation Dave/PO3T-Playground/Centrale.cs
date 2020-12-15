@@ -7,12 +7,12 @@ namespace test
 
     public abstract class Centrale
     {
-        int max_prod;
-        public Centrale(int max_prod)
+        public float max_prod;
+        public Centrale(float max_prod)
         {
             this.max_prod = max_prod;
         }
-        public virtual int Get_prod()
+        public virtual float Get_prod()
         {
             //code pour générer p
             return 100;
