@@ -69,6 +69,7 @@
     <Compile Include="Marche.cs" />
     <Compile Include="Meteo.cs" />
     <Compile Include="Nucleaire.cs" />
+    <Compile Include="Test.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="Solaire.cs" />
     <Compile Include="Vente_achat.cs" />

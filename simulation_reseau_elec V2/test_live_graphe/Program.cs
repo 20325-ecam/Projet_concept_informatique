@@ -15,6 +15,7 @@ namespace simulation_reseau_elec
         [STAThread]
         static void Main()
         {
+            Test test = new Test(1000); 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new View_graphe());
