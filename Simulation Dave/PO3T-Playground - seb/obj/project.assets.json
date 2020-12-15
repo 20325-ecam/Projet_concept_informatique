@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PC4\\OneDrive - ECAM\\laboratoire de concepts informatiques\\projet\\Simulation Dave\\PO3T-Playground\\test.csproj",
+      "projectUniqueName": "D:\\PC4\\OneDrive - ECAM\\laboratoire de concepts informatiques\\projet\\Simulation Dave\\PO3T-Playground - seb\\test.csproj",
       "projectName": "test",
-      "projectPath": "D:\\PC4\\OneDrive - ECAM\\laboratoire de concepts informatiques\\projet\\Simulation Dave\\PO3T-Playground\\test.csproj",
+      "projectPath": "D:\\PC4\\OneDrive - ECAM\\laboratoire de concepts informatiques\\projet\\Simulation Dave\\PO3T-Playground - seb\\test.csproj",
       "packagesPath": "C:\\Users\\PC4\\.nuget\\packages\\",
-      "outputPath": "D:\\PC4\\OneDrive - ECAM\\laboratoire de concepts informatiques\\projet\\Simulation Dave\\PO3T-Playground\\obj\\",
+      "outputPath": "D:\\PC4\\OneDrive - ECAM\\laboratoire de concepts informatiques\\projet\\Simulation Dave\\PO3T-Playground - seb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
