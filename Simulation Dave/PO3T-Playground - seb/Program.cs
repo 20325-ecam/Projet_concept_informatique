@@ -6,7 +6,7 @@ namespace test
 {
 	class Program
 	{
-		public double abs_trou;
+		//public double abs_trou;
 		static void Main(string[] args)
 		{
 
@@ -18,9 +18,12 @@ namespace test
 			//création des consommateurs et producteurs
 			Meteo Bruxelles = new Meteo(30,20,60);
 			Centrale e1 = new Eolien(6000, Bruxelles);
-			Centrale n1 = new Nucléaire(20000);
+			Centrale n1 = new Nucléaire(200);
+			Centrale a1 = new Achat(2000);
 			Consommateur ville = new Consommateur_random(1000);
 			Consommateur entreprise = new Consommateur_statique(8000);
+			Consommateur v1 = new Vente(5000);
+			
 
 			//ensemble des producteurs
 			List<Centrale> centrales = new List<Centrale>();
@@ -49,15 +52,13 @@ namespace test
 			if (trou_energie > 0)
             {
 				Console.WriteLine("il manque "+ abs_trou + " W");
+				a1.Get_achat(abs_trou);
 			}
 			else if (trou_energie < 0)
             {
-				Console.WriteLine("il y a en trop "+ abs_trou + " W");				
+				Console.WriteLine("il y a en trop "+ abs_trou + " W");
+				v1.Get_vente(abs_trou);
 			}
-			
-
-
 		}
-		public float
 	}
 }

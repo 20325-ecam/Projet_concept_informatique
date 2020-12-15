@@ -16,5 +16,9 @@ namespace test
         {
             return 0;
         }
+        public virtual double Get_vente(double trou_energie)
+        {
+            return 0;
+        }
     }
 }

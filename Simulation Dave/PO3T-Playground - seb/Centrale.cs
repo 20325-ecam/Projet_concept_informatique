@@ -17,5 +17,9 @@ namespace test
             //code pour générer p
             return 100;
         }
+        public virtual double Get_achat(double trou_energie)
+        {
+            return 0;
+        }
     }
 }

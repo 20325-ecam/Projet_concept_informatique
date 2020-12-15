@@ -10,10 +10,19 @@ namespace test
         {
 
         }
-        public float Get_vente()
+        public override double Get_vente(double trou_energie)
         {
-           Program.
-            abs_trou 
+            trou_energie -= max_conso; 
+            if (trou_energie > 0)
+            {
+                Console.WriteLine("surplus restant " + trou_energie);
+                // appel methode disipateur ********************************************************
+            }
+            else
+            {
+                Console.WriteLine("pas de vente");
+            }
+            return trou_energie;
         }
     }
 }
