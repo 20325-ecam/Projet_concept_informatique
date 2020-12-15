@@ -6,14 +6,14 @@ namespace test
 {
     public class Eolien : Centrale
     {
-        public Eolien(int max_prod) : base(max_prod)
+        public Eolien(float max_prod) : base(max_prod)
         {
 
         }
-        public override int Get_prod()
+        public override float Get_prod()
         {
             //return base.Get_prod();
-            return 500;
+            return max_prod;
         }
     }
 

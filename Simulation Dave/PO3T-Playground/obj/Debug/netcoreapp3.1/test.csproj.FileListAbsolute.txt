@@ -24,3 +24,16 @@ C:\Users\Dawid\Downloads\PO3T-Playground\obj\Debug\netcoreapp3.1\test.csproj.Cor
 C:\Users\Dawid\Downloads\PO3T-Playground\obj\Debug\netcoreapp3.1\test.dll
 C:\Users\Dawid\Downloads\PO3T-Playground\obj\Debug\netcoreapp3.1\test.pdb
 C:\Users\Dawid\Downloads\PO3T-Playground\obj\Debug\netcoreapp3.1\test.genruntimeconfig.cache
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\bin\Debug\netcoreapp3.1\test.exe
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\bin\Debug\netcoreapp3.1\test.deps.json
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\bin\Debug\netcoreapp3.1\test.runtimeconfig.json
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\bin\Debug\netcoreapp3.1\test.runtimeconfig.dev.json
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\bin\Debug\netcoreapp3.1\test.dll
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\bin\Debug\netcoreapp3.1\test.pdb
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\obj\Debug\netcoreapp3.1\test.csprojAssemblyReference.cache
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\obj\Debug\netcoreapp3.1\test.AssemblyInfoInputs.cache
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\obj\Debug\netcoreapp3.1\test.AssemblyInfo.cs
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\obj\Debug\netcoreapp3.1\test.csproj.CoreCompileInputs.cache
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\obj\Debug\netcoreapp3.1\test.dll
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\obj\Debug\netcoreapp3.1\test.pdb
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\Simulation Dave\PO3T-Playground\obj\Debug\netcoreapp3.1\test.genruntimeconfig.cache

@@ -4,17 +4,17 @@ using System.Text;
 
 namespace test
 {
-    public abstract class Consommateur
+    public abstract class Consommateur  //​​Terminé!!!!!!!!
     {
-        int max_conso;
-        public Consommateur(int max_conso)
+        public float max_conso;
+        
+        public Consommateur(float max_conso)
         {
             this.max_conso = max_conso;
         }
-        public virtual int Get_conso()
+        public virtual float Get_conso()
         {
-            //code pour conso
-            return 100;
+            return 0;
         }
     }
 }

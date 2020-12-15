@@ -8,16 +8,17 @@ namespace test
 	{
 		static void Main(string[] args)
 		{
+
 			double prod_tot = 0;
 			double conso_tot = 0;
 			double trou_energie = 0; // si + -> manque E ; si + -> surplus E
 			double abs_trou = 0;
 
 			//création des consommateurs et producteurs
-			Centrale e1 = new Eolien(0);
-			Centrale n1 = new Nucléaire(0);
-			Consommateur ville = new Consommateur_random(0);
-			Consommateur entreprise = new Consommateur_statique(0);
+			Centrale e1 = new Eolien(6000);
+			Centrale n1 = new Nucléaire(20000);
+			Consommateur ville = new Consommateur_random(1000);
+			Consommateur entreprise = new Consommateur_statique(8000);
 
 			//ensemble des producteurs
 			List<Centrale> centrales = new List<Centrale>();
@@ -25,10 +26,9 @@ namespace test
 			centrales.Add(n1);
 			foreach (var centrale in centrales)
             {
-				Console.WriteLine(centrale.Get_prod());
 				prod_tot += centrale.Get_prod();
             }
-			Console.WriteLine("prod est de " + prod_tot);
+			Console.WriteLine("prod est de " + prod_tot +" W");
 
 			//ensemble des consommateurs
 			List<Consommateur> consommateurs = new List<Consommateur>();
@@ -36,22 +36,21 @@ namespace test
 			consommateurs.Add(entreprise);
 			foreach (var consommateur in consommateurs)
 			{
-				Console.WriteLine(consommateur.Get_conso());
 				conso_tot += consommateur.Get_conso();
 			}
-			Console.WriteLine("conso est de " + conso_tot);
+			Console.WriteLine("conso est de " + conso_tot+ " W");
 
 			//Gestion manque & surplus E
 			trou_energie = conso_tot - prod_tot;
 			abs_trou = Math.Abs(trou_energie);
-			Console.WriteLine("trou est de " + trou_energie);
+			Console.WriteLine("trou est de " + trou_energie + " W");
 			if (trou_energie > 0)
             {
-				Console.WriteLine("il manque "+ abs_trou);
+				Console.WriteLine("il manque "+ abs_trou + " W");
 			}
 			else if (trou_energie < 0)
             {
-				Console.WriteLine("il y a en trop "+ abs_trou);				
+				Console.WriteLine("il y a en trop "+ abs_trou + " W");				
 			}
 
 

@@ -4,14 +4,14 @@ using System.Text;
 
 namespace test
 {
-    class Consommateur_statique : Consommateur
+    class Consommateur_statique : Consommateur  //​​Terminé!!!!!!!!
     {
-        public Consommateur_statique(int max_conso) : base(max_conso)
+        public Consommateur_statique(float max_conso) : base(max_conso)
         {
         }
-        public override int Get_conso()
+        public override float Get_conso()
         {
-            return 300;
+            return max_conso;
         }
     }
 }

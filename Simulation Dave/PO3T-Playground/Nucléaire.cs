@@ -6,14 +6,14 @@ namespace test
 {
     public class Nucléaire : Centrale
     {
-        public Nucléaire(int max_prod) : base(max_prod)
+        public Nucléaire(float max_prod) : base(max_prod)
         {
 
         }
-        public override int Get_prod()
+        public override float Get_prod()
         {
-            return 1000;
             //code production nucléaire
+            return max_prod;
         }
     }
 
