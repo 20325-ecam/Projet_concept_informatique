@@ -6,5 +6,6 @@ namespace test
 {
     class Ligne
     {
+        // public Ligne(consomateur consomateur)
     }
 }

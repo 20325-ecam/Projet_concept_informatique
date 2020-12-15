@@ -8,7 +8,7 @@ namespace test
     {
         public float max_conso;
         
-        public Consommateur(float max_conso)
+        public Consommateur(float max_conso) //(float max_conso, Ligne ligne)
         {
             this.max_conso = max_conso;
         }
