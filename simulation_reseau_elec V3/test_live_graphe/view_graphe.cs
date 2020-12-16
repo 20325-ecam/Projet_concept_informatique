@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace simulation_reseau_elec
@@ -25,9 +26,17 @@ namespace simulation_reseau_elec
         //Centrale e1 = new Eolien(6000, 10,1, Bruxelles);        //declare dans update()
         Centrale n1 = new Nucleaire(2000, 100, 0);
         Centrale a1 = new Achat(2000, 100, 0);
-        Consommateur ville = new Consommateur_random(1000);
+        Consommateur vil = new Consommateur_random(1000);
         Consommateur entreprise = new Consommateur_statique(8000);
         Consommateur v1 = new Vente(5000);
+        Ligne l1 = new Ligne(2000); //eolien vers prod
+        Ligne l2 = new Ligne(2000); //nucleaire vers prod
+        Ligne l3 = new Ligne(8000); //conso vers ville
+        Ligne l4 = new Ligne(8000); //conso vers entreprise
+        Ligne l5 = new Ligne(10000); //conso vers vente
+        Ligne l6 = new Ligne(10000); //achat vers prod
+        Ligne l7 = new Ligne(8000); //conso vers disp
+        Ligne l8 = new Ligne(11000); //prod vers conso
 
         //private bool last = false;
 
@@ -103,9 +112,10 @@ namespace simulation_reseau_elec
             //meteo.Soleil = cbSoleil.Checked;
             if (cbSoleil.Checked == false)
             {
+                //System.Windows.MessageBox.Show("helloe");
                 //Sun = cbSoleil.Checked;
                 //meteo.SUN(Sun);
-                
+
                 //Console.WriteLine(T);
             }
         }
@@ -134,6 +144,7 @@ namespace simulation_reseau_elec
             int prix = 0;
             int CO2 = 0;
             rtbMessage.Text = "";
+            //rtbErrors.Text = "";
             Centrale e1 = new Eolien(6000, 10, 1,  Bruxelles);
 
             //ensemble des producteurs
@@ -146,65 +157,95 @@ namespace simulation_reseau_elec
                 CO2 += centrale.Get_co2();
                 prix += centrale.Get_prix();
             }
+            rtbMessage.AppendText("CO2: " + CO2.ToString() + "g \n");
+            rtbMessage.AppendText("Prix: " + prix.ToString() + "€ \n");
             tbCO2.Text = CO2.ToString();
             tbPrix.Text = prix.ToString();
-            float Eo1 = e1.Get_prod();
-            float Nu1 = n1.Get_prod();
-            prod_tot += Eo1;
-            prod_tot += Nu1;
-            tbEolien.Text = Eo1.ToString();
-            tbNucleaire.Text = Nu1.ToString();
             
+            double Eo1 = e1.Get_prod();
+            Eo1 = l1.Ligne_in(Eo1);
+            prod_tot += Eo1;
+            if(Eo1 == 0)
+            {
+                e_surcharge(nameof(l1));
+            }
+            tbEolien.Text = Eo1.ToString();
+            rtbMessage.AppendText("Eolien: " + Math.Round(Eo1).ToString() + " W \n");
+
+            double Nu1 = n1.Get_prod();
+            Nu1 = l2.Ligne_in(Nu1);
+            prod_tot += Nu1;
+            if (Nu1 == 0)
+            {
+                e_surcharge(nameof(l2));
+            }
+            tbNucleaire.Text = Nu1.ToString();
+            rtbMessage.AppendText("Nucleaire: " + Math.Round(Nu1).ToString() + " W \n");
+
             Console.WriteLine("prod est de " + prod_tot + " W");
 
             //ensemble des consommateurs
             List<Consommateur> consommateurs = new List<Consommateur>();
-            consommateurs.Add(ville);
+            consommateurs.Add(vil);
             consommateurs.Add(entreprise);
             /*foreach (var consommateur in consommateurs)
             {
                 conso_tot += consommateur.Get_conso();
             }*/
-            float vil = ville.Get_conso();
-            float entr = entreprise.Get_conso();
-            conso_tot += vil;
+            
+            double ville = vil.Get_conso();
+            ville = l3.Ligne_in(ville);
+            conso_tot += ville;
+            if (ville == 0) { e_surcharge(nameof(ville)); }
+            tbVille.Text = ville.ToString();
+            tbL1_ville.Text = ville.ToString();
+
+            double entr = entreprise.Get_conso();
+            entr = l4.Ligne_in(entr);
             conso_tot += entr;
-            tbVille.Text = vil.ToString();
-            tbL1_ville.Text = vil.ToString();
+            if (entr == 0) { e_surcharge(nameof(entr)); }
             tbEntreprise.Text = entr.ToString();
-            Console.WriteLine("conso est de " + conso_tot + " W");
+            //Console.WriteLine("conso est de " + conso_tot + " W");
 
             //Gestion manque & surplus E
             trou_energie = conso_tot - prod_tot;
             abs_trou = Math.Abs(trou_energie);
-            Console.WriteLine("trou est de " + trou_energie + " W");
+            //Console.WriteLine("trou est de " + trou_energie + " W");
             if (trou_energie > 0)
             {
-                rtbMessage.Text += "il manque " + abs_trou.ToString() + " W";
-                Console.WriteLine("il manque " + abs_trou + " W");
+                rtbMessage.AppendText("il manque " + Math.Round(abs_trou).ToString() + " W \n");
+                //rtbMessage.Text += "il manque " + abs_trou.ToString() + " W";
+                //Console.WriteLine("il manque " + abs_trou + " W");
                 trou_achat = abs_trou;
+                trou_achat = l6.Ligne_in(trou_achat);
                 trou_vente = 0;
-                a1.Get_achat(abs_trou);
+                a1.Get_achat(trou_achat);
                 tbAchat.Text = trou_achat.ToString();
                 tbVente.Text = trou_vente.ToString();
             }
             else if (trou_energie < 0)
             {
-                rtbMessage.Text = "il y a en trop " + abs_trou.ToString() + " W";
-                Console.WriteLine("il y a en trop " + abs_trou + " W");
+                rtbMessage.AppendText("il y a en trop " + Math.Round(abs_trou).ToString() + " W \n");
+                //rtbMessage.Text += "il y a en trop " + abs_trou.ToString() + " W";
+                //Console.WriteLine("il y a en trop " + abs_trou + " W");
                 trou_vente = abs_trou;
+                trou_vente = l5.Ligne_in(trou_vente);
                 trou_achat = 0;
-                v1.Get_vente(abs_trou);
+                v1.Get_vente(trou_vente);
                 tbAchat.Text = trou_achat.ToString();
                 tbVente.Text = trou_vente.ToString();
             }
-            tbJour_nuit.Text = ville.Get_status();
+            tbJour_nuit.Text = vil.Get_status();
             
+            //prod_tot + trou_achat
             rtbMessage.AppendText("\n");
             rtbMessage.Text += " *******************";
-            Console.WriteLine("************************");
+            //Console.WriteLine("************************");
         }
-
+        public void e_surcharge(string zone)
+        {
+            rtbErrors.AppendText(DateTime.Now + " Ligne " + zone + " surcharge" + "\n");
+        }
         private void tbAchat_TextChanged(object sender, EventArgs e)
         {
 
@@ -255,6 +296,11 @@ namespace simulation_reseau_elec
             
         }
         private void tbL1_ville_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbErrors_TextChanged(object sender, EventArgs e)
         {
 
         }

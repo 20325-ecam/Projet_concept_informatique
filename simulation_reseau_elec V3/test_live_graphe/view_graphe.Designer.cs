@@ -67,6 +67,7 @@ namespace simulation_reseau_elec
             this.label14 = new System.Windows.Forms.Label();
             this.tbL1_ville = new System.Windows.Forms.TextBox();
             this.tbL2_entreprise = new System.Windows.Forms.TextBox();
+            this.rtbErrors = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTemperature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVent)).BeginInit();
             this.SuspendLayout();
@@ -464,11 +465,22 @@ namespace simulation_reseau_elec
             this.tbL2_entreprise.TabIndex = 45;
             this.tbL2_entreprise.Text = "0";
             // 
+            // rtbErrors
+            // 
+            this.rtbErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbErrors.Location = new System.Drawing.Point(1390, 624);
+            this.rtbErrors.Name = "rtbErrors";
+            this.rtbErrors.Size = new System.Drawing.Size(710, 507);
+            this.rtbErrors.TabIndex = 46;
+            this.rtbErrors.Text = "";
+            this.rtbErrors.TextChanged += new System.EventHandler(this.rtbErrors_TextChanged);
+            // 
             // View_graphe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2153, 1201);
+            this.Controls.Add(this.rtbErrors);
             this.Controls.Add(this.tbL2_entreprise);
             this.Controls.Add(this.tbL1_ville);
             this.Controls.Add(this.label13);
@@ -553,6 +565,7 @@ namespace simulation_reseau_elec
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox tbL1_ville;
         private System.Windows.Forms.TextBox tbL2_entreprise;
+        private System.Windows.Forms.RichTextBox rtbErrors;
     }
 }
 

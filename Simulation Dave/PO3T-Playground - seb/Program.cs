@@ -15,7 +15,7 @@ namespace test
 			double trou_energie = 0; // si + -> manque E ; si + -> surplus E
 			double abs_trou = 0;
 
-			//création des consommateurs et producteurs
+			
 			Meteo Bruxelles = new Meteo(30,20,60);
 			Centrale e1 = new Eolien(6000, Bruxelles);
 			Centrale n1 = new Nucléaire(200);
