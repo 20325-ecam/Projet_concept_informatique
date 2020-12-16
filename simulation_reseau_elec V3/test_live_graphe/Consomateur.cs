@@ -22,5 +22,21 @@ namespace simulation_reseau_elec
         {
             return 0;
         }
+        public virtual string Get_status()
+        {
+            int maintenant = DateTime.Now.Second / 3;
+            if ((maintenant >= 0 && maintenant < 7) || (maintenant >= 19 && maintenant < 24))
+            {
+                return "Nuit";
+            }
+            else if (maintenant >= 7 && maintenant < 19)
+            {
+                return "Jour";
+            }
+            else
+            {
+                return "1";
+            }
+        }
     }
 }

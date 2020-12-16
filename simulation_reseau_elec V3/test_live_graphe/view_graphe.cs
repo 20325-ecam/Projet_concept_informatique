@@ -21,14 +21,16 @@ namespace simulation_reseau_elec
         int nextDataIndex = 1;
         Color blueColor = Color.FromArgb(0, 128, 255);
         Color redColor = Color.FromArgb(255, 0, 0);
-        //private bool last = false;
         Meteo Bruxelles = new Meteo(30, 20, 60);
-        Centrale e1 = new Eolien(6000, 10,1, Bruxelles);        //declare dans update()
+        //Centrale e1 = new Eolien(6000, 10,1, Bruxelles);        //declare dans update()
         Centrale n1 = new Nucleaire(2000, 100, 0);
         Centrale a1 = new Achat(2000, 100, 0);
         Consommateur ville = new Consommateur_random(1000);
         Consommateur entreprise = new Consommateur_statique(8000);
         Consommateur v1 = new Vente(5000);
+
+        //private bool last = false;
+
 
         public View_graphe()
         {
@@ -196,20 +198,8 @@ namespace simulation_reseau_elec
                 tbAchat.Text = trou_achat.ToString();
                 tbVente.Text = trou_vente.ToString();
             }
-            int maintenant = DateTime.Now.Second / 3;
-            //return max_conso;
-            if ((maintenant >= 0 && maintenant < 7) || (maintenant >= 19 && maintenant < 24))
-            {
-                tbJour_nuit.Text = "Nuit";
-            }
-            else if (maintenant >= 7 && maintenant < 19)
-            {
-                tbJour_nuit.Text = "Jour";
-            }
-            else
-            {
-                tbJour_nuit.Text = "0";
-            }
+            tbJour_nuit.Text = ville.Get_status();
+            
             rtbMessage.AppendText("\n");
             rtbMessage.Text += " *******************";
             Console.WriteLine("************************");

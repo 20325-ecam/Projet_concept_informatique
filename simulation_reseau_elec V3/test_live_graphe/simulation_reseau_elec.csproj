@@ -66,13 +66,11 @@
     <Compile Include="Consomateur.cs" />
     <Compile Include="Consommateur_random.cs" />
     <Compile Include="Consommateur_statique.cs" />
-    <Compile Include="Entreprise.cs" />
     <Compile Include="Eolien.cs" />
     <Compile Include="Gaz.cs" />
     <Compile Include="Ligne.cs" />
     <Compile Include="Meteo.cs" />
     <Compile Include="Nucleaire.cs" />
-    <Compile Include="Test.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="Vente.cs" />
     <Compile Include="view_graphe.cs">

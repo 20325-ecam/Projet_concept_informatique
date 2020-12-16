@@ -26,5 +26,9 @@ namespace simulation_reseau_elec
                 return 1;
             }
         }
+        public override string Get_status()
+        {
+            return base.Get_status();
+        }
     }
 }
