@@ -58,6 +58,11 @@ namespace simulation_reseau_elec
             this.tbEntreprise = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tbVille = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbCO2 = new System.Windows.Forms.TextBox();
+            this.tbPrix = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.rtbMessage = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTemperature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVent)).BeginInit();
             this.SuspendLayout();
@@ -358,11 +363,69 @@ namespace simulation_reseau_elec
             this.tbVille.Text = "0";
             this.tbVille.TextChanged += new System.EventHandler(this.tbVille_TextChanged);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(-4, 835);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 17);
+            this.label11.TabIndex = 37;
+            this.label11.Text = "CO2:";
+            // 
+            // tbCO2
+            // 
+            this.tbCO2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCO2.Location = new System.Drawing.Point(73, 830);
+            this.tbCO2.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCO2.Name = "tbCO2";
+            this.tbCO2.ReadOnly = true;
+            this.tbCO2.Size = new System.Drawing.Size(80, 27);
+            this.tbCO2.TabIndex = 36;
+            this.tbCO2.Text = "0";
+            this.tbCO2.TextChanged += new System.EventHandler(this.tbCO2_TextChanged);
+            // 
+            // tbPrix
+            // 
+            this.tbPrix.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrix.Location = new System.Drawing.Point(73, 771);
+            this.tbPrix.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPrix.Name = "tbPrix";
+            this.tbPrix.ReadOnly = true;
+            this.tbPrix.Size = new System.Drawing.Size(80, 27);
+            this.tbPrix.TabIndex = 34;
+            this.tbPrix.Text = "0";
+            this.tbPrix.TextChanged += new System.EventHandler(this.tbPrix_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(13, 776);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 17);
+            this.label12.TabIndex = 38;
+            this.label12.Text = "Prix:";
+            // 
+            // rtbMessage
+            // 
+            this.rtbMessage.Location = new System.Drawing.Point(1407, 375);
+            this.rtbMessage.Name = "rtbMessage";
+            this.rtbMessage.Size = new System.Drawing.Size(495, 507);
+            this.rtbMessage.TabIndex = 39;
+            this.rtbMessage.Text = "";
+            this.rtbMessage.TextChanged += new System.EventHandler(this.rtbMessage_TextChanged);
+            // 
             // View_graphe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1859, 1201);
+            this.ClientSize = new System.Drawing.Size(2153, 1201);
+            this.Controls.Add(this.rtbMessage);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.tbCO2);
+            this.Controls.Add(this.tbPrix);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tbEntreprise);
             this.Controls.Add(this.label10);
@@ -429,6 +492,11 @@ namespace simulation_reseau_elec
         private System.Windows.Forms.TextBox tbEntreprise;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox tbVille;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tbCO2;
+        private System.Windows.Forms.TextBox tbPrix;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RichTextBox rtbMessage;
     }
 }
 

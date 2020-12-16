@@ -8,7 +8,7 @@ namespace simulation_reseau_elec
 {
     class Achat : Centrale
     {
-        public Achat(float max_prod) : base(max_prod)
+        public Achat(float max_prod, int prix, int co2) : base(max_prod, prix, co2)
         {
 
         }

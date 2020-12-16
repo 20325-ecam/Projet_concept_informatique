@@ -10,7 +10,7 @@ namespace simulation_reseau_elec
     {
         float wind = 0;
         public float coeff = 0;
-        public Eolien(float max_prod, Meteo meteo) : base(max_prod)
+        public Eolien(float max_prod, int prix, int co2, Meteo meteo) : base(max_prod, prix, co2)
         {
             this.wind = meteo.Get_wind();
         }
@@ -24,6 +24,14 @@ namespace simulation_reseau_elec
 
             Console.WriteLine("le coeff est de " + coeff);
             return max_prod * coeff;
+        }
+        public override int Get_prix()
+        {
+            return base.Get_prix();
+        }
+        public override int Get_co2()
+        {
+            return base.Get_co2();
         }
     }
     

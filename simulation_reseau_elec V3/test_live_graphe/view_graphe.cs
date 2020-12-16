@@ -24,15 +24,16 @@ namespace simulation_reseau_elec
         //private bool last = false;
         Meteo Bruxelles = new Meteo(30, 20, 60);
         //Centrale e1 = new Eolien(6000, Bruxelles);        //declare dans update()
-        Centrale n1 = new Nucleaire(2000);
-        Centrale a1 = new Achat(2000);
+        Centrale n1 = new Nucleaire(2000, 100, 0);
+        Centrale a1 = new Achat(2000, 100, 0);
         Consommateur ville = new Consommateur_random(1000);
         Consommateur entreprise = new Consommateur_statique(8000);
         Consommateur v1 = new Vente(5000);
+
         public View_graphe()
         {
             InitializeComponent();
-            Centrale e1 = new Eolien(6000, Bruxelles);
+            //Centrale e1 = new Eolien(6000, 10, 1, Bruxelles);
             update();
             //Add_central();
             formsPlot1.plt.PlotSignal(data, maxRenderIndex: 100, color: blueColor);
@@ -128,22 +129,30 @@ namespace simulation_reseau_elec
             abs_trou = 0;
             double trou_achat;
             double trou_vente;
-            Centrale e1 = new Eolien(6000, Bruxelles);
+            int prix = 0;
+            int CO2 = 0;
+            rtbMessage.Text = "";
+            Centrale e1 = new Eolien(6000, 10, 1,  Bruxelles);
 
             //ensemble des producteurs
             List<Centrale> centrales = new List<Centrale>();
             centrales.Add(e1);
             centrales.Add(n1);
-            /*foreach (var centrale in centrales)
+            foreach (var centrale in centrales)
             {
-                prod_tot += centrale.Get_prod();
-            }*/
+                //prod_tot += centrale.Get_prod();
+                CO2 += centrale.Get_co2();
+                prix += centrale.Get_prix();
+            }
+            tbCO2.Text = CO2.ToString();
+            tbPrix.Text = prix.ToString();
             float eo1 = e1.Get_prod();
             float nu1 = n1.Get_prod();
             prod_tot += eo1;
             prod_tot += nu1;
             tbEolien.Text = eo1.ToString();
             tbNucleaire.Text = nu1.ToString();
+            
             Console.WriteLine("prod est de " + prod_tot + " W");
 
             //ensemble des consommateurs
@@ -168,6 +177,7 @@ namespace simulation_reseau_elec
             Console.WriteLine("trou est de " + trou_energie + " W");
             if (trou_energie > 0)
             {
+                rtbMessage.Text += "il manque " + abs_trou.ToString() + " W";
                 Console.WriteLine("il manque " + abs_trou + " W");
                 trou_achat = abs_trou;
                 trou_vente = 0;
@@ -177,6 +187,7 @@ namespace simulation_reseau_elec
             }
             else if (trou_energie < 0)
             {
+                rtbMessage.Text = "il y a en trop " + abs_trou.ToString() + " W";
                 Console.WriteLine("il y a en trop " + abs_trou + " W");
                 trou_vente = abs_trou;
                 trou_achat = 0;
@@ -198,7 +209,7 @@ namespace simulation_reseau_elec
             {
                 tbJour_nuit.Text = "0";
             }
-            
+            rtbMessage.Text += "*******************";
             Console.WriteLine("************************");
         }
 
@@ -235,6 +246,21 @@ namespace simulation_reseau_elec
         private void tbEntreprise_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbPrix_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCO2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbMessage_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
