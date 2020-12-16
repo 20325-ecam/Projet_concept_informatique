@@ -8,11 +8,11 @@ namespace simulation_reseau_elec
 {
     class Nucleaire : Centrale
     {
-        public Nucleaire(float max_prod, int prix, int co2) : base(max_prod, prix, co2)
+        public Nucleaire(double max_prod, int prix, int co2) : base(max_prod, prix, co2)
         {
 
         }
-        public override float Get_prod()
+        public override double Get_prod()
         {
             //code production nucléaire
             return max_prod;

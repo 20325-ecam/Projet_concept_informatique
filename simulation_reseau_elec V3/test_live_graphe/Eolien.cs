@@ -9,12 +9,12 @@ namespace simulation_reseau_elec
     class Eolien : Centrale
     {
         float wind = 0;
-        public float coeff = 0;
-        public Eolien(float max_prod, int prix, int co2, Meteo meteo) : base(max_prod, prix, co2)
+        public double coeff = 0;
+        public Eolien(double max_prod, int prix, int co2, Meteo meteo) : base(max_prod, prix, co2)
         {
             this.wind = meteo.Get_wind();
         }
-        public override float Get_prod()
+        public override double Get_prod()
         {
             //return base.Get_prod();
             Console.WriteLine("vent = " + wind);

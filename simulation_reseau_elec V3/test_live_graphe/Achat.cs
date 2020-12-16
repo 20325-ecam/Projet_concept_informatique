@@ -8,23 +8,26 @@ namespace simulation_reseau_elec
 {
     class Achat : Centrale
     {
-        public Achat(float max_prod, int prix, int co2) : base(max_prod, prix, co2)
+        public Achat(double max_prod, int prix, int co2) : base(max_prod, prix, co2)
         {
 
         }
         public override double Get_achat(double trou_energie)
         {
-            trou_energie -= max_prod;
-            if (trou_energie > 0)
+            
+            if(max_prod < trou_energie) //si achat peux pas combler le trou 
             {
+                return max_prod;
                 Console.WriteLine("manque restant (achat) " + trou_energie);
-                // gestion erreur ?? ********************************************************
+            }
+            else if(max_prod > trou_energie) // achat peux combler les besoins
+            {
+                return trou_energie;
             }
             else
             {
-                Console.WriteLine("pas d'achat");
+                return 0;
             }
-            return trou_energie;
         }
     }
 }

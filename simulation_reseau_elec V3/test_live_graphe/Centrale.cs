@@ -8,17 +8,17 @@ namespace simulation_reseau_elec
 {
     public abstract class Centrale
     {
-        public float max_prod;
+        public double max_prod;
         public int prix;
         public int co2;
 
-        public Centrale(float max_prod, int prix, int co2)
+        public Centrale(double max_prod, int prix, int co2)
         {
             this.max_prod = max_prod;
             this.prix = prix;
             this.co2 = co2;
         }
-        public virtual float Get_prod()
+        public virtual double Get_prod()
         {
             //code pour générer p
             return 100;

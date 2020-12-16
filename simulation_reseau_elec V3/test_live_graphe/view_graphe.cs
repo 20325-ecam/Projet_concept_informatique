@@ -139,8 +139,9 @@ namespace simulation_reseau_elec
             conso_tot = 0;
             trou_energie = 0; // si + -> manque E ; si + -> surplus E
             abs_trou = 0;
-            double trou_achat;
+            double trou_achat = 0;
             double trou_vente;
+            double total = 0;
             int prix = 0;
             int CO2 = 0;
             rtbMessage.Text = "";
@@ -181,18 +182,14 @@ namespace simulation_reseau_elec
             }
             tbNucleaire.Text = Nu1.ToString();
             rtbMessage.AppendText("Nucleaire: " + Math.Round(Nu1).ToString() + " W \n");
-
-            Console.WriteLine("prod est de " + prod_tot + " W");
-
+            total += prod_tot;
+            //Console.WriteLine("prod est de " + prod_tot + " W");
+            //*************************************************************************************************
             //ensemble des consommateurs
             List<Consommateur> consommateurs = new List<Consommateur>();
             consommateurs.Add(vil);
             consommateurs.Add(entreprise);
-            /*foreach (var consommateur in consommateurs)
-            {
-                conso_tot += consommateur.Get_conso();
-            }*/
-            
+
             double ville = vil.Get_conso();
             ville = l3.Ligne_in(ville);
             conso_tot += ville;
@@ -205,7 +202,6 @@ namespace simulation_reseau_elec
             conso_tot += entr;
             if (entr == 0) { e_surcharge(nameof(entr)); }
             tbEntreprise.Text = entr.ToString();
-            //Console.WriteLine("conso est de " + conso_tot + " W");
 
             //Gestion manque & surplus E
             trou_energie = conso_tot - prod_tot;
@@ -219,7 +215,8 @@ namespace simulation_reseau_elec
                 trou_achat = abs_trou;
                 trou_achat = l6.Ligne_in(trou_achat);
                 trou_vente = 0;
-                a1.Get_achat(trou_achat);
+                trou_achat = a1.Get_achat(trou_achat);
+                total += trou_achat;
                 tbAchat.Text = trou_achat.ToString();
                 tbVente.Text = trou_vente.ToString();
             }
@@ -236,8 +233,9 @@ namespace simulation_reseau_elec
                 tbVente.Text = trou_vente.ToString();
             }
             tbJour_nuit.Text = vil.Get_status();
-            
-            //prod_tot + trou_achat
+            total = l8.Ligne_in(total);
+            //total = prod_tot + trou_achat;
+            rtbMessage.AppendText(total.ToString());
             rtbMessage.AppendText("\n");
             rtbMessage.Text += " *******************";
             //Console.WriteLine("************************");
