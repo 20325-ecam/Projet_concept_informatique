@@ -23,7 +23,7 @@ namespace simulation_reseau_elec
         Color redColor = Color.FromArgb(255, 0, 0);
         //private bool last = false;
         Meteo Bruxelles = new Meteo(30, 20, 60);
-        //Centrale e1 = new Eolien(6000, Bruxelles);        //declare dans update()
+        Centrale e1 = new Eolien(6000, 10,1, Bruxelles);        //declare dans update()
         Centrale n1 = new Nucleaire(2000, 100, 0);
         Centrale a1 = new Achat(2000, 100, 0);
         Consommateur ville = new Consommateur_random(1000);
@@ -146,12 +146,12 @@ namespace simulation_reseau_elec
             }
             tbCO2.Text = CO2.ToString();
             tbPrix.Text = prix.ToString();
-            float eo1 = e1.Get_prod();
-            float nu1 = n1.Get_prod();
-            prod_tot += eo1;
-            prod_tot += nu1;
-            tbEolien.Text = eo1.ToString();
-            tbNucleaire.Text = nu1.ToString();
+            float Eo1 = e1.Get_prod();
+            float Nu1 = n1.Get_prod();
+            prod_tot += Eo1;
+            prod_tot += Nu1;
+            tbEolien.Text = Eo1.ToString();
+            tbNucleaire.Text = Nu1.ToString();
             
             Console.WriteLine("prod est de " + prod_tot + " W");
 
@@ -210,7 +210,8 @@ namespace simulation_reseau_elec
             {
                 tbJour_nuit.Text = "0";
             }
-            rtbMessage.Text += "*******************";
+            rtbMessage.AppendText("\n");
+            rtbMessage.Text += " *******************";
             Console.WriteLine("************************");
         }
 

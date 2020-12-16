@@ -413,6 +413,7 @@ namespace simulation_reseau_elec
             // 
             // rtbMessage
             // 
+            this.rtbMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbMessage.Location = new System.Drawing.Point(1390, 65);
             this.rtbMessage.Name = "rtbMessage";
             this.rtbMessage.Size = new System.Drawing.Size(495, 507);
