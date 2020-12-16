@@ -63,6 +63,10 @@ namespace simulation_reseau_elec
             this.tbPrix = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.rtbMessage = new System.Windows.Forms.RichTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.tbL1_ville = new System.Windows.Forms.TextBox();
+            this.tbL2_entreprise = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTemperature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVent)).BeginInit();
             this.SuspendLayout();
@@ -409,18 +413,65 @@ namespace simulation_reseau_elec
             // 
             // rtbMessage
             // 
-            this.rtbMessage.Location = new System.Drawing.Point(1407, 375);
+            this.rtbMessage.Location = new System.Drawing.Point(1390, 65);
             this.rtbMessage.Name = "rtbMessage";
             this.rtbMessage.Size = new System.Drawing.Size(495, 507);
             this.rtbMessage.TabIndex = 39;
             this.rtbMessage.Text = "";
             this.rtbMessage.TextChanged += new System.EventHandler(this.rtbMessage_TextChanged);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(965, 706);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 17);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "L2-entreprise:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(996, 637);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 17);
+            this.label14.TabIndex = 41;
+            this.label14.Text = "L1-ville:";
+            // 
+            // tbL1_ville
+            // 
+            this.tbL1_ville.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbL1_ville.Location = new System.Drawing.Point(1070, 632);
+            this.tbL1_ville.Margin = new System.Windows.Forms.Padding(4);
+            this.tbL1_ville.Name = "tbL1_ville";
+            this.tbL1_ville.ReadOnly = true;
+            this.tbL1_ville.Size = new System.Drawing.Size(80, 27);
+            this.tbL1_ville.TabIndex = 44;
+            this.tbL1_ville.Text = "0";
+            this.tbL1_ville.TextChanged += new System.EventHandler(this.tbL1_ville_TextChanged);
+            // 
+            // tbL2_entreprise
+            // 
+            this.tbL2_entreprise.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbL2_entreprise.Location = new System.Drawing.Point(1070, 701);
+            this.tbL2_entreprise.Margin = new System.Windows.Forms.Padding(4);
+            this.tbL2_entreprise.Name = "tbL2_entreprise";
+            this.tbL2_entreprise.ReadOnly = true;
+            this.tbL2_entreprise.Size = new System.Drawing.Size(80, 27);
+            this.tbL2_entreprise.TabIndex = 45;
+            this.tbL2_entreprise.Text = "0";
+            // 
             // View_graphe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2153, 1201);
+            this.Controls.Add(this.tbL2_entreprise);
+            this.Controls.Add(this.tbL1_ville);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.rtbMessage);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -497,6 +548,10 @@ namespace simulation_reseau_elec
         private System.Windows.Forms.TextBox tbPrix;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox rtbMessage;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox tbL1_ville;
+        private System.Windows.Forms.TextBox tbL2_entreprise;
     }
 }
 

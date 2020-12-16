@@ -168,6 +168,7 @@ namespace simulation_reseau_elec
             conso_tot += vil;
             conso_tot += entr;
             tbVille.Text = vil.ToString();
+            tbL1_ville.Text = vil.ToString();
             tbEntreprise.Text = entr.ToString();
             Console.WriteLine("conso est de " + conso_tot + " W");
 
@@ -261,6 +262,10 @@ namespace simulation_reseau_elec
         private void rtbMessage_TextChanged(object sender, EventArgs e)
         {
             
+        }
+        private void tbL1_ville_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
