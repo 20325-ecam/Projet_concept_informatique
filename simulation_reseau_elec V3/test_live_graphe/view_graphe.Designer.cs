@@ -48,6 +48,16 @@ namespace simulation_reseau_elec
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tbVente = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbJour_nuit = new System.Windows.Forms.TextBox();
+            this.tbNucleaire = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbEolien = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbEntreprise = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbVille = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTemperature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVent)).BeginInit();
             this.SuspendLayout();
@@ -238,11 +248,131 @@ namespace simulation_reseau_elec
             this.tbVente.Text = "0";
             this.tbVente.TextChanged += new System.EventHandler(this.tbVente_TextChanged);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(256, 637);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 17);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Jour-Nuit:";
+            // 
+            // tbJour_nuit
+            // 
+            this.tbJour_nuit.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbJour_nuit.Location = new System.Drawing.Point(334, 632);
+            this.tbJour_nuit.Margin = new System.Windows.Forms.Padding(4);
+            this.tbJour_nuit.Name = "tbJour_nuit";
+            this.tbJour_nuit.ReadOnly = true;
+            this.tbJour_nuit.Size = new System.Drawing.Size(80, 27);
+            this.tbJour_nuit.TabIndex = 24;
+            this.tbJour_nuit.Text = "0";
+            this.tbJour_nuit.TextChanged += new System.EventHandler(this.tbJour_nuit_TextChanged);
+            // 
+            // tbNucleaire
+            // 
+            this.tbNucleaire.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNucleaire.Location = new System.Drawing.Point(553, 696);
+            this.tbNucleaire.Margin = new System.Windows.Forms.Padding(4);
+            this.tbNucleaire.Name = "tbNucleaire";
+            this.tbNucleaire.ReadOnly = true;
+            this.tbNucleaire.Size = new System.Drawing.Size(80, 27);
+            this.tbNucleaire.TabIndex = 28;
+            this.tbNucleaire.Text = "0";
+            this.tbNucleaire.TextChanged += new System.EventHandler(this.tbNucleaire_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(493, 637);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 17);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Eolien: ";
+            // 
+            // tbEolien
+            // 
+            this.tbEolien.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEolien.Location = new System.Drawing.Point(553, 637);
+            this.tbEolien.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEolien.Name = "tbEolien";
+            this.tbEolien.ReadOnly = true;
+            this.tbEolien.Size = new System.Drawing.Size(80, 27);
+            this.tbEolien.TabIndex = 26;
+            this.tbEolien.Text = "0";
+            this.tbEolien.TextChanged += new System.EventHandler(this.tbEolien_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(476, 701);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 17);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Nucleaire: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(689, 701);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 17);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "Entreprise:";
+            // 
+            // tbEntreprise
+            // 
+            this.tbEntreprise.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEntreprise.Location = new System.Drawing.Point(766, 696);
+            this.tbEntreprise.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEntreprise.Name = "tbEntreprise";
+            this.tbEntreprise.ReadOnly = true;
+            this.tbEntreprise.Size = new System.Drawing.Size(80, 27);
+            this.tbEntreprise.TabIndex = 32;
+            this.tbEntreprise.Text = "0";
+            this.tbEntreprise.TextChanged += new System.EventHandler(this.tbEntreprise_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(703, 637);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(42, 17);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Ville: ";
+            // 
+            // tbVille
+            // 
+            this.tbVille.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbVille.Location = new System.Drawing.Point(766, 637);
+            this.tbVille.Margin = new System.Windows.Forms.Padding(4);
+            this.tbVille.Name = "tbVille";
+            this.tbVille.ReadOnly = true;
+            this.tbVille.Size = new System.Drawing.Size(80, 27);
+            this.tbVille.TabIndex = 30;
+            this.tbVille.Text = "0";
+            this.tbVille.TextChanged += new System.EventHandler(this.tbVille_TextChanged);
+            // 
             // View_graphe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1859, 1201);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.tbEntreprise);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.tbVille);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.tbNucleaire);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.tbEolien);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.tbJour_nuit);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbVente);
             this.Controls.Add(this.label4);
@@ -289,6 +419,16 @@ namespace simulation_reseau_elec
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tbVente;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbJour_nuit;
+        private System.Windows.Forms.TextBox tbNucleaire;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbEolien;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox tbEntreprise;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbVille;
     }
 }
 

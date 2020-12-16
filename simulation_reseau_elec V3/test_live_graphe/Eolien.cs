@@ -9,7 +9,7 @@ namespace simulation_reseau_elec
     class Eolien : Centrale
     {
         float wind = 0;
-        float coeff = 0;
+        public float coeff = 0;
         public Eolien(float max_prod, Meteo meteo) : base(max_prod)
         {
             this.wind = meteo.Get_wind();

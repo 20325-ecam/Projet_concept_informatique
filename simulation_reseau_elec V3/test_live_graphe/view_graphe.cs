@@ -134,20 +134,32 @@ namespace simulation_reseau_elec
             List<Centrale> centrales = new List<Centrale>();
             centrales.Add(e1);
             centrales.Add(n1);
-            foreach (var centrale in centrales)
+            /*foreach (var centrale in centrales)
             {
                 prod_tot += centrale.Get_prod();
-            }
+            }*/
+            float eo1 = e1.Get_prod();
+            float nu1 = n1.Get_prod();
+            prod_tot += eo1;
+            prod_tot += nu1;
+            tbEolien.Text = eo1.ToString();
+            tbNucleaire.Text = nu1.ToString();
             Console.WriteLine("prod est de " + prod_tot + " W");
 
             //ensemble des consommateurs
             List<Consommateur> consommateurs = new List<Consommateur>();
             consommateurs.Add(ville);
             consommateurs.Add(entreprise);
-            foreach (var consommateur in consommateurs)
+            /*foreach (var consommateur in consommateurs)
             {
                 conso_tot += consommateur.Get_conso();
-            }
+            }*/
+            float vil = ville.Get_conso();
+            float entr = entreprise.Get_conso();
+            conso_tot += vil;
+            conso_tot += entr;
+            tbVille.Text = vil.ToString();
+            tbEntreprise.Text = entr.ToString();
             Console.WriteLine("conso est de " + conso_tot + " W");
 
             //Gestion manque & surplus E
@@ -172,6 +184,20 @@ namespace simulation_reseau_elec
                 tbAchat.Text = trou_achat.ToString();
                 tbVente.Text = trou_vente.ToString();
             }
+            int maintenant = DateTime.Now.Second / 3;
+            //return max_conso;
+            if ((maintenant >= 0 && maintenant < 7) || (maintenant >= 19 && maintenant < 24))
+            {
+                tbJour_nuit.Text = "Nuit";
+            }
+            else if (maintenant >= 7 && maintenant < 19)
+            {
+                tbJour_nuit.Text = "Jour";
+            }
+            else
+            {
+                tbJour_nuit.Text = "0";
+            }
             
             Console.WriteLine("************************");
         }
@@ -182,6 +208,31 @@ namespace simulation_reseau_elec
         }
 
         private void tbVente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbJour_nuit_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbEolien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbNucleaire_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbVille_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbEntreprise_TextChanged(object sender, EventArgs e)
         {
 
         }
