@@ -24,7 +24,6 @@ namespace simulation_reseau_elec
         public View_graphe()
         {
             InitializeComponent();
-            m1 = new Marcher();
             //Centrale e1 = new Eolien(6000, 10, 1, Bruxelles);
             update();
             //Add_central();

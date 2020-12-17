@@ -67,9 +67,8 @@
     <Compile Include="Consommateur_random.cs" />
     <Compile Include="Consommateur_statique.cs" />
     <Compile Include="Eolien.cs" />
-    <Compile Include="Gaz.cs" />
     <Compile Include="Ligne.cs" />
-    <Compile Include="Marcher.cs" />
+    <Compile Include="Market.cs" />
     <Compile Include="Meteo.cs" />
     <Compile Include="Nucleaire.cs" />
     <Compile Include="Simulation.cs" />

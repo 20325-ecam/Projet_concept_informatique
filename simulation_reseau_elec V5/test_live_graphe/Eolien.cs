@@ -10,9 +10,11 @@ namespace simulation_reseau_elec
     {
         float wind = 0;
         public double coeff = 0;
-        public Eolien(double max_prod, int prix, int co2, Meteo meteo) : base(max_prod, prix, co2)
+        public double price;
+        public Eolien(double max_prod, int co2, Market market , Meteo meteo) : base(max_prod, co2)
         {
             this.wind = meteo.Get_wind();
+            this.price = market.Get_e_price();
         }
         public override double Get_prod()
         {

@@ -15,24 +15,31 @@ namespace simulation_reseau_elec
         public bool Sun;
 
         Meteo Bruxelles = new Meteo(30, 20, 60);
-        Centrale e1;
-        Centrale n1 = new Nucleaire(2000, 100, 0);
-        Centrale a1 = new Achat(2000, 100, 0);
-        Consommateur vil = new Consommateur_random(1000);
-        Consommateur entreprise = new Consommateur_statique(8000);
-        Consommateur v1 = new Vente(5000);
-        Ligne l1 = new Ligne(2000); //eolien vers prod
-        Ligne l2 = new Ligne(2000); //nucleaire vers prod
-        Ligne l3 = new Ligne(8000); //conso vers ville
-        Ligne l4 = new Ligne(8000); //conso vers entreprise
-        Ligne l5 = new Ligne(10000); //conso vers vente
-        Ligne l6 = new Ligne(10000); //achat vers prod
-        Ligne l7 = new Ligne(8000); //conso vers disp
-        Ligne l8 = new Ligne(11000); //prod vers conso
+        Market market = new Market(10, 10, 10, 10); //nuc/eol/achat/vente
+        Centrale e1, n1, a1;
+
+        Consommateur vil, entreprise, v1;
+        Ligne l1, l2, l3, l4, l5, l6, l7, l8;
+
         
         public Update()
         {
-            e1 = new Eolien(6000, 10, 1, Bruxelles);        //declare dans update()
+            e1 = new Eolien(6000, 0, market, Bruxelles);        //declare dans update()
+            n1 = new Nucleaire(2000, 10, market);
+            a1 = new Achat(2000, 100, market);
+
+            vil = new Consommateur_random(1000);
+            entreprise = new Consommateur_statique(8000);
+            v1 = new Vente(5000, market);
+
+            l1 = new Ligne(2000); //eolien vers prod
+            l2 = new Ligne(2000); //nucleaire vers prod
+            l3 = new Ligne(8000); //conso vers ville
+            l4 = new Ligne(8000); //conso vers entreprise
+            l5 = new Ligne(10000); //conso vers vente
+            l6 = new Ligne(10000); //achat vers prod
+            l7 = new Ligne(8000); //conso vers disp
+            l8 = new Ligne(11000); //prod vers conso
         }
         public void get_marcher()
         {

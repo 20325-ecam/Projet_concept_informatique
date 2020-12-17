@@ -9,13 +9,11 @@ namespace simulation_reseau_elec
     public abstract class Centrale
     {
         public double max_prod;
-        public int prix;
         public int co2;
 
-        public Centrale(double max_prod, int prix, int co2)
+        public Centrale(double max_prod, int co2)
         {
             this.max_prod = max_prod;
-            this.prix = prix;
             this.co2 = co2;
         }
         public virtual double Get_prod()
@@ -29,7 +27,7 @@ namespace simulation_reseau_elec
         }
         public virtual int Get_prix()
         {
-            return prix;
+            return 0;
         }
         public virtual int Get_co2()
         {

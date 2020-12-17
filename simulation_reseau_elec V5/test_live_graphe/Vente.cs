@@ -8,9 +8,10 @@ namespace simulation_reseau_elec
 {
     class Vente : Consommateur
     {
-        public Vente(int max_conso) : base(max_conso)
+        public double price;
+        public Vente(int max_conso, Market market) : base(max_conso)
         {
-
+            this.price = market.Get_v_price();
         }
         public override double Get_vente(double trou_energie)
         {
