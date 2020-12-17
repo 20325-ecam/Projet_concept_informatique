@@ -17,16 +17,14 @@ namespace simulation_reseau_elec
         public double[] data = new double[1_000_000]; // buffer max du graphe
         Color blueColor = Color.FromArgb(0, 128, 255);
         Color redColor = Color.FromArgb(255, 0, 0);
-        //private bool last = false;
         int nextDataIndex = 1;
-        Marcher m1;
+        Update up;
 
         public View_graphe()
         {
             InitializeComponent();
-            //Centrale e1 = new Eolien(6000, 10, 1, Bruxelles);
+            up = new Update(); 
             update();
-            //Add_central();
             formsPlot1.plt.PlotSignal(data, maxRenderIndex: 100, color: blueColor);
             formsPlot1.plt.YLabel("Value");
             formsPlot1.plt.XLabel("Sample Number");
@@ -52,7 +50,7 @@ namespace simulation_reseau_elec
                 //   4. plot the new (larger) array
                 //   5. continue to update the new array
             }
-            firstValue = conso_tot;
+            firstValue = up.conso_tot;
             latestValue = firstValue;
             data[nextDataIndex] = latestValue;
             tbLastValue.Text = (latestValue > 0) ? "+" + latestValue.ToString() : latestValue.ToString(); // affiche la derniere valeur axe "Y"
@@ -87,39 +85,52 @@ namespace simulation_reseau_elec
 
         }
 
-        public void cbSoleil_CheckedChanged(object sender, EventArgs e)
-        {
-            //meteo.Soleil = cbSoleil.Checked;
-            if (cbSoleil.Checked == false)
-            {
-                //System.Windows.MessageBox.Show("helloe");
-                //Sun = cbSoleil.Checked;
-                //meteo.SUN(Sun);
-
-                //Console.WriteLine(T);
-            }
-        }
-
-        private void numericUpDownVent_ValueChanged(object sender, EventArgs e)
-        {
-            //meteo.vent = numericUpDownVent.Value;
-            
-        }
-
-        private void numericUpDownTemperature_ValueChanged(object sender, EventArgs e)
-        {
-            //meteo.temp = numericUpDownTemperature.Value;
-            
-        }
-
         public void update()
         {
+            up.get_new_Data();
             rtbMessage.Text = "";
-            rtbMessage.AppendText("CO2: " +   CO2.ToString() + "g \n");
+            rtbMessage.AppendText("Eolien: "
+                + up.prix_eolien.ToString() + "€"   //prix_e1
+                + up.co2_eolien.ToString() + "g"    //co2_e1
+                + up.prod_eolien.ToString() + "W"   //prod-e1
+                + "\n");
+            rtbMessage.AppendText("Nucleaire: "
+                + up.prix_nucleaire.ToString() + "€"   //prix_n1
+                + up.co2_nucleaire.ToString() + "g"    //co2_n1
+                + up.prod_nucleaire.ToString() + "W"   //prod-n1
+                + "\n");
+            rtbMessage.AppendText("Ville: "
+                + up.conso_ville.ToString() + "W"   //conso_ville
+                + "\n");
+            rtbMessage.AppendText("Entreprise: "
+                + up.conso_entreprise.ToString() + "W"   //conso_ville
+                + "\n");
+            rtbMessage.AppendText("Achat: "
+                + up.trou_achat.ToString() + "W"   
+                + "\n");
+            rtbMessage.AppendText("Vente: "
+                + up.trou_vente.ToString() + "W"   
+                + "\n");
+            tbJour_nuit.Text = up.jour_nuit;
+            rtbMessage.AppendText("Total: "
+                + up.total.ToString() + "W"
+                + "\n");
+            //val abs trou
+            //achat
+            //vente
+            //jour nuit
+            //tbCO2.Text = CO2.ToString();
+            //tbPrix.Text = prix.ToString();*/
+            //tbEolien.Text = Eo1.ToString();
+            //rtbMessage.AppendText("Eolien: " + Math.Round(Eo1).ToString() + " W \n");
+            /*tbNucleaire.Text = Nu1.ToString();
+            rtbMessage.AppendText("Nucleaire: " + Math.Round(Nu1).ToString() + " W \n");*/
+            /*tbVille.Text = ville.ToString();
+            tbL1_ville.Text = ville.ToString();*/
         }
         public void e_surcharge(string zone)
         {
-            rtbErrors.AppendText(DateTime.Now + " Ligne " + zone + " surcharge" + "\n");
+        rtbErrors.AppendText(DateTime.Now + " Ligne " + zone + " surcharge" + "\n");
         }
         private void tbAchat_TextChanged(object sender, EventArgs e)
         {
@@ -168,7 +179,7 @@ namespace simulation_reseau_elec
 
         private void rtbMessage_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
         private void tbL1_ville_TextChanged(object sender, EventArgs e)
         {

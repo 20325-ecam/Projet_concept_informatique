@@ -34,11 +34,6 @@ namespace simulation_reseau_elec
             this.tbLatestValue = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lTemperature = new System.Windows.Forms.Label();
-            this.numericUpDownTemperature = new System.Windows.Forms.NumericUpDown();
-            this.lVent = new System.Windows.Forms.Label();
-            this.numericUpDownVent = new System.Windows.Forms.NumericUpDown();
-            this.cbSoleil = new System.Windows.Forms.CheckBox();
             this.cbAutoAxis = new System.Windows.Forms.CheckBox();
             this.tbLastValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,8 +63,6 @@ namespace simulation_reseau_elec
             this.tbL1_ville = new System.Windows.Forms.TextBox();
             this.tbL2_entreprise = new System.Windows.Forms.TextBox();
             this.rtbErrors = new System.Windows.Forms.RichTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTemperature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVent)).BeginInit();
             this.SuspendLayout();
             // 
             // formsPlot1
@@ -112,59 +105,6 @@ namespace simulation_reseau_elec
             this.label1.Size = new System.Drawing.Size(359, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "This example simulates live display of a growing dataset";
-            // 
-            // lTemperature
-            // 
-            this.lTemperature.AutoSize = true;
-            this.lTemperature.Location = new System.Drawing.Point(1145, 60);
-            this.lTemperature.Name = "lTemperature";
-            this.lTemperature.Size = new System.Drawing.Size(90, 17);
-            this.lTemperature.TabIndex = 19;
-            this.lTemperature.Text = "Temperature";
-            // 
-            // numericUpDownTemperature
-            // 
-            this.numericUpDownTemperature.Location = new System.Drawing.Point(1019, 59);
-            this.numericUpDownTemperature.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numericUpDownTemperature.Name = "numericUpDownTemperature";
-            this.numericUpDownTemperature.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDownTemperature.TabIndex = 18;
-            this.numericUpDownTemperature.ValueChanged += new System.EventHandler(this.numericUpDownTemperature_ValueChanged);
-            // 
-            // lVent
-            // 
-            this.lVent.AutoSize = true;
-            this.lVent.Location = new System.Drawing.Point(879, 64);
-            this.lVent.Name = "lVent";
-            this.lVent.Size = new System.Drawing.Size(73, 17);
-            this.lVent.TabIndex = 17;
-            this.lVent.Text = "Vent (m/s)";
-            // 
-            // numericUpDownVent
-            // 
-            this.numericUpDownVent.Location = new System.Drawing.Point(752, 59);
-            this.numericUpDownVent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numericUpDownVent.Maximum = new decimal(new int[] {
-            130,
-            0,
-            0,
-            0});
-            this.numericUpDownVent.Name = "numericUpDownVent";
-            this.numericUpDownVent.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDownVent.TabIndex = 16;
-            this.numericUpDownVent.ValueChanged += new System.EventHandler(this.numericUpDownVent_ValueChanged);
-            // 
-            // cbSoleil
-            // 
-            this.cbSoleil.AutoSize = true;
-            this.cbSoleil.Location = new System.Drawing.Point(683, 60);
-            this.cbSoleil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbSoleil.Name = "cbSoleil";
-            this.cbSoleil.Size = new System.Drawing.Size(64, 21);
-            this.cbSoleil.TabIndex = 15;
-            this.cbSoleil.Text = "Soleil";
-            this.cbSoleil.UseVisualStyleBackColor = true;
-            this.cbSoleil.CheckedChanged += new System.EventHandler(this.cbSoleil_CheckedChanged);
             // 
             // cbAutoAxis
             // 
@@ -504,11 +444,6 @@ namespace simulation_reseau_elec
             this.Controls.Add(this.tbVente);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbAchat);
-            this.Controls.Add(this.lTemperature);
-            this.Controls.Add(this.numericUpDownTemperature);
-            this.Controls.Add(this.lVent);
-            this.Controls.Add(this.numericUpDownVent);
-            this.Controls.Add(this.cbSoleil);
             this.Controls.Add(this.cbAutoAxis);
             this.Controls.Add(this.tbLastValue);
             this.Controls.Add(this.label3);
@@ -519,8 +454,6 @@ namespace simulation_reseau_elec
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "View_graphe";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTemperature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownVent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,11 +465,6 @@ namespace simulation_reseau_elec
         private System.Windows.Forms.TextBox tbLatestValue;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lTemperature;
-        private System.Windows.Forms.NumericUpDown numericUpDownTemperature;
-        private System.Windows.Forms.Label lVent;
-        private System.Windows.Forms.NumericUpDown numericUpDownVent;
-        private System.Windows.Forms.CheckBox cbSoleil;
         private System.Windows.Forms.CheckBox cbAutoAxis;
         private System.Windows.Forms.TextBox tbLastValue;
         private System.Windows.Forms.Label label3;

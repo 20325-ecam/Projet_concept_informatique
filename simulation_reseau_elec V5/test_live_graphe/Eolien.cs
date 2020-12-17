@@ -27,11 +27,11 @@ namespace simulation_reseau_elec
             Console.WriteLine("le coeff est de " + coeff);
             return max_prod * coeff;
         }
-        public override int Get_prix()
+        public override double Get_prix()
         {
             return base.Get_prix();
         }
-        public override int Get_co2()
+        public override double Get_co2()
         {
             return base.Get_co2();
         }

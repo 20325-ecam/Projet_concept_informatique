@@ -9,7 +9,7 @@ namespace simulation_reseau_elec
     class Nucleaire : Centrale
     {
         public double price;
-        public Nucleaire(double max_prod, int co2, Market market) : base(max_prod, co2)
+        public Nucleaire(double max_prod, double co2, Market market) : base(max_prod, co2)
         {
             this.price = market.Get_n_price();
         }
@@ -18,11 +18,11 @@ namespace simulation_reseau_elec
             //code production nucléaire
             return max_prod;
         }
-        public override int Get_prix()
+        public override double Get_prix()
         {
             return base.Get_prix();
         }
-        public override int Get_co2()
+        public override double Get_co2()
         {
             return base.Get_co2();
         }

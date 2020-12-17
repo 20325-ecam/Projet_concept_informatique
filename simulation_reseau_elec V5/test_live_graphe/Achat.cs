@@ -9,7 +9,7 @@ namespace simulation_reseau_elec
     class Achat : Centrale
     {
         public double price;
-        public Achat(double max_prod, int co2, Market market) : base(max_prod, co2)
+        public Achat(double max_prod, double co2, Market market) : base(max_prod, co2)
         {
             this.price = market.Get_a_price();
         }

@@ -27,6 +27,6 @@ namespace simulation_reseau_elec
             }
             return trou_energie;
         }
-
+        
     }
 }
