@@ -8,19 +8,19 @@ namespace simulation_reseau_elec
 {
     class Update
     {
-        public double prod_tot = 0;
+        public double prod_tot;
         public double conso_tot = 0;
         public double trou_energie = 0; // si + -> manque E ; si + -> surplus E
         public double abs_trou = 0;
         
-        public double prix_eolien = 0;
-        public double co2_eolien = 0;
-        public double prod_eolien = 0;
-        public double prix_nucleaire = 0;
-        public double co2_nucleaire = 0;
-        public double prod_nucleaire = 0;
-        public double conso_ville = 0;
-        public double conso_entreprise = 0;
+        public double prix_eolien;
+        public double co2_eolien;
+        public double prod_eolien;
+        public double prix_nucleaire;
+        public double co2_nucleaire;
+        public double prod_nucleaire;
+        public double conso_ville;
+        public double conso_entreprise;
         public double trou_vente;
         public double trou_achat;
         public string jour_nuit;
@@ -40,7 +40,7 @@ namespace simulation_reseau_elec
         {
             bruxelles = new Meteo(30, 20, 60);
             market = new Market(10, 10, 10, 10); //nuc/eol/achat/vente
-            e1 = new Eolien(6000, 0, market, bruxelles);        //declare dans update()
+            e1 = new Eolien(6000, 1, market, bruxelles);        //declare dans update()
             n1 = new Nucleaire(2000, 10, market);
             a1 = new Achat(2000, 100, market);
 
@@ -55,7 +55,7 @@ namespace simulation_reseau_elec
             l5 = new Ligne(10000); //conso vers vente
             l6 = new Ligne(10000); //achat vers prod
             l7 = new Ligne(8000); //conso vers disp
-            l8 = new Ligne(11000); //prod vers conso
+            l8 = new Ligne(51000); //prod vers conso
             centrales = new List<Centrale>();
             centrales.Add(e1);
             centrales.Add(n1);
@@ -67,12 +67,13 @@ namespace simulation_reseau_elec
         {
             //création des consommateurs et producteurs
             prod_tot = 0;
+            trou_achat = 0;
             conso_tot = 0;
             trou_energie = 0; // si + -> manque E ; si + -> surplus E
             abs_trou = 0;
-            double trou_achat = 0;
-            double trou_vente;
-            double total = 0;
+            //double trou_achat;
+            //double trou_vente;
+            //double total = 0;
             int prix = 0;
             int CO2 = 0;
 
@@ -162,7 +163,8 @@ namespace simulation_reseau_elec
                 //tbVente.Text = trou_vente.ToString();
             }
             jour_nuit = vil.Get_status();
-            total = l8.Ligne_in(total);
+            total = prod_eolien + prod_nucleaire + trou_achat; 
+            //total = l8.Ligne_in(total);
             //total = prod_tot + trou_achat;
             //rtbMessage.AppendText(total.ToString());
             //rtbMessage.AppendText("\n");

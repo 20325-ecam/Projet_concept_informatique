@@ -20,7 +20,8 @@ namespace simulation_reseau_elec
         }
         public override double Get_prix()
         {
-            return base.Get_prix();
+            return price * this.Get_prod();
+            //return base.Get_prix();
         }
         public override double Get_co2()
         {

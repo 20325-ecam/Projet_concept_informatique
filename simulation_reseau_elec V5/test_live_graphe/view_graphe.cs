@@ -90,14 +90,14 @@ namespace simulation_reseau_elec
             up.get_new_Data();
             rtbMessage.Text = "";
             rtbMessage.AppendText("Eolien: "
-                + up.prix_eolien.ToString() + "€"   //prix_e1
-                + up.co2_eolien.ToString() + "g"    //co2_e1
-                + up.prod_eolien.ToString() + "W"   //prod-e1
+                + up.prix_eolien.ToString() + "€ "   //prix_e1
+                + up.co2_eolien.ToString() + "g "    //co2_e1
+                + up.prod_eolien.ToString() + "W "   //prod-e1
                 + "\n");
             rtbMessage.AppendText("Nucleaire: "
-                + up.prix_nucleaire.ToString() + "€"   //prix_n1
-                + up.co2_nucleaire.ToString() + "g"    //co2_n1
-                + up.prod_nucleaire.ToString() + "W"   //prod-n1
+                + up.prix_nucleaire.ToString() + "€ "   //prix_n1
+                + up.co2_nucleaire.ToString() + "g "    //co2_n1
+                + up.prod_nucleaire.ToString() + "W "   //prod-n1
                 + "\n");
             rtbMessage.AppendText("Ville: "
                 + up.conso_ville.ToString() + "W"   //conso_ville
@@ -115,6 +115,7 @@ namespace simulation_reseau_elec
             rtbMessage.AppendText("Total: "
                 + up.total.ToString() + "W"
                 + "\n");
+
             //val abs trou
             //achat
             //vente
