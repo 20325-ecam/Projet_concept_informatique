@@ -47,14 +47,9 @@ namespace simulation_reseau_elec
             if (nextDataIndex >= data1.Length) 
             {
                 //throw new OverflowException("data array isn't long enough to accomodate new data");
-                // in this situation the solution would be:
-                //   1. clear the plot
-                //   2. create a new larger array
-                //   3. copy the old data into the start of the larger array
-                //   4. plot the new (larger) array
-                //   5. continue to update the new array
+
                 //formsPlot1.plt.PlotSignal(data1, maxRenderIndex: 100, color: blueColor);
-                data1 = new double[1_10];
+                //data1 = new double[1_10];
                 nextDataIndex = 0;
             }
             latestValue = up.total - up.trou_vente; //up.conso_tot;
