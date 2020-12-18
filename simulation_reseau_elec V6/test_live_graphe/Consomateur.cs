@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    public abstract class Consommateur
+    public abstract class Consommateur  //classe mère pour toute source consommatrice d'énergie
     {
         public float max_conso;
 
         public Consommateur(float max_conso) //(float max_conso, Ligne ligne)
         {
-            this.max_conso = max_conso;
+            this.max_conso = max_conso; //consommation maximale autorisée 
         }
         public virtual float Get_conso()
         {
@@ -22,20 +22,17 @@ namespace simulation_reseau_elec
         {
             return 0;
         }
-        public virtual string Get_status()
+        public virtual string Get_status() //indique si la consommation est en mode jour/nuit
         {
             int maintenant = DateTime.Now.Second / 3;
-            if ((maintenant >= 0 && maintenant < 7) || (maintenant >= 19 && maintenant < 24))
-            {
-                return "Nuit";
-            }
-            else if (maintenant >= 7 && maintenant < 19)
+
+            if (maintenant >= 7 && maintenant < 18)
             {
                 return "Jour";
             }
             else
             {
-                return "1";
+                return "Nuit";
             }
         }
     }

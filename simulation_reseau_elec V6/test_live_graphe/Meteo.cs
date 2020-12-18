@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    class Meteo
+    class Meteo //classe qui gère divers paramètres météorologiques
     {
         public float wind;
         public float temp;

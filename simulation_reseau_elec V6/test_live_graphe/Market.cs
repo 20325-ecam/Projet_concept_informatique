@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    public class Market
+    public class Market //classe qui gère les prix unitaire des !=types de productions (€/KWh)
     {
-        public double n_price;
-        public double e_price;
-        public double a_price;
-        public double v_price;
+        public double n_price;  //prix nucléaire
+        public double e_price;  //prix éolien
+        public double a_price;  //prix achat étrangers
+        public double v_price;  //prix vente (surplus production)
         public Market(double n, double e, double a, double v)
         {
             this.n_price = n;
@@ -35,7 +35,5 @@ namespace simulation_reseau_elec
         {
             return v_price;
         }
-
     }
-    
 }

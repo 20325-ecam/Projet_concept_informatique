@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    class Ville
+    class Ville //!INUTILE --> REMPLACEMENT FAIT PAR LA CLASSE CONSOMMATEUR RANDOM!
     {
         public double conso_ville;
-        //dave DateTime now = DateTime.Now;
         Random rand = new Random();
 
         public void void_ville()
         {
-            //int maintenant = now.Hour;
-            //int maintenant = now.Minute/3;
-            //int maintenant = now.Second /3;
             int maintenant = DateTime.Now.Second / 3;
             //int maintenant = DateTime.Now.Minute / 3; 
             //int maintenant = DateTime.Now.Hour / 3;

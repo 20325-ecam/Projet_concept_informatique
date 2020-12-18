@@ -6,28 +6,22 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    class Achat : Centrale
+    class Achat : Centrale //Classe représentant une centrale à l'etranger pour combler les "trous" énergétiques éventuels
     {
         public double price;
         public Achat(double max_prod, double co2, Market market) : base(max_prod, co2)
         {
-            this.price = market.Get_a_price();
+            this.price = market.Get_a_price(); //récupération du prix KWh du marché
         }
-        public override double Get_achat(double trou_energie)
+        public override double Get_achat(double trou_energie) //appel si la production des centrales "locales" ne suffit pas
         {
-            
-            if(max_prod < trou_energie) //si achat peux pas combler le trou 
-            {
-                return max_prod;
-                Console.WriteLine("manque restant (achat) " + trou_energie);
-            }
-            else if(max_prod > trou_energie) // achat peux combler les besoins
+            if(max_prod >= trou_energie) // achat peux combler les besoins 
             {
                 return trou_energie;
             }
-            else
+            else  //si achat peux pas combler le trou énergétique
             {
-                return 0;
+                return max_prod;
             }
         }
     }

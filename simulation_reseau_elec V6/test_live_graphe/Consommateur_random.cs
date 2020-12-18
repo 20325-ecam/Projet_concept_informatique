@@ -4,7 +4,7 @@ using System.Text;
 
 namespace simulation_reseau_elec
 {
-    public class Consommateur_random : Consommateur //​​Terminé!!!!!!!!
+    public class Consommateur_random : Consommateur //​​classe pour créer un consommateur non constant
 
     {
          static readonly Random rand = new Random();
@@ -14,35 +14,22 @@ namespace simulation_reseau_elec
 
         public override float Get_conso()
         {
-            //return base.Get_conso();
-            //code pour conso
-
             int maintenant = DateTime.Now.Second / 3;
             int x, y;
             float r;
-            if ((maintenant >= 0 && maintenant < 7) || (maintenant >= 19 && maintenant < 24))
-            {
-                x = 1; y = 20;
-                r = rand.Next(x, y);
-                //Console.WriteLine(r + " est le random");
-                r = (r / 100) * max_conso;
-                Console.WriteLine("conso nuit");
-                //Console.WriteLine(r + " est la conso random");
-                return r ;
-            }
-            else if (maintenant>=7 && maintenant<19)
+            if (maintenant>=7 && maintenant<18)  //consommation durant la journée
             {
                 x = 21; y = 100;
-                r = rand.Next(x, y);
-                //Console.WriteLine(r + " est le random");
+                r = rand.Next(x, y);    //coefficient aléatoire
                 r = (r / 100) * max_conso;
-                Console.WriteLine("conso jour");
-                //Console.WriteLine(r + " est la conso random");
                 return r;
             }
-            else
+            else  //consommation durant la nuit
             {
-                return 1;
+                x = 1; y = 20;
+                r = rand.Next(x, y);    //coefficient aléatoire
+                r = (r / 100) * max_conso;
+                return r;
             }
         }
         public override string Get_status()

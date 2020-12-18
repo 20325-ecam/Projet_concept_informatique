@@ -71,7 +71,6 @@
     <Compile Include="Market.cs" />
     <Compile Include="Meteo.cs" />
     <Compile Include="Nucleaire.cs" />
-    <Compile Include="Simulation.cs" />
     <Compile Include="Update.cs" />
     <Compile Include="Vente.cs" />
     <Compile Include="view_graphe.cs">
