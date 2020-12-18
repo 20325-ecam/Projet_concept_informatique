@@ -26,10 +26,12 @@ namespace simulation_reseau_elec
         public double prod_nucleaire;
 
         public double conso_ville;
-        public double conso_entreprise;   
+        public double conso_entreprise;
 
+        Errors errors_center;
         Meteo bruxelles;
-        Market market; 
+        Market market;
+        
 
         Centrale e1, n1, a1;
 
@@ -43,18 +45,19 @@ namespace simulation_reseau_elec
 
         public Update()
         {
+            errors_center = new Errors();
             bruxelles = new Meteo(30, 20, 60);
             market = new Market(10, 10, 10, 10); //nuc/eol/achat/vente
 
             //producteurs
-            e1 = new Eolien(6000, 1, market, bruxelles);
-            n1 = new Nucleaire(2000, 10, market);
-            a1 = new Achat(2000, 100, market);
+            e1 = new Eolien(6000, 1, "e1", market, bruxelles);
+            n1 = new Nucleaire(2000, 10,"n1", market);
+            a1 = new Achat(2000, 100,"a1", market);
 
             //consommateurs
-            ville = new Consommateur_random(1000);
-            entreprise = new Consommateur_statique(8000);
-            v1 = new Vente(5000, market);
+            ville = new Consommateur_random(1000, "ville");
+            entreprise = new Consommateur_statique(8000,"entreprise");
+            v1 = new Vente(5000,"v1", market);
 
             //lignes électriques
             l1 = new Ligne(2000); //eolien vers prod
@@ -81,6 +84,8 @@ namespace simulation_reseau_elec
             conso_tot = 0;
             trou_energie = 0;
             abs_trou = 0;
+
+            
 
             /*foreach (var centrale in centrales)
             {
@@ -139,6 +144,7 @@ namespace simulation_reseau_elec
                 trou_vente = 0;
                 trou_achat = a1.Get_achat(trou_achat);
                 total += trou_achat;
+                errors_center.Show_error1(a1); //!!!!!!!!!!!!!!!! trop de pop ups!!!!!!!!!
             }
             else if (trou_energie < 0)
             {
@@ -147,6 +153,7 @@ namespace simulation_reseau_elec
                 trou_vente = l5.Ligne_in(trou_vente);
                 trou_achat = 0;
                 v1.Get_vente(trou_vente);
+                
             }
             else
             {

@@ -29,6 +29,9 @@ namespace simulation_reseau_elec
         {
             return base.Get_co2();
         }
+        public override string Get_name()
+        {
+            return base.Get_name();
+        }
     }
-    
 }
