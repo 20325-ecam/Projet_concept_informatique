@@ -8,7 +8,7 @@ namespace simulation_reseau_elec
 
     {
          static readonly Random rand = new Random();
-        public Consommateur_random(float max_conso) : base(max_conso)
+        public Consommateur_random(float max_conso, string name) : base(max_conso, name)
         {
         }
 
@@ -35,6 +35,10 @@ namespace simulation_reseau_elec
         public override string Get_status()
         {
             return base.Get_status();
+        }
+        public override string Get_name()
+        {
+            return base.Get_name();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace simulation_reseau_elec
         float wind = 0;
         public double coeff = 0;
         public double price;
-        public Eolien(double max_prod, int co2, Market market , Meteo meteo) : base(max_prod, co2)
+        public Eolien(double max_prod, int co2, string name, Market market , Meteo meteo) : base(max_prod, co2, name)
         {
             this.wind = meteo.Get_wind();   //récupération de la vitesse du vent depuis la classe météo
             this.price = market.Get_e_price();  //récupération du prix KWh du marché

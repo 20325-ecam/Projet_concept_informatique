@@ -9,7 +9,7 @@ namespace simulation_reseau_elec
     class Achat : Centrale //Classe représentant une centrale à l'etranger pour combler les "trous" énergétiques éventuels
     {
         public double price;
-        public Achat(double max_prod, double co2, Market market) : base(max_prod, co2)
+        public Achat(double max_prod, double co2, string name, Market market) : base(max_prod, co2, name)
         {
             this.price = market.Get_a_price(); //récupération du prix KWh du marché
         }
@@ -23,6 +23,10 @@ namespace simulation_reseau_elec
             {
                 return max_prod;
             }
+        }
+        public override string Get_name()
+        {
+            return base.Get_name();
         }
     }
 }
