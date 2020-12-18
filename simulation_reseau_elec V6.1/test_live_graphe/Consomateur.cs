@@ -9,10 +9,12 @@ namespace simulation_reseau_elec
     public abstract class Consommateur  //classe mère pour toute source consommatrice d'énergie
     {
         public float max_conso;
+        public string name;
 
-        public Consommateur(float max_conso) //(float max_conso, Ligne ligne)
+        public Consommateur(float max_conso, string name) //(float max_conso, Ligne ligne)
         {
             this.max_conso = max_conso; //consommation maximale autorisée 
+            this.name = name;
         }
         public virtual float Get_conso()
         {
@@ -34,6 +36,10 @@ namespace simulation_reseau_elec
             {
                 return "Nuit";
             }
+        }
+        public virtual string Get_name()
+        {
+            return this.name;
         }
     }
 }
