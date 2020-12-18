@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="simulation_reseau_elec.Achat">
+    <Position X="7" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Achat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Centrale">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAgAAQQAAAAQAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Centrale.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Consommateur">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgABCAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Consomateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Consommateur_random">
+    <Position X="4.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Consommateur_random.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Consommateur_statique">
+    <Position X="6.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Consommateur_statique.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Eolien">
+    <Position X="9.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAAAAAAAAAAAAAEAQAAAAQAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Eolien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Ligne" Collapsed="true">
+    <Position X="14" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ligne.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Market" Collapsed="true">
+    <Position X="15.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAGQAAAAAAAAAAAEAAAAACAAACAAAABA=</HashCode>
+      <FileName>Market.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Meteo" Collapsed="true">
+    <Position X="17.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEBAAAAAAQAAAAAAAAAAAAAAAAQACAAAAAAAAABAA=</HashCode>
+      <FileName>Meteo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Nucleaire">
+    <Position X="11.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Nucleaire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Program" Collapsed="true">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Update" Collapsed="true">
+    <Position X="14" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BABAAAAAAFZAYACDABEQAQgAACIQAAhwQEMKEQAAggA=</HashCode>
+      <FileName>Update.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Vente">
+    <Position X="2" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.View_graphe" Collapsed="true">
+    <Position X="15.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBAAg0AACAAARSABEKAIAACACASIAABAAgaAgEEAQQ=</HashCode>
+      <FileName>view_graphe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="test_live_graphe.Properties.Resources" Collapsed="true">
+    <Position X="15.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="test_live_graphe.Properties.Settings" Collapsed="true">
+    <Position X="17.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
