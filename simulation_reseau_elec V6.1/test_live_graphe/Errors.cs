@@ -10,29 +10,15 @@ namespace simulation_reseau_elec
 {
     class Errors
     {
-        public bool error1 = false;
-        public bool error2 = false;
-        public bool error3 = false;
 
         public Errors()
         {
         }
-        public void Show_error1(Centrale centrale)
+        public virtual void Show_error(Centrale centrale)
         {
-            if(error1==false)
-            {
-                error1 = true;
-                System.Windows.Forms.MessageBox.Show("Hello, you have error1 on plant : " 
-                    + centrale.Get_name());
-                //pseudo delay
-                
-                error1 = false;
-                //Task.Delay(3000);
-                
 
-
-            }
         }
+        
     }
 
 }

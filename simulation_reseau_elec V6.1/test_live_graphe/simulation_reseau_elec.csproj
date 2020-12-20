@@ -68,6 +68,7 @@
     <Compile Include="Consommateur_statique.cs" />
     <Compile Include="Eolien.cs" />
     <Compile Include="Errors.cs" />
+    <Compile Include="Error_1.cs" />
     <Compile Include="Ligne.cs" />
     <Compile Include="Market.cs" />
     <Compile Include="Meteo.cs" />
