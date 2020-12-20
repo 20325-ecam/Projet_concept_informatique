@@ -17,13 +17,13 @@ namespace simulation_reseau_elec
         {
             if(surplus <= max_conso) // si dispateur peu tous gere
             {
-                Console.WriteLine("disp_if" + surplus);
+                //Console.WriteLine("disp_if" + surplus);
                 this.energie_dissipee = surplus;
                 return surplus; //inutile
             }
             else // si dispateur ne peut^pas tous disiper 
             {
-                Console.WriteLine("disp_else" + max_conso);
+                //Console.WriteLine("disp_else" + max_conso);
                 this.energie_dissipee = max_conso;
                 this.surplus = surplus - max_conso;
                 return max_conso; //inutile

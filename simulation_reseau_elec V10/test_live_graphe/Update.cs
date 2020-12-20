@@ -20,6 +20,7 @@ namespace simulation_reseau_elec
         public double dissipation;
         public double energie_vendue;
         public double battery_percentage;
+        public double bat_discharge;
 
         public string erreurs;
 
@@ -156,11 +157,23 @@ namespace simulation_reseau_elec
             if (trou_energie > 0) //manque
             {
                 trou_achat = abs_trou;
+                Console.WriteLine("trou_achat before if " + trou_achat);
+                if (battery_percentage>0)
+                {
+                    bat_discharge = b1.Get_discharge(trou_achat);
+                    Console.WriteLine("bat discharge "+bat_discharge);
+                    trou_achat -= bat_discharge;
+                    Console.WriteLine("trou_achat in if " + trou_achat);
+                    //trou_achat = abs_trou;
+
+                }
+                Console.WriteLine("trou_achat out if " + trou_achat);
                 trou_achat = a1.Get_achat(trou_achat);
                 trou_achat = l6.Ligne_in(trou_achat);
+                Console.WriteLine("trou_achat end " + trou_achat);
                 trou_vente = 0;
+               
                 
-                total += trou_achat;
             }
             else if (trou_energie < 0) //surplus
             {
@@ -187,7 +200,8 @@ namespace simulation_reseau_elec
                 trou_vente = 0;
             }
             jour_nuit = this.ville.Get_status();
-            total = prod_eolien + prod_nucleaire + trou_achat;
+            total = prod_eolien + prod_nucleaire + trou_achat + bat_discharge ;
+            Console.WriteLine("bat " + bat_discharge);
             total = l8.Ligne_in(total);
         }
     }

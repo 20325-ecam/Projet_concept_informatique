@@ -38,12 +38,14 @@ namespace simulation_reseau_elec
             if (capacity >= value_asked)
             {
                 capacity -= value_asked;
+                //Console.WriteLine("value_asked " + value_asked);
                 return value_asked;
             }
             else
             {
                 double value = capacity ;
                 capacity -= value;
+                //Console.WriteLine("value " + value);
                 return value;
             }
         }
