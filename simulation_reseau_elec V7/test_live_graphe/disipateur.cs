@@ -10,7 +10,7 @@ namespace simulation_reseau_elec
     {//a verifier ********************************
         public double energie_dissipee;
         public double surplus;
-        public Disipateur(float max_conso) : base(max_conso)
+        public Disipateur(float max_conso, string name) : base(max_conso, name)
         {
         }
         public override double Get_dissip(double surplus)
@@ -40,6 +40,10 @@ namespace simulation_reseau_elec
         public override double Get_energieDisipee()
         {
             return this.energie_dissipee;
+        }
+        public override string Get_name()
+        {
+            return base.Get_name();
         }
     }
 }

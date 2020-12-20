@@ -10,11 +10,13 @@ namespace simulation_reseau_elec
     {
         public double max_prod;
         public double co2;
+        public string name;
 
-        public Centrale(double max_prod, double co2)
+        public Centrale(double max_prod, double co2, string name)
         {
             this.max_prod = max_prod;   //production maximale supportée par la centrale
             this.co2 = co2;     //taux de CO2 prouit (g/MWh)
+            this.name = name; //nom de la centale
         }
         public virtual double Get_prod()
         {
@@ -31,6 +33,10 @@ namespace simulation_reseau_elec
         public virtual double Get_co2()
         {
             return co2* Get_prod();
+        }
+        public virtual string Get_name()
+        {
+            return this.name;
         }
     }
 }

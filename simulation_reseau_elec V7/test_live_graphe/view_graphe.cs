@@ -87,6 +87,7 @@ namespace simulation_reseau_elec
         {
             up.get_new_Data();  //simulation du réseau
             rtbMessage.Text = "";
+            rtbErrors.Text = "";
 
             rtbMessage.AppendText("Eolien: "
                 + up.prix_eolien.ToString() + " € "   //prix_e1
@@ -129,6 +130,23 @@ namespace simulation_reseau_elec
             rtbMessage.AppendText("Surplus: "
                 + up.surplus.ToString() + " W"
                 + "\n");
+
+
+            //////////////////////////////////////////
+            /*
+            rtbErrors.AppendText(
+                up.erreurs.ToString()
+               + "\n");
+            */
+
+            //rtbErrors.Text = "";
+            rtbErrors.Text = (
+                up.erreurs.ToString()
+               + "\n");
+
+            //////////////////////////////////////////
+
+
 
             //val abs trou
             //achat

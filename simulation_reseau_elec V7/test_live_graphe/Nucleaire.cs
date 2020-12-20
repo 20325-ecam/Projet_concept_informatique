@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    class Nucleaire : Centrale  //classe pour créer/gérer une source d'énergie nucléaire
+    public class Nucleaire : Centrale  //classe pour créer/gérer une source d'énergie nucléaire
     {
         public double price;
-        public Nucleaire(double max_prod, double co2, Market market) : base(max_prod, co2)
+        public Nucleaire(double max_prod, double co2, string name, Market market) : base(max_prod, co2, name)
         {
             this.price = market.Get_n_price();  //récupération du prix KWh du marché
         }
@@ -24,6 +24,10 @@ namespace simulation_reseau_elec
         public override double Get_co2()
         {
             return base.Get_co2();
+        }
+        public override string Get_name()
+        {
+            return base.Get_name();
         }
     }
 }

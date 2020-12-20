@@ -47,21 +47,20 @@ namespace simulation_reseau_elec
             // 
             // formsPlot1
             // 
-            this.formsPlot1.Location = new System.Drawing.Point(20, 55);
-            this.formsPlot1.Margin = new System.Windows.Forms.Padding(5);
+            this.formsPlot1.Location = new System.Drawing.Point(15, 45);
+            this.formsPlot1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.formsPlot1.Name = "formsPlot1";
-            this.formsPlot1.Size = new System.Drawing.Size(1227, 431);
+            this.formsPlot1.Size = new System.Drawing.Size(920, 350);
             this.formsPlot1.TabIndex = 0;
             this.formsPlot1.Load += new System.EventHandler(this.formsPlot1_Load);
             // 
             // tbLatestValue
             // 
             this.tbLatestValue.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLatestValue.Location = new System.Drawing.Point(96, 16);
-            this.tbLatestValue.Margin = new System.Windows.Forms.Padding(4);
+            this.tbLatestValue.Location = new System.Drawing.Point(72, 13);
             this.tbLatestValue.Name = "tbLatestValue";
             this.tbLatestValue.ReadOnly = true;
-            this.tbLatestValue.Size = new System.Drawing.Size(80, 27);
+            this.tbLatestValue.Size = new System.Drawing.Size(61, 23);
             this.tbLatestValue.TabIndex = 5;
             this.tbLatestValue.Text = "123";
             this.tbLatestValue.TextChanged += new System.EventHandler(this.tbLatestValue_TextChanged);
@@ -69,10 +68,9 @@ namespace simulation_reseau_elec
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 21);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(13, 17);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Mesure N°:";
             // 
@@ -81,10 +79,9 @@ namespace simulation_reseau_elec
             this.cbAutoAxis.AutoSize = true;
             this.cbAutoAxis.Checked = true;
             this.cbAutoAxis.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbAutoAxis.Location = new System.Drawing.Point(443, 20);
-            this.cbAutoAxis.Margin = new System.Windows.Forms.Padding(4);
+            this.cbAutoAxis.Location = new System.Drawing.Point(332, 16);
             this.cbAutoAxis.Name = "cbAutoAxis";
-            this.cbAutoAxis.Size = new System.Drawing.Size(190, 21);
+            this.cbAutoAxis.Size = new System.Drawing.Size(146, 17);
             this.cbAutoAxis.TabIndex = 14;
             this.cbAutoAxis.Text = "auto-axis on each update";
             this.cbAutoAxis.UseVisualStyleBackColor = true;
@@ -93,11 +90,10 @@ namespace simulation_reseau_elec
             // tbLastValue
             // 
             this.tbLastValue.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLastValue.Location = new System.Drawing.Point(299, 17);
-            this.tbLastValue.Margin = new System.Windows.Forms.Padding(4);
+            this.tbLastValue.Location = new System.Drawing.Point(224, 14);
             this.tbLastValue.Name = "tbLastValue";
             this.tbLastValue.ReadOnly = true;
-            this.tbLastValue.Size = new System.Drawing.Size(97, 27);
+            this.tbLastValue.Size = new System.Drawing.Size(74, 23);
             this.tbLastValue.TabIndex = 13;
             this.tbLastValue.Text = "+123.4";
             this.tbLastValue.TextChanged += new System.EventHandler(this.tbLastValue_TextChanged);
@@ -105,10 +101,9 @@ namespace simulation_reseau_elec
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(192, 22);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(144, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 17);
+            this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Consommation :";
             // 
@@ -127,21 +122,19 @@ namespace simulation_reseau_elec
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(673, 22);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(505, 18);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 17);
+            this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 25;
             this.label6.Text = "Jour-Nuit:";
             // 
             // tbJour_nuit
             // 
             this.tbJour_nuit.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbJour_nuit.Location = new System.Drawing.Point(751, 17);
-            this.tbJour_nuit.Margin = new System.Windows.Forms.Padding(4);
+            this.tbJour_nuit.Location = new System.Drawing.Point(563, 14);
             this.tbJour_nuit.Name = "tbJour_nuit";
             this.tbJour_nuit.ReadOnly = true;
-            this.tbJour_nuit.Size = new System.Drawing.Size(80, 27);
+            this.tbJour_nuit.Size = new System.Drawing.Size(61, 23);
             this.tbJour_nuit.TabIndex = 24;
             this.tbJour_nuit.Text = "0";
             this.tbJour_nuit.TextChanged += new System.EventHandler(this.tbJour_nuit_TextChanged);
@@ -149,10 +142,10 @@ namespace simulation_reseau_elec
             // rtbMessage
             // 
             this.rtbMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbMessage.Location = new System.Drawing.Point(1255, 55);
-            this.rtbMessage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rtbMessage.Location = new System.Drawing.Point(941, 45);
+            this.rtbMessage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbMessage.Name = "rtbMessage";
-            this.rtbMessage.Size = new System.Drawing.Size(469, 267);
+            this.rtbMessage.Size = new System.Drawing.Size(353, 266);
             this.rtbMessage.TabIndex = 39;
             this.rtbMessage.Text = "";
             this.rtbMessage.TextChanged += new System.EventHandler(this.rtbMessage_TextChanged);
@@ -160,19 +153,20 @@ namespace simulation_reseau_elec
             // rtbErrors
             // 
             this.rtbErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbErrors.Location = new System.Drawing.Point(1255, 329);
-            this.rtbErrors.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rtbErrors.Location = new System.Drawing.Point(941, 315);
+            this.rtbErrors.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbErrors.Name = "rtbErrors";
-            this.rtbErrors.Size = new System.Drawing.Size(469, 378);
+            this.rtbErrors.Size = new System.Drawing.Size(353, 260);
             this.rtbErrors.TabIndex = 46;
             this.rtbErrors.Text = "";
             this.rtbErrors.TextChanged += new System.EventHandler(this.rtbErrors_TextChanged);
             // 
             // bSave
             // 
-            this.bSave.Location = new System.Drawing.Point(38, 544);
+            this.bSave.Location = new System.Drawing.Point(28, 442);
+            this.bSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bSave.Name = "bSave";
-            this.bSave.Size = new System.Drawing.Size(138, 39);
+            this.bSave.Size = new System.Drawing.Size(104, 32);
             this.bSave.TabIndex = 47;
             this.bSave.Text = "Save graphe";
             this.bSave.UseVisualStyleBackColor = true;
@@ -180,9 +174,9 @@ namespace simulation_reseau_elec
             // 
             // View_graphe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1743, 742);
+            this.ClientSize = new System.Drawing.Size(1307, 585);
             this.Controls.Add(this.bSave);
             this.Controls.Add(this.rtbErrors);
             this.Controls.Add(this.rtbMessage);
@@ -194,7 +188,7 @@ namespace simulation_reseau_elec
             this.Controls.Add(this.tbLatestValue);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.formsPlot1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "View_graphe";
             this.Text = "Form1";
             this.ResumeLayout(false);

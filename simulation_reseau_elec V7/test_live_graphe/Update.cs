@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    class Update //classe qui se charge de la simulation du réseau
+    public class Update //classe qui se charge de la simulation du réseau
     {
         public double prod_tot;
         public double conso_tot = 0;
@@ -19,6 +19,8 @@ namespace simulation_reseau_elec
         public double surplus;
         public double dissipation;
 
+        public string erreurs;
+
         public double prix_eolien;
         public double co2_eolien;
         public double prod_eolien;
@@ -28,7 +30,9 @@ namespace simulation_reseau_elec
         public double prod_nucleaire;
 
         public double conso_ville;
-        public double conso_entreprise;   
+        public double conso_entreprise;
+
+        Errors erreur_type1;
 
         Meteo bruxelles;
         Market market; 
@@ -45,19 +49,21 @@ namespace simulation_reseau_elec
 
         public Update()
         {
+            erreur_type1 = new Error_1();
+
             bruxelles = new Meteo(30, 20, 60);
             market = new Market(10, 10, 10, 10); //nuc/eol/achat/vente
 
             //producteurs
-            e1 = new Eolien(60000, 1, market, bruxelles);
-            n1 = new Nucleaire(20000, 10, market);
-            a1 = new Achat(2000, 100, market);
+            e1 = new Eolien(60000, 1, "e1", market, bruxelles);
+            n1 = new Nucleaire(20000, 10, "n1", market);
+            a1 = new Achat(2000, 100,"a1", market);
 
             //consommateurs
-            ville = new Consommateur_random(1000);
-            entreprise = new Consommateur_statique(8000);
-            v1 = new Vente(5000, market);
-            d1 = new Disipateur(10000); //// a verifier !!!!!!!!!!!!!!!!!!!!!!!!!
+            ville = new Consommateur_random(1000, "ville");
+            entreprise = new Consommateur_statique(8000, "entreprise");
+            v1 = new Vente(5000,"v1", market);
+            d1 = new Disipateur(10000, "d1"); //// a verifier !!!!!!!!!!!!!!!!!!!!!!!!!
 
             //lignes électriques
             l1 = new Ligne(20000); //eolien vers prod
@@ -85,6 +91,10 @@ namespace simulation_reseau_elec
             trou_energie = 0;
             abs_trou = 0;
             total = 0;
+            ////////////
+            erreurs = "";
+            ////////////
+            
 
             /*foreach (var centrale in centrales)
             {
@@ -156,7 +166,13 @@ namespace simulation_reseau_elec
                 surplus = d1.Get_surplus();
                 Console.WriteLine("vente " + trou_vente);
                 v1.Get_vente(trou_vente, d1);
-                
+
+                erreurs += DateTime.Now.ToString();
+                erreurs += erreur_type1.Show_error(e1); //DOOM
+                erreurs += "\n";
+                Console.WriteLine(erreurs);
+
+
             }
             else
             {

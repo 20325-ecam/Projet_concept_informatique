@@ -4,9 +4,9 @@ using System.Text;
 
 namespace simulation_reseau_elec
 {
-    class Consommateur_statique : Consommateur  //​​classe pour créer un consommateur fixe
+    public class Consommateur_statique : Consommateur  //​​classe pour créer un consommateur fixe
     {
-        public Consommateur_statique(float max_conso) : base(max_conso)
+        public Consommateur_statique(float max_conso, string name) : base(max_conso, name)
         {
         }
         public override float Get_conso()
@@ -24,6 +24,10 @@ namespace simulation_reseau_elec
         public override string Get_status()
         {
             return base.Get_status();
+        }
+        public override string Get_name()
+        {
+            return base.Get_name();
         }
     }
 }
