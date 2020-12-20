@@ -48,7 +48,7 @@ namespace simulation_reseau_elec
             // formsPlot1
             // 
             this.formsPlot1.Location = new System.Drawing.Point(15, 45);
-            this.formsPlot1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.formsPlot1.Margin = new System.Windows.Forms.Padding(4);
             this.formsPlot1.Name = "formsPlot1";
             this.formsPlot1.Size = new System.Drawing.Size(920, 350);
             this.formsPlot1.TabIndex = 0;
@@ -143,9 +143,9 @@ namespace simulation_reseau_elec
             // 
             this.rtbMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbMessage.Location = new System.Drawing.Point(941, 45);
-            this.rtbMessage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbMessage.Margin = new System.Windows.Forms.Padding(2);
             this.rtbMessage.Name = "rtbMessage";
-            this.rtbMessage.Size = new System.Drawing.Size(353, 266);
+            this.rtbMessage.Size = new System.Drawing.Size(353, 312);
             this.rtbMessage.TabIndex = 39;
             this.rtbMessage.Text = "";
             this.rtbMessage.TextChanged += new System.EventHandler(this.rtbMessage_TextChanged);
@@ -153,10 +153,10 @@ namespace simulation_reseau_elec
             // rtbErrors
             // 
             this.rtbErrors.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbErrors.Location = new System.Drawing.Point(941, 315);
-            this.rtbErrors.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbErrors.Location = new System.Drawing.Point(941, 361);
+            this.rtbErrors.Margin = new System.Windows.Forms.Padding(2);
             this.rtbErrors.Name = "rtbErrors";
-            this.rtbErrors.Size = new System.Drawing.Size(353, 260);
+            this.rtbErrors.Size = new System.Drawing.Size(353, 214);
             this.rtbErrors.TabIndex = 46;
             this.rtbErrors.Text = "";
             this.rtbErrors.TextChanged += new System.EventHandler(this.rtbErrors_TextChanged);
@@ -164,7 +164,7 @@ namespace simulation_reseau_elec
             // bSave
             // 
             this.bSave.Location = new System.Drawing.Point(28, 442);
-            this.bSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bSave.Margin = new System.Windows.Forms.Padding(2);
             this.bSave.Name = "bSave";
             this.bSave.Size = new System.Drawing.Size(104, 32);
             this.bSave.TabIndex = 47;
@@ -188,7 +188,7 @@ namespace simulation_reseau_elec
             this.Controls.Add(this.tbLatestValue);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.formsPlot1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "View_graphe";
             this.Text = "Form1";
             this.ResumeLayout(false);

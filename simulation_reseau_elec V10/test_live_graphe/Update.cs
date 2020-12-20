@@ -174,8 +174,10 @@ namespace simulation_reseau_elec
                     d1.Get_dissip(v1.Get_surplus()); //on dissipe le surplus de vente
                     dissipation = d1.Get_energieDisipee(); //qte energie dissispee par dissipateur
                     surplus = d1.Get_surplus(); //surplus dissipateur
-                    b1.Get_charge(surplus); //surplus dissipateur va vers batterie  //un truc qui manque ?
-                     
+                    double var_random = b1.Get_charge(surplus); //surplus dissipateur va vers batterie  //un truc qui manque ?
+                    surplus -= var_random;
+
+
 
                 }
             }
