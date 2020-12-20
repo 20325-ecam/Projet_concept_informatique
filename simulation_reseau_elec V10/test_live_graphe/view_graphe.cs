@@ -135,6 +135,10 @@ namespace simulation_reseau_elec
                 up.erreurs.ToString()
                + "\n");
 
+            rtbMessage.AppendText("Batt: "
+                + up.battery_percentage.ToString() + " %"
+                + "\n");
+
         }
         public void e_surcharge(string zone)
         {

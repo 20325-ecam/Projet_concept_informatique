@@ -166,3 +166,17 @@ D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\simulation_r
 D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\simulation_reseau_elec V10\test_live_graphe\obj\Debug\simulation_reseau_elec.csproj.CopyComplete
 D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\simulation_reseau_elec V10\test_live_graphe\obj\Debug\test_live_graphe.exe
 D:\PC4\OneDrive - ECAM\laboratoire de concepts informatiques\projet\simulation_reseau_elec V10\test_live_graphe\obj\Debug\test_live_graphe.pdb
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\bin\Debug\test_live_graphe.exe.config
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\bin\Debug\test_live_graphe.exe
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\bin\Debug\test_live_graphe.pdb
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\bin\Debug\ScottPlot.dll
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\bin\Debug\ScottPlot.WinForms.dll
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\bin\Debug\System.Drawing.Common.dll
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\obj\Debug\simulation_reseau_elec.csprojAssemblyReference.cache
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\obj\Debug\simulation_reseau_elec.View_graphe.resources
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\obj\Debug\test_live_graphe.Properties.Resources.resources
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\obj\Debug\simulation_reseau_elec.csproj.GenerateResource.cache
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\obj\Debug\simulation_reseau_elec.csproj.CoreCompileInputs.cache
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\obj\Debug\simulation_reseau_elec.csproj.CopyComplete
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\obj\Debug\test_live_graphe.exe
+C:\Users\Dawid\Documents\GitHub\Projet_concept_informatique\simulation_reseau_elec V10\test_live_graphe\obj\Debug\test_live_graphe.pdb

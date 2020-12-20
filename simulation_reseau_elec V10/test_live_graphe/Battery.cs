@@ -10,7 +10,7 @@ namespace simulation_reseau_elec
     {
         public double max_capacity;
         public string name;
-        public double capacity;
+        public double capacity = 20;
         public int div = 10;
         public Battery(double max_capacity, string name) 
         {

@@ -19,7 +19,7 @@ namespace simulation_reseau_elec
         public double surplus;
         public double dissipation;
         public double energie_vendue;
-        public double Battery_percentage;
+        public double battery_percentage;
 
         public string erreurs;
 
@@ -57,24 +57,24 @@ namespace simulation_reseau_elec
             market = new Market(10, 10, 10, 10); //nuc/eol/achat/vente
 
             //producteurs
-            e1 = new Eolien(6000, 1, "e1", market, bruxelles);
-            n1 = new Nucleaire(6000, 10, "n1", market);
+            e1 = new Eolien(2000, 1, "e1", market, bruxelles);
+            n1 = new Nucleaire(5000, 10, "n1", market);
             a1 = new Achat(2000, 100,"a1", market);
 
             //consommateurs
             ville = new Consommateur_random(1000, "ville");
-            entreprise = new Consommateur_statique(8000, "entreprise");
-            v1 = new Vente(5000,"v1", market);
-            d1 = new Disipateur(10000, "d1");
+            entreprise = new Consommateur_statique(7000, "entreprise");
+            v1 = new Vente(400,"v1", market);
+            d1 = new Disipateur(200, "d1");
 
             //batterie
-            b1 = new Battery(2000, "b1");
+            b1 = new Battery(100000, "b1");
 
             //lignes électriques
-            l1 = new Ligne(1799, "l1"); //eolien vers prod
+            l1 = new Ligne(1800, "l1"); //eolien vers prod
             l2 = new Ligne(6001, "l2"); //nucleaire vers prod
             l3 = new Ligne(2000, "l3"); //conso vers ville
-            l4 = new Ligne(2400, "l4"); //conso vers entreprise
+            l4 = new Ligne(7000, "l4"); //conso vers entreprise
             l5 = new Ligne(100000, "l5"); //conso vers vente
             l6 = new Ligne(10000, "l6"); //achat vers prod
             l7 = new Ligne(8000, "l7"); //conso vers disp
@@ -95,8 +95,8 @@ namespace simulation_reseau_elec
             surplus = 0;
             erreurs = "";
 
-            Battery_percentage = b1.Get_capacity(); //----------------------------
-
+            battery_percentage = b1.Get_capacity(); //----------------------------
+            
             //*************ASIGNATION DES LIGNES & GESTION ERREURS SURCHARGES COTE PRODUCTION*************//
             double Eo1 = e1.Get_prod();
             Eo1 = l1.Ligne_in(Eo1);
@@ -171,9 +171,12 @@ namespace simulation_reseau_elec
                 
                 if(v1.Get_surplus() > 0)
                 {
-                    d1.Get_dissip(v1.Get_surplus());
-                    dissipation = d1.Get_energieDisipee();
-                    surplus = d1.Get_surplus();
+                    d1.Get_dissip(v1.Get_surplus()); //on dissipe le surplus de vente
+                    dissipation = d1.Get_energieDisipee(); //qte energie dissispee par dissipateur
+                    surplus = d1.Get_surplus(); //surplus dissipateur
+                    b1.Get_charge(surplus); //surplus dissipateur va vers batterie  //un truc qui manque ?
+                     
+
                 }
             }
             else //ni manque, ni surplus
