@@ -6,26 +6,40 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    class Disipateur : Consommateur
+    public class Disipateur : Consommateur
     {//a verifier ********************************
+        public double energie_dissipee;
+        public double surplus;
         public Disipateur(float max_conso) : base(max_conso)
         {
         }
-        public override float Get_conso()
+        public override double Get_dissip(double surplus)
         {
-            int maintenant = DateTime.Now.Second / 3;
-            if (maintenant >= 7 && maintenant < 18) //consommation durant la journée
+            if(surplus <= max_conso) // si dispateur peu tous gere
             {
-                return max_conso;
+                Console.WriteLine("disp_if" + surplus);
+                this.energie_dissipee = surplus;
+                return surplus; //inutile
             }
-            else //consommation durant la nuit
+            else // si dispateur ne peut^pas tous disiper 
             {
-                return max_conso / 5;
+                Console.WriteLine("disp_else" + max_conso);
+                this.energie_dissipee = max_conso;
+                this.surplus = surplus - max_conso;
+                return max_conso; //inutile
             }
         }
         public override string Get_status()
         {
             return base.Get_status();
+        }
+        public override double Get_surplus()
+        {
+            return this.surplus;
+        }
+        public override double Get_energieDisipee()
+        {
+            return this.energie_dissipee;
         }
     }
 }

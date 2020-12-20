@@ -18,7 +18,7 @@ namespace simulation_reseau_elec
         {
             return 0;
         }
-        public virtual double Get_vente(double trou_energie)
+        public virtual double Get_vente(double trou_energie, Consommateur disipateur)
         {
             return 0;
         }
@@ -34,6 +34,18 @@ namespace simulation_reseau_elec
             {
                 return "Nuit";
             }
+        }
+        public virtual double Get_dissip(double surplus)
+        {
+            return 0;
+        }
+        public virtual double Get_surplus()
+        {
+            return 0;
+        }
+        public virtual double Get_energieDisipee()
+        {
+            return 0;
         }
     }
 }

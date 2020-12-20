@@ -16,6 +16,8 @@ namespace simulation_reseau_elec
         public double trou_achat;
         public string jour_nuit;
         public double total;
+        public double surplus;
+        public double dissipation;
 
         public double prix_eolien;
         public double co2_eolien;
@@ -33,7 +35,7 @@ namespace simulation_reseau_elec
 
         Centrale e1, n1, a1;
 
-        Consommateur ville, entreprise, v1, d1;
+        public Consommateur ville, entreprise, v1, d1;
 
         Ligne l1, l2, l3, l4, l5, l6, l7, l8;
 
@@ -47,22 +49,22 @@ namespace simulation_reseau_elec
             market = new Market(10, 10, 10, 10); //nuc/eol/achat/vente
 
             //producteurs
-            e1 = new Eolien(6000, 1, market, bruxelles);
-            n1 = new Nucleaire(2000, 10, market);
+            e1 = new Eolien(60000, 1, market, bruxelles);
+            n1 = new Nucleaire(20000, 10, market);
             a1 = new Achat(2000, 100, market);
 
             //consommateurs
             ville = new Consommateur_random(1000);
             entreprise = new Consommateur_statique(8000);
             v1 = new Vente(5000, market);
-            d1 = new Disipateur(5000); //// a verifier !!!!!!!!!!!!!!!!!!!!!!!!!
+            d1 = new Disipateur(10000); //// a verifier !!!!!!!!!!!!!!!!!!!!!!!!!
 
             //lignes électriques
-            l1 = new Ligne(2000); //eolien vers prod
-            l2 = new Ligne(2000); //nucleaire vers prod
-            l3 = new Ligne(8000); //conso vers ville
-            l4 = new Ligne(8000); //conso vers entreprise
-            l5 = new Ligne(10000); //conso vers vente
+            l1 = new Ligne(20000); //eolien vers prod
+            l2 = new Ligne(20000); //nucleaire vers prod
+            l3 = new Ligne(80000); //conso vers ville
+            l4 = new Ligne(80000); //conso vers entreprise
+            l5 = new Ligne(100000); //conso vers vente
             l6 = new Ligne(10000); //achat vers prod
             l7 = new Ligne(8000); //conso vers disp
             l8 = new Ligne(50000); //prod vers conso
@@ -132,6 +134,7 @@ namespace simulation_reseau_elec
             //*************************************************************************************************
             //Gestion manque & surplus E
             trou_energie = conso_tot - prod_tot;
+            Console.WriteLine("trou " + trou_energie);
             abs_trou = Math.Abs(trou_energie);
             if (trou_energie > 0)
             {
@@ -149,7 +152,11 @@ namespace simulation_reseau_elec
                 trou_vente = abs_trou;
                 trou_vente = l5.Ligne_in(trou_vente);
                 trou_achat = 0;
-                v1.Get_vente(trou_vente);
+                dissipation = d1.Get_energieDisipee();
+                surplus = d1.Get_surplus();
+                Console.WriteLine("vente " + trou_vente);
+                v1.Get_vente(trou_vente, d1);
+                
             }
             else
             {

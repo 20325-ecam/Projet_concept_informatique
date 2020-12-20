@@ -122,6 +122,14 @@ namespace simulation_reseau_elec
                 + up.total.ToString() + " W"
                 + "\n");
 
+            rtbMessage.AppendText("Disipateur: "
+                + up.dissipation.ToString() + " W"
+                + "\n");
+
+            rtbMessage.AppendText("Surplus: "
+                + up.surplus.ToString() + " W"
+                + "\n");
+
             //val abs trou
             //achat
             //vente

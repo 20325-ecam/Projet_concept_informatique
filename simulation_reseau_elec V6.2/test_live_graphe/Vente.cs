@@ -6,22 +6,24 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    class Vente : Consommateur //classe qui permet de vensre le surplus de production énergétique
+    public class Vente : Consommateur //classe qui permet de vensre le surplus de production énergétique
     {
         public double price;
         public Vente(int max_conso, Market market) : base(max_conso)
         {
             this.price = market.Get_v_price();  //récupération du prix KWh du marché
         }
-        public override double Get_vente(double trou_energie)
+        public override double Get_vente(double trou_energie, Consommateur disipateur)
         {
-            trou_energie -= max_conso;
-            if (trou_energie > 0)
+            
+            if ((trou_energie - max_conso) > 0) //vente pas assez importante 
             {
                 // appel methode disipateur ********************************************************
+                trou_energie -= max_conso;
+                disipateur.Get_dissip(trou_energie);
                 return trou_energie;
             }
-            else  //pas de vente
+            else  //vente a ecoule tous le surplus
             {
                 return trou_energie;
             }
