@@ -94,6 +94,9 @@ namespace simulation_reseau_elec
             ////////////
             erreurs = "";
             ////////////
+            erreurs += DateTime.Now.ToString();
+            erreurs += erreur_type1.Show_error(a1);
+            erreurs += "\n";
             
 
             /*foreach (var centrale in centrales)
@@ -166,7 +169,7 @@ namespace simulation_reseau_elec
                 surplus = d1.Get_surplus();
                 Console.WriteLine("vente " + trou_vente);
                 v1.Get_vente(trou_vente, d1);
-
+                /////////////////////////////////////////////
                 erreurs += DateTime.Now.ToString();
                 erreurs += erreur_type1.Show_error(e1); //DOOM
                 erreurs += "\n";
