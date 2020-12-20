@@ -6,14 +6,22 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    public abstract class Errors
+    public  class Errors
     {
         public Errors()
         {
         }
-        public virtual string Show_error(Centrale centrale)
+        public string Plant_Overload(Centrale centrale)
         {
-            return "nothing";
+            return "Overload on plant : " + centrale.Get_name();
+        }
+        public string Line_Overload(Ligne ligne)
+        {
+            return "Overload on line : " + ligne.name;
+        }
+        public string Blackout(Ligne ligne)
+        {
+            return "Blackout";
         }
     }
 }

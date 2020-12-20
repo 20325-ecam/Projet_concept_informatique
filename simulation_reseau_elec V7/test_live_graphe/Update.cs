@@ -32,7 +32,7 @@ namespace simulation_reseau_elec
         public double conso_ville;
         public double conso_entreprise;
 
-        Errors erreur_type1;
+        Errors errors;
 
         Meteo bruxelles;
         Market market; 
@@ -49,7 +49,7 @@ namespace simulation_reseau_elec
 
         public Update()
         {
-            erreur_type1 = new Error_1();
+            errors = new Errors();
 
             bruxelles = new Meteo(30, 20, 60);
             market = new Market(10, 10, 10, 10); //nuc/eol/achat/vente
@@ -66,14 +66,14 @@ namespace simulation_reseau_elec
             d1 = new Disipateur(10000, "d1"); //// a verifier !!!!!!!!!!!!!!!!!!!!!!!!!
 
             //lignes électriques
-            l1 = new Ligne(20000); //eolien vers prod
-            l2 = new Ligne(20000); //nucleaire vers prod
-            l3 = new Ligne(80000); //conso vers ville
-            l4 = new Ligne(80000); //conso vers entreprise
-            l5 = new Ligne(100000); //conso vers vente
-            l6 = new Ligne(10000); //achat vers prod
-            l7 = new Ligne(8000); //conso vers disp
-            l8 = new Ligne(50000); //prod vers conso
+            l1 = new Ligne(20000, "l1"); //eolien vers prod
+            l2 = new Ligne(20000, "l2"); //nucleaire vers prod
+            l3 = new Ligne(80000, "l3"); //conso vers ville
+            l4 = new Ligne(80000, "l4"); //conso vers entreprise
+            l5 = new Ligne(100000, "l5"); //conso vers vente
+            l6 = new Ligne(10000, "l6"); //achat vers prod
+            l7 = new Ligne(8000, "l7"); //conso vers disp
+            l8 = new Ligne(50000, "l8"); //prod vers conso
             
             centrales = new List<Centrale>();
             centrales.Add(e1);
@@ -95,9 +95,12 @@ namespace simulation_reseau_elec
             erreurs = "";
             ////////////
             erreurs += DateTime.Now.ToString();
-            erreurs += erreur_type1.Show_error(a1);
+            erreurs += errors.Plant_Overload(n1);
             erreurs += "\n";
-            
+            erreurs += DateTime.Now.ToString();
+            erreurs += errors.Line_Overload(l8);
+            erreurs += "\n";
+
 
             /*foreach (var centrale in centrales)
             {
@@ -171,7 +174,7 @@ namespace simulation_reseau_elec
                 v1.Get_vente(trou_vente, d1);
                 /////////////////////////////////////////////
                 erreurs += DateTime.Now.ToString();
-                erreurs += erreur_type1.Show_error(e1); //DOOM
+                erreurs += errors.Plant_Overload(e1); //DOOM
                 erreurs += "\n";
                 Console.WriteLine(erreurs);
 

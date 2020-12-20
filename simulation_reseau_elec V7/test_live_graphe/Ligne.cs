@@ -12,11 +12,13 @@ namespace simulation_reseau_elec
         //public double power_in;
         public double power_out;
         // public Ligne(consomateur consomateur)
-        public Ligne(double Power_limit)
+        public string name;
+        public Ligne(double Power_limit, string name)
         {
             this.power_limit = Power_limit;
             //power_in = centrale.Get_prod();
             //power_out = consomateur.Get_conso();
+            this.name = name;
         }
         public double Ligne_in(double power_in) //sortie du noeux consomateur/d'un producteur
         {
