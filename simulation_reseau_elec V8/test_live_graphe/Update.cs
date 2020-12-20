@@ -33,24 +33,21 @@ namespace simulation_reseau_elec
         public double conso_ville;
         public double conso_entreprise;
 
-        Errors erreur_type1;
+        Errors errors;
 
         Meteo bruxelles;
         Market market; 
 
         Centrale e1, n1, a1;
 
-        public Consommateur ville, entreprise, v1, d1;
+        Consommateur ville, entreprise, v1, d1;
 
         Ligne l1, l2, l3, l4, l5, l6, l7, l8;
 
-        List<Centrale> centrales;
-
-        List<Consommateur> consommateurs;
-
         public Update()
         {
-            erreur_type1 = new Error_1();
+            //*************************CREATION DES OBJETS*************************//
+            errors = new Errors();
 
             bruxelles = new Meteo(30, 20, 60);
             market = new Market(10, 10, 10, 10); //nuc/eol/achat/vente
@@ -64,28 +61,22 @@ namespace simulation_reseau_elec
             ville = new Consommateur_random(1000, "ville");
             entreprise = new Consommateur_statique(8000, "entreprise");
             v1 = new Vente(5000,"v1", market);
-            d1 = new Disipateur(10000, "d1"); //// a verifier !!!!!!!!!!!!!!!!!!!!!!!!!
+            d1 = new Disipateur(10000, "d1");
 
             //lignes électriques
-            l1 = new Ligne(20000); //eolien vers prod
-            l2 = new Ligne(20000); //nucleaire vers prod
-            l3 = new Ligne(80000); //conso vers ville
-            l4 = new Ligne(80000); //conso vers entreprise
-            l5 = new Ligne(100000); //conso vers vente
-            l6 = new Ligne(10000); //achat vers prod
-            l7 = new Ligne(8000); //conso vers disp
-            l8 = new Ligne(50000); //prod vers conso
-            
-            centrales = new List<Centrale>();
-            centrales.Add(e1);
-            centrales.Add(n1);
+            l1 = new Ligne(1799, "l1"); //eolien vers prod
+            l2 = new Ligne(6001, "l2"); //nucleaire vers prod
+            l3 = new Ligne(2000, "l3"); //conso vers ville
+            l4 = new Ligne(2400, "l4"); //conso vers entreprise
+            l5 = new Ligne(100000, "l5"); //conso vers vente
+            l6 = new Ligne(10000, "l6"); //achat vers prod
+            l7 = new Ligne(8000, "l7"); //conso vers disp
+            l8 = new Ligne(50000, "l8"); //prod vers conso
 
-            consommateurs = new List<Consommateur>();
-            consommateurs.Add(ville);
-            consommateurs.Add(entreprise);
         }
         public void get_new_Data()
         {
+            //*************************INITIALISATION DES VARIABLES*************************//
             prod_tot = 0;
             trou_achat = 0;
             conso_tot = 0;
@@ -94,27 +85,17 @@ namespace simulation_reseau_elec
             total = 0;
             dissipation = 0;
             surplus = 0;
-            ////////////
             erreurs = "";
-            ////////////
-            erreurs += DateTime.Now.ToString();
-            erreurs += erreur_type1.Show_error(a1);
-            erreurs += "\n";
-            
 
-            /*foreach (var centrale in centrales)
-            {
-                //prod_tot += centrale.Get_prod();
-                CO2 += centrale.Get_co2();
-                prix += centrale.Get_prix();
-            }*/
-
+            //*************ASIGNATION DES LIGNES & GESTION ERREURS SURCHARGES COTE PRODUCTION*************//
             double Eo1 = e1.Get_prod();
             Eo1 = l1.Ligne_in(Eo1);
             prod_tot += Eo1;
             if (Eo1 == 0)
             {
-                //e_surcharge(nameof(l1));
+                erreurs += DateTime.Now.ToString();
+                erreurs += errors.Line_Overload(l1);
+                erreurs += "\n";
             }
             prix_eolien = e1.Get_prix();
             co2_eolien = e1.Get_co2();
@@ -125,7 +106,9 @@ namespace simulation_reseau_elec
             prod_tot += Nu1;
             if (Nu1 == 0)
             {
-                //e_surcharge(nameof(l2));
+                erreurs += DateTime.Now.ToString();
+                erreurs += errors.Line_Overload(l2);
+                erreurs += "\n";
             }
             prix_nucleaire = n1.Get_prix();
             co2_nucleaire = n1.Get_co2();
@@ -133,45 +116,48 @@ namespace simulation_reseau_elec
 
             total += prod_tot;
 
-            //*************************************************************************************************
+            //*************ASIGNATION DES LIGNES & GESTION ERREURS SURCHARGES COTE CONSOMMATION*************//
             double ville = this.ville.Get_conso();
             ville = l3.Ligne_in(ville);
+            if (ville == 0)
+            {
+                erreurs += DateTime.Now.ToString();
+                erreurs += errors.Line_Overload(l3);
+                erreurs += "\n";
+            }
             conso_tot += ville;
-            //if (ville == 0) { e_surcharge(nameof(ville)); }
             conso_ville = ville; 
 
             double entr = entreprise.Get_conso();
             entr = l4.Ligne_in(entr);
+            if (entr == 0)
+            {
+                erreurs += DateTime.Now.ToString();
+                erreurs += errors.Line_Overload(l4);
+                erreurs += "\n";
+            }
             conso_tot += entr;
-            //if (entr == 0) { e_surcharge(nameof(entr)); }
-            //tbEntreprise.Text = entr.ToString();
             conso_entreprise = entr;
 
-            //*************************************************************************************************
-            //Gestion manque & surplus E
+            //**********************************GESTION MANQUE & SURPLUS D'ENRGIE******************************//
             trou_energie = conso_tot - prod_tot;
-            Console.WriteLine("trou " + trou_energie);
             abs_trou = Math.Abs(trou_energie);
-            if (trou_energie > 0)
+
+            if (trou_energie > 0) //manque
             {
-                //rtbMessage.AppendText("il manque " + Math.Round(abs_trou).ToString() + " W \n");
                 trou_achat = abs_trou;
                 trou_achat = a1.Get_achat(trou_achat);
                 trou_achat = l6.Ligne_in(trou_achat);
                 trou_vente = 0;
                 
                 total += trou_achat;
-                
             }
-            else if (trou_energie < 0)
+            else if (trou_energie < 0) //surplus
             {
-                //rtbMessage.AppendText("il y a en trop " + Math.Round(abs_trou).ToString() + " W \n");
                 trou_vente = abs_trou;
                 trou_vente = v1.Get_vente(trou_vente, d1);
                 trou_vente = l5.Ligne_in(trou_vente);
                 trou_achat = 0;
-                
-                Console.WriteLine("vente " + trou_vente);
                 
                 if(v1.Get_surplus() > 0)
                 {
@@ -179,20 +165,11 @@ namespace simulation_reseau_elec
                     dissipation = d1.Get_energieDisipee();
                     surplus = d1.Get_surplus();
                 }
-                
-                /////////////////////////////////////////////
-                erreurs += DateTime.Now.ToString();
-                erreurs += erreur_type1.Show_error(e1); //DOOM
-                erreurs += "\n";
-                Console.WriteLine(erreurs);
-
-
             }
-            else
+            else //ni manque, ni surplus
             {
                 trou_achat = 0;
                 trou_vente = 0;
-
             }
             jour_nuit = this.ville.Get_status();
             total = prod_eolien + prod_nucleaire + trou_achat;

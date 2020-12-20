@@ -9,28 +9,26 @@ namespace simulation_reseau_elec
     public class Ligne 
     {
         public double power_limit;
-        //public double power_in;
         public double power_out;
-        // public Ligne(consomateur consomateur)
-        public Ligne(double Power_limit)
+        public string name;
+        public Ligne(double Power_limit, string name)
         {
             this.power_limit = Power_limit;
-            //power_in = centrale.Get_prod();
-            //power_out = consomateur.Get_conso();
+            this.name = name;
+
         }
         public double Ligne_in(double power_in) //sortie du noeux consomateur/d'un producteur
         {
             
             if (power_in <= power_limit)
             {
-                //Console.WriteLine(power_in);
                 return power_in;
                 
             }
             else
             {
                 return 0;
-                // error message****************
+                
             }
         }
         public double Ligne_out()
