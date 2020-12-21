@@ -62,19 +62,19 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achat.cs" />
+    <Compile Include="Centrales\Achat.cs" />
     <Compile Include="Battery.cs" />
-    <Compile Include="Centrale.cs" />
+    <Compile Include="Centrales\Centrale.cs" />
     <Compile Include="Consomateur.cs" />
     <Compile Include="Consommateur_random.cs" />
     <Compile Include="Consommateur_statique.cs" />
     <Compile Include="disipateur.cs" />
-    <Compile Include="Eolien.cs" />
+    <Compile Include="Centrales\Eolien.cs" />
     <Compile Include="Errors.cs" />
     <Compile Include="Ligne.cs" />
     <Compile Include="Market.cs" />
     <Compile Include="Meteo.cs" />
-    <Compile Include="Nucleaire.cs" />
+    <Compile Include="Centrales\Nucleaire.cs" />
     <Compile Include="Update.cs" />
     <Compile Include="Vente.cs" />
     <Compile Include="view_graphe.cs">

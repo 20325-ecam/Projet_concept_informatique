@@ -1,113 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="simulation_reseau_elec.Achat">
-    <Position X="7" Y="9.25" Width="1.5" />
+    <Position X="1.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Achat.cs</FileName>
+      <HashCode>AAABAAAAAAAAAAAAAAgAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Centrales\Achat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Centrale">
-    <Position X="9.25" Y="6" Width="1.5" />
+    <Position X="4" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAAAAAgAAQQAAAAQAAAAAAAAAQAAAAA=</HashCode>
-      <FileName>Centrale.cs</FileName>
+      <HashCode>AABAAAAAACAAAAAAAAgAAQQAAAAUAAAAgAAAAQAAAAA=</HashCode>
+      <FileName>Centrales\Centrale.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Consommateur">
-    <Position X="4.25" Y="1" Width="1.5" />
+    <Position X="5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgABCAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgABCAAgEAAAAAAAAAAAAAMAAAAkAAAAAAAAAA=</HashCode>
       <FileName>Consomateur.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Consommateur_random">
-    <Position X="4.25" Y="4" Width="1.5" />
+    <Position X="4" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAABAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA=</HashCode>
       <FileName>Consommateur_random.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Consommateur_statique">
-    <Position X="6.5" Y="4" Width="1.5" />
+    <Position X="6.25" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA=</HashCode>
       <FileName>Consommateur_statique.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Eolien">
-    <Position X="9.25" Y="9.25" Width="1.5" />
+    <Position X="4" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABBAAAAAAAAAAAAAAAAEAQAAAAQAAAAAAAAAAAABAA=</HashCode>
-      <FileName>Eolien.cs</FileName>
+      <HashCode>AABBAAAAACAAAAAAAAAAEAQAAAAQAAAAgAAAAAAABAA=</HashCode>
+      <FileName>Centrales\Eolien.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Ligne" Collapsed="true">
-    <Position X="14" Y="1" Width="1.5" />
+    <Position X="14.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAgAFAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Ligne.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Market" Collapsed="true">
-    <Position X="15.75" Y="1" Width="1.5" />
+    <Position X="16.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAGQAAAAAAAAAAAEAAAAACAAACAAAABA=</HashCode>
       <FileName>Market.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Meteo" Collapsed="true">
-    <Position X="17.5" Y="1" Width="1.5" />
+    <Position X="11" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEBAAAAAAQAAAAAAAAAAAAAAAAQACAAAAAAAAABAA=</HashCode>
+      <HashCode>AAAEBIAAAAAQAAAAAAAAAAAAAAAAQACAAAAAAAAABAA=</HashCode>
       <FileName>Meteo.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Nucleaire">
-    <Position X="11.5" Y="9.25" Width="1.5" />
+    <Position X="6.25" Y="11.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABBAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Nucleaire.cs</FileName>
+      <HashCode>AABBAAAAAAAAAAAAAAAAAAQAAAAQAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Centrales\Nucleaire.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Program" Collapsed="true">
-    <Position X="14" Y="2" Width="1.5" />
+    <Position X="12.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Update" Collapsed="true">
-    <Position X="14" Y="3" Width="1.5" />
+    <Position X="11" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BABAAAAAAFZAYACDABEQAQgAACIQAAhwQEMKEQAAggA=</HashCode>
+      <HashCode>BgRAEAIAAFZBYACDABEQAQAAACIQAAhwQEOqGQAAhAA=</HashCode>
       <FileName>Update.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Vente">
-    <Position X="2" Y="4" Width="1.5" />
+    <Position X="1.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAABAAAAACAABEAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
       <FileName>Vente.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="simulation_reseau_elec.View_graphe" Collapsed="true">
-    <Position X="15.75" Y="3" Width="1.5" />
+  <Class Name="simulation_reseau_elec.View_graphe">
+    <Position X="12.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABBAAg0AACAAARSABEKAIAACACASIAABAAgaAgEEAQQ=</HashCode>
+      <HashCode>AABAgg0AACAAAZSIBECAAAACACAQAiABCAgCAgEUBQQ=</HashCode>
       <FileName>view_graphe.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="test_live_graphe.Properties.Resources" Collapsed="true">
-    <Position X="15.75" Y="2" Width="1.5" />
+    <Position X="14.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="test_live_graphe.Properties.Settings" Collapsed="true">
-    <Position X="17.5" Y="2" Width="1.5" />
+    <Position X="16.25" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Battery" Collapsed="true">
+    <Position X="11" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQBAACAAAAAAAAIAAAAAAAAEAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Battery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Disipateur">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAABAAAgEAAAAAAAAAAAAAEAAAAkAAAAAAAAAA=</HashCode>
+      <FileName>disipateur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="simulation_reseau_elec.Errors" Collapsed="true">
+    <Position X="12.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAEAAAAAAAAIAAgA=</HashCode>
+      <FileName>Errors.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
