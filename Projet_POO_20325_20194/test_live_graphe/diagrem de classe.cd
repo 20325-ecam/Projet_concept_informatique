@@ -43,21 +43,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Ligne" Collapsed="true">
-    <Position X="14.5" Y="1" Width="1.5" />
+    <Position X="9.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAgAFAAAAAEAAAAAAAAA=</HashCode>
       <FileName>Ligne.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Market" Collapsed="true">
-    <Position X="16.25" Y="1" Width="1.5" />
+    <Position X="9.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAACAAAAGQAAAAAAAAAAAEAAAAACAAACAAAABA=</HashCode>
       <FileName>Market.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Meteo" Collapsed="true">
-    <Position X="11" Y="2" Width="1.5" />
+    <Position X="9.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEBIAAAAAQAAAAAAAAAAAAAAAAQACAAAAAAAAABAA=</HashCode>
       <FileName>Meteo.cs</FileName>
@@ -71,14 +71,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Program" Collapsed="true">
-    <Position X="12.75" Y="2" Width="1.5" />
+    <Position X="13" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="simulation_reseau_elec.Update" Collapsed="true">
-    <Position X="11" Y="3" Width="1.5" />
+  <Class Name="simulation_reseau_elec.Update">
+    <Position X="14.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BgRAEAIAAFZBYACDABEQAQAAACIQAAhwQEOqGQAAhAA=</HashCode>
       <FileName>Update.cs</FileName>
@@ -99,19 +99,19 @@
     </TypeIdentifier>
   </Class>
   <Class Name="test_live_graphe.Properties.Resources" Collapsed="true">
-    <Position X="14.5" Y="2" Width="1.5" />
+    <Position X="13" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="test_live_graphe.Properties.Settings" Collapsed="true">
-    <Position X="16.25" Y="2" Width="1.5" />
+    <Position X="14.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Battery" Collapsed="true">
-    <Position X="11" Y="1" Width="1.5" />
+    <Position X="9.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQBAACAAAAAAAAIAAAAAAAAEAAAAAAAIAAAAAAA=</HashCode>
       <FileName>Battery.cs</FileName>
@@ -125,7 +125,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="simulation_reseau_elec.Errors" Collapsed="true">
-    <Position X="12.75" Y="1" Width="1.5" />
+    <Position X="9.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAEAAAAAAAAIAAgA=</HashCode>
       <FileName>Errors.cs</FileName>
