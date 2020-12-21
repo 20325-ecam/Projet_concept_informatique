@@ -39,9 +39,6 @@ namespace simulation_reseau_elec
 
         public double trou_achat; //qte energie qui doit être achetée
         public double bat_discharge; //qte energie réinjectée dans le réseaux en cas de besoin
-        
-        //View_graphe view_Graphe;
-        //public double energie_vendue;
 
         Errors errors;
 

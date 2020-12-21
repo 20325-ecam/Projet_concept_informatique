@@ -101,6 +101,7 @@
     <None Include="ClassDiagram2.cd" />
     <None Include="ClassDiagram3.cd" />
     <None Include="ClassDiagram4.cd" />
+    <None Include="ClassDiagram5.cd" />
     <None Include="diagrem de classe.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\simulation_reseau_elec.Achat.datasource" />
