@@ -22,7 +22,7 @@ namespace simulation_reseau_elec
         public double battery_percentage;
         public double bat_discharge;
 
-        public float vent;
+        public float wind;
         public bool status = true;
 
         public string erreurs;
@@ -78,7 +78,7 @@ namespace simulation_reseau_elec
             b1 = new Battery(100000, "b1");
 
             //lignes électriques
-            l1 = new Ligne(1800, "l1"); //eolien vers prod
+            l1 = new Ligne(2000, "l1"); //eolien vers prod
             l2 = new Ligne(6001, "l2"); //nucleaire vers prod
             l3 = new Ligne(2000, "l3"); //conso vers ville
             l4 = new Ligne(7000, "l4"); //conso vers entreprise
@@ -96,6 +96,7 @@ namespace simulation_reseau_elec
             trou_achat = 0;
             conso_tot = 0;
             trou_energie = 0;
+            prod_eolien = 0;
             abs_trou = 0;
             total = 0;
             dissipation = 0;
@@ -104,8 +105,10 @@ namespace simulation_reseau_elec
 
             battery_percentage = b1.Get_capacity(); //----------------------------
 
+            wind = e1.Get_vent(bruxelles); // vent independent de si l'eolien est activer ou non
+            //wind = bruxelles.Get_wind();
             //*************ASIGNATION DES LIGNES & GESTION ERREURS SURCHARGES COTE PRODUCTION*************//
-            vent = e1.Get_vent(bruxelles); // vent independent de si l'eolien est activer ou non
+
             if (status == true){
                 double Eo1 = e1.Get_prod();
                 Eo1 = l1.Ligne_in(Eo1);
@@ -173,20 +176,14 @@ namespace simulation_reseau_elec
             if (trou_energie > 0) //manque
             {
                 trou_achat = abs_trou;
-                Console.WriteLine("trou_achat before if " + trou_achat);
                 if (battery_percentage>0)
                 {
                     bat_discharge = b1.Get_discharge(trou_achat);
-                    Console.WriteLine("bat discharge "+bat_discharge);
                     trou_achat -= bat_discharge;
-                    Console.WriteLine("trou_achat in if " + trou_achat);
-                    //trou_achat = abs_trou;
 
                 }
-                Console.WriteLine("trou_achat out if " + trou_achat);
                 trou_achat = a1.Get_achat(trou_achat);
                 trou_achat = l6.Ligne_in(trou_achat);
-                Console.WriteLine("trou_achat end " + trou_achat);
                 trou_vente = 0;
                
                 
@@ -217,7 +214,6 @@ namespace simulation_reseau_elec
             }
             jour_nuit = this.ville.Get_status();
             total = prod_eolien + prod_nucleaire + trou_achat + bat_discharge ;
-            Console.WriteLine("bat " + bat_discharge);
             total = l8.Ligne_in(total);
         }
     }

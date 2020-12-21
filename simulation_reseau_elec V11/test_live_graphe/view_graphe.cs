@@ -140,7 +140,7 @@ namespace simulation_reseau_elec
                 + up.battery_percentage.ToString() + " %"
                 + "\n");
 
-            tbVent.Text = up.vent.ToString();
+            tbVent.Text = up.wind.ToString();
         }
         public void e_surcharge(string zone)
         {
@@ -173,7 +173,6 @@ namespace simulation_reseau_elec
             else
             {
                 up.status = false;
-                up.prod_eolien = 0;
             }
         }
 

@@ -9,7 +9,7 @@ namespace simulation_reseau_elec
     public class Meteo //classe qui gère divers paramètres météorologiques
     {
         static readonly Random rand = new Random();
-        private float wind;
+        public float wind;
         public float temp;
         public float sun;
 
@@ -36,10 +36,6 @@ namespace simulation_reseau_elec
         public float Get_sun()
         {
             return sun;
-        }
-        public float Get_vent()
-        {
-            return wind;
         }
     }
 }
