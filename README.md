@@ -16,3 +16,11 @@ Dans le fichier de classe update rajouter le nom a utiliser pour la centrale en 
 '''c#
 Centrale e1, n1, a1;
 '''
+
+```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```
