@@ -62,21 +62,21 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achat.cs" />
-    <Compile Include="Battery.cs" />
-    <Compile Include="Centrale.cs" />
-    <Compile Include="Consomateur.cs" />
-    <Compile Include="Consommateur_random.cs" />
-    <Compile Include="Consommateur_statique.cs" />
-    <Compile Include="disipateur.cs" />
-    <Compile Include="Eolien.cs" />
+    <Compile Include="Centrales\Achat.cs" />
+    <Compile Include="Centrales\Battery.cs" />
+    <Compile Include="Centrales\Centrale.cs" />
+    <Compile Include="Consommateurs\Consomateur.cs" />
+    <Compile Include="Consommateurs\Consommateur_random.cs" />
+    <Compile Include="Consommateurs\Consommateur_statique.cs" />
+    <Compile Include="Consommateurs\disipateur.cs" />
+    <Compile Include="Centrales\Eolien.cs" />
     <Compile Include="Errors.cs" />
     <Compile Include="Ligne.cs" />
     <Compile Include="Market.cs" />
     <Compile Include="Meteo.cs" />
-    <Compile Include="Nucleaire.cs" />
+    <Compile Include="Centrales\Nucleaire.cs" />
     <Compile Include="Update.cs" />
-    <Compile Include="Vente.cs" />
+    <Compile Include="Consommateurs\Vente.cs" />
     <Compile Include="view_graphe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,12 +97,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
-    <None Include="ClassDiagram3.cd" />
-    <None Include="ClassDiagram4.cd" />
-    <None Include="ClassDiagram5.cd" />
-    <None Include="diagrem de classe.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\simulation_reseau_elec.Achat.datasource" />
     <None Include="Properties\DataSources\simulation_reseau_elec.Centrale.datasource" />
