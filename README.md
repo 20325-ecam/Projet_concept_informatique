@@ -10,10 +10,10 @@ dossier repenant tous les documents lier au projet
 
 
 
-##Crée une nouvelle centrale 
+## Crée une nouvelle centrale 
 
 Dans le fichier de classe update rajouter le nom a utiliser pour la centrale en ligne dan sla declaration des centrales; 
-'''c#
+'''c
 Centrale e1, n1, a1;
 '''
 
