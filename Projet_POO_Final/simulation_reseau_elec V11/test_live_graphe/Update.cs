@@ -59,8 +59,8 @@ namespace simulation_reseau_elec
             //*************************CREATION DES OBJETS*************************//
             errors = new Errors();
 
-            bruxelles = new Meteo(30, 30, 60);
-            market = new Market(10, 10, 10, 10);
+            bruxelles = new Meteo(30, 30, 60); //wind, temp, sun
+            market = new Market(10, 10, 10, 10); //nuc, eo, achat, vente
 
             //producteurs
             e1 = new Eolien(2000, 1, "e1", market, bruxelles);
