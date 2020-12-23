@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace simulation_reseau_elec
 {
-    public class Update //classe qui se charge de la simulation du réseau
+    public class Update             //classe qui se charge de la simulation du réseau
     {
-        public string erreurs; //erreurs qui apparaisent durant la méthode get_new_Data()
+        public string erreurs;      //erreurs qui apparaisent durant la méthode get_new_Data()
 
-        public string jour_nuit; //période de la journée
+        public string jour_nuit;    //période de la journée
 
-        public bool status = true; //status pour activer/désactiver la centrale
+        public bool status = true;  //status pour activer/désactiver la centrale
         public float wind;
         public double prix_eolien;
         public double co2_eolien;
@@ -22,23 +22,23 @@ namespace simulation_reseau_elec
         public double co2_nucleaire;
         public double prod_nucleaire;
 
-        public double prod_tot; //enrgie produite par nos centrales "locales"
-        public double total; //ensemble de l'énergie envoyée dans le réseau
+        public double prod_tot;     //energie produite par nos centrales "locales"
+        public double total;        //ensemble de l'énergie envoyée dans le réseau
 
-        public double conso_ville; //besoin énergétique random
-        public double conso_entreprise; //besoin énergétique statique
-        public double conso_tot = 0; //ensemble du besoin énergétique (ville & entreprise)
+        public double conso_ville;              //besoin énergétique random
+        public double conso_entreprise;         //besoin énergétique statique
+        public double conso_tot = 0;            //ensemble du besoin énergétique (ville & entreprise)
 
-        public double trou_energie = 0; // (+) -> manque E | (-) -> surplus E
-        public double abs_trou = 0; //valeur absolue du "trou" énergétique
+        public double trou_energie = 0;         // (+) -> manque E | (-) -> surplus E
+        public double abs_trou = 0;             //valeur absolue du "trou" énergétique
        
-        public double trou_vente; //qte energie qui doit être vendue
-        public double dissipation; //qte energie dissispee par dissipateur
-        public double surplus; //surplus du dissipateur -> charge la batterie
-        public double battery_percentage; //capacité de la batterie (%)
+        public double trou_vente;               //qte energie qui doit être vendue
+        public double dissipation;              //qte energie dissispee par dissipateur
+        public double surplus;                  //surplus du dissipateur -> charge la batterie
+        public double battery_percentage;       //capacité de la batterie (%)
 
-        public double trou_achat; //qte energie qui doit être achetée
-        public double bat_discharge; //qte energie réinjectée dans le réseaux en cas de besoin
+        public double trou_achat;               //qte energie qui doit être achetée
+        public double bat_discharge;            //qte energie réinjectée dans le réseaux en cas de besoin
 
         Errors errors;
 

@@ -57,8 +57,8 @@ namespace simulation_reseau_elec
             latestValue = up.total - up.trou_vente;
             data1[nextDataIndex] = latestValue;
             data2[nextDataIndex] = up.conso_ville + up.conso_entreprise;
-            tbLastValue.Text = (latestValue > 0) ? "+" + latestValue.ToString() : latestValue.ToString(); // affiche la derniere valeur axe "Y"
-            tbLatestValue.Text = nextDataIndex.ToString();  //affiche la valeur actuel axe "X"
+            tbLastValue.Text = (latestValue > 0) ? "+" + latestValue.ToString() : latestValue.ToString();   // affiche la derniere valeur axe "Y"
+            tbLatestValue.Text = nextDataIndex.ToString();                                                  // affiche la valeur actuel axe "X"
             formsPlot1.plt.PlotSignal(data2, maxRenderIndex: nextDataIndex, color: redColor);
             formsPlot1.plt.PlotSignal(data1, maxRenderIndex: nextDataIndex, color: blueColor);
             nextDataIndex += 1;
@@ -121,15 +121,15 @@ namespace simulation_reseau_elec
             tbJour_nuit.Text = up.jour_nuit;             //période de la journée
 
             rtbMessage.AppendText("Total: "
-                + up.total.ToString() + " W"             //
+                + up.total.ToString() + " W"             //production total des centrales 
                 + "\n");
 
             rtbMessage.AppendText("Disipateur: "
-                + up.dissipation.ToString() + " W"       //enrgie dissipée
+                + up.dissipation.ToString() + " W"       //energie dissipée
                 + "\n");
 
             rtbMessage.AppendText("Surplus: "
-                + up.surplus.ToString() + " W"           //surplus enrgie          
+                + up.surplus.ToString() + " W"           //surplus energie          
                 + "\n");
 
             rtbErrors.Text = (
@@ -140,7 +140,7 @@ namespace simulation_reseau_elec
                 + up.battery_percentage.ToString()+ " %" //capacité de la batterie en %
                 + "\n");
 
-            tbVent.Text = up.wind.ToString();            //veleur actuelle du vent
+            tbVent.Text = up.wind.ToString();            //valeur actuelle du vent
         }
 
         private void tbJour_nuit_TextChanged(object sender, EventArgs e)
