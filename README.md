@@ -27,6 +27,7 @@ x1 est le nom utilisé dans le code lors d’appel de méthodes, ou bien quand o
 À présent, nous pouvons assigner la centrale à une ligne électrique. Si vous souhaitez raccorder la centrale à une ligne existante, il suffit d’ajouter le bloc suivant dans la partie. 
 
 « ASIGNATION DES LIGNES & GESTION ERREURS SURCHARGES COTE PRODUCTION »
+
 Dans le cas de l’éolien nous pouvons choisir de désactiver sa production en pleine simulation avec cette condition que nous détaillerons plus tard.
 
 
