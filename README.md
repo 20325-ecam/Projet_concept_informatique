@@ -9,86 +9,60 @@ dossier repenant tous les documents lier au projet
 ![diagrame](Documents/diagrame.png)
 
 
+## Creation d’une nouvelle classe pour une centrale 
 
-## Crée une nouvelle centrale 
-
-Dans le fichier de classe update rajouter le nom à utilisé pour la centrale, dans la declaration des centrales(ligne 48); 
+Dans le cas de la création d’une nouvelle Eolienne 
+Premièrement il faut savoir que toutes les centrales sont reliées à la classe Centrale. Donc pour connaitre les différentes méthodes déjà utilisables il suffit de parcourir la classe Centrale, et dans le cas ou aucune méthode ne convient il faudra d’abord la crée dans la Classe centrale.  
+Toutes les centrales ont une déclaration de base qui est similaire.
 ```csharp
-Centrale e1, n1, a1;
-```
-
-definir un cout de production.
-```csharp
-Market market; 
-```
-
-Si cette centrale est influencer par la météo (vent, soleil, ...) crée aussi une nouvelle meteo, si le lieu est differents que celui ou ceux qui sont deja crée, 
-```csharp
-Meteo bruxelles;
-```
-
-Ensuite definir quel sont les parametres de la dite centrale, des couts de production et des parametres de meteo max à un endroit donner. 
-```csharp
-//exemple de creation d'une eolienne.
-e1 = new Eolien(2000, 1, "e1", market, bruxelles); 
-//puissance max de la centrale, co2 produit, nom de l'eolienne, couts de production, lieu ou est placer l'eolienne en question.
-
-//exemple de creation d'une centrale nucleaire.
-n1 = new Nucleaire(5000, 10, "n1", market);
-//puissance max de la centrale, co2 produit, nom de l'eolienne, couts de production.
-
-//exemple de creation de different couts.
-market = new Market(10, 10, 10, 10); //nucleaire, eolienne, achat, vente
-
-//exemple de creation d'une meteo a Bruxelles.
-bruxelles = new Meteo(30, 30, 60); //wind, temp, sun
-```
-
-ensuite créé une ligne qui reliera la centrale au noeux.
-```csharp
-// a nouveau rajouter le nom de la ligne en parametre. 
-Ligne l1, l2, l3, l4, l5, l6, l7, l8;
-
-//puis lui donner des caractéristiques
-l1 = new Ligne(2000, "l1"); //eolien vers prod
-// puissance max de la ligne, nom de la ligne. 
-```
-
-si la centrale peut etre eteindre utiliser cette structure ci 
-```csharp
-if (status == true){
-        double Eo1 = e1.Get_prod();
-        Eo1 = l1.Ligne_in(Eo1);
-        prod_tot += Eo1;
-        if (Eo1 == 0)
-        {
-            erreurs += DateTime.Now.ToString();
-            erreurs += errors.Line_Overload(l1);
-            erreurs += "\n";
+public class Nom_centrale : Centrale  //classe pour créer/gérer une source d'énergie 
+{
+public double price;
+   	public Nom_centrale (double max_prod, double co2, string name, Market market) : base(max_prod, co2, name)
+       {
+            this.price = market.Get_n_price();  //récupération du prix KWh du marché
         }
-        prix_eolien = e1.Get_prix();
-        co2_eolien = e1.Get_co2();
-        prod_eolien = Eo1;
-}
-else
+        public override double Get_prod() // production
+        {
+            return max_prod;
+        }
+        public override double Get_prix() // prix pour produire l'énergie nucléaire
+        {
+            return price * this.Get_prod();
+        }
+        public override double Get_co2() // CO2
+        {
+            return base.Get_co2();
+        }
+        public override string Get_name()
+        {
+            return base.Get_name();
+        }
+    }
+```
+Dans le cas d’une centrale nucléaire il n’y a pas besoin de plus, cependant si cette centrale est influencée par la météo, par exemple, il faudra rajouter des méthodes. 
+1.	Le cas où la méthode existe déjà. 
+Si la méthode est déjà présente dans la classe centrale il suffit simplement de la rajouter dans la nouvelle classe et de rajouter les paramètres qui y sont lier. 
+Par exemple pour avoir une valeur de vent il faut rajouter la méthode Get_vent() pour cela il faut rajouter plusieurs chose. 
+Une variable globale à la classe.
+```csharp
+Float wind = 0 ;
+```
+Ensuite dans la déclaration de la classe il faut rajouter l’appel de la classe Meteo car c’est a cette endroit la que l’on récupèrera notre variable de vent.  Puis il faut ajouter le methode Get_wind() de Meteo et l’assigner a notre variable globale crée plus tôt. Cela nous donne.
+```csharp
+public Nom_centrale (double max_prod, int co2, string name, Market market , Meteo meteo) : base(max_prod, co2, name)
+        {
+
+            this.wind = meteo.Get_wind();   //récupération de la vitesse du vent depuis la classe météo
+            this.price = market.Get_e_price();  //récupération du prix KWh du marché
+        }
+```
+Ensuite il nous suffit simplement de rajouter la methode Get_vent().
+```csharp
+public override float Get_vent(Meteo meteo)
 {
-        erreurs += DateTime.Now.ToString();
-        erreurs += errors.Deactivate(e1);
-        erreurs += "\n";
-}
+            wind = meteo.Get_wind();
+            return wind;
+        }
 ```
 
-sinon
-```csharp
-double Nu1 = n1.Get_prod();
-Nu1 = l2.Ligne_in(Nu1);
-prod_tot += Nu1;
-if (Nu1 == 0)
-{
-        erreurs += DateTime.Now.ToString();
-        erreurs += errors.Line_Overload(l2);
-        erreurs += "\n";
-}
-prix_nucleaire = n1.Get_prix();
-co2_nucleaire = n1.Get_co2();
-prod_nucleaire = Nu1;```
