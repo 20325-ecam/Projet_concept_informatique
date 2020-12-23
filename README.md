@@ -6,7 +6,7 @@ Il est possible d’ajouter des sources productrices d’énergie, créer de nou
 Un système de météo est présent qui permet de simuler 3 paramètres : la force du vent, l’ensoleillement ainsi que la température. 
 Un système de marché permet de gérer les prix unitaires pour plusieurs types d’énergies ainsi que le prix auquel l’électricité est achetée depuis l’étrangers.
 
-## Production
+## Ajout d'un producteur d'énergie
 
 Lors du développement de ce projet, nous avons décidé de créer trois types de producteurs d’énergie sans pour autant limiter ce nombre à l’avenir (nucléaire, éolien, achat à l’étrangers).
 Pour créer une centrale d’un type connu, il faut commencer par ajouter du code dans la classe *Update* :
@@ -108,7 +108,7 @@ public void cb_x1_CheckedChanged(object sender, EventArgs e)
    }
 }
 ```
-## Nouveau type de centrale
+## Création d'un nouveau type de producteur d'énergie
 
 Si vous ne trouvez pas votre bonheur dans les types de centrales exiqtantes, il vous est possible d'en créer des nouvelles très facilement.
 
@@ -194,7 +194,7 @@ public override double Get_prod() // production
 ```
 
 
-## Ajout consommateur
+## Ajout d'un producteur d'énergie
 Si l’utilisateur souhaite ajouter un nouveau consommateur, il y a deux possibilités, soit il est d’un type déjà existant, soit il sera d’un nouveau type.
 Nous allons procéder à l’ajout d’un consommateur de type aléatoire nommé lambda à titre d’exemple.
 Dans la classe update, il faut créer la variable associée à la consommation :
@@ -247,7 +247,7 @@ rtbMessage.AppendText("lambda: "
     + "\n");
 ```
 
-## Nouveau type de consommateur
+## Création d'un nouveau type de consommateur d'énergie
 Si vous souhiatez ajouter un nouveau type de consommateur ayant un différent type de régime de consommation, il faut se baser sur la classe consommateur_random.
 sachant que cette furutre classe héritera de la classe mère *Consommateur*, il faut le préciser :
 ```csharp
@@ -277,7 +277,7 @@ public override string Get_name()
 }
 ```
 
-## Créer de nouveaux messages (info, erreurs) 
+## Création de nouveaux messages (info, erreurs) 
 Pour afficher les messages, nous avons une classe Errors. Chaque message est affiché en appelant une des méthodes s’y trouvant.
 Ensuite nous récupérons ces erreurs et le ajoutons à notre variables erreurs pour les afficher via la classe view_graphe.
 Les méthodes que vous allez créer doivent renvoyer une chaine de caractères pour que cela puisse fonctionner.
