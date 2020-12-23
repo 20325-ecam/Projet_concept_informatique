@@ -24,16 +24,166 @@ x1 = new Eolien(2000, 1, "x1", market, bruxelles);
 ```
 x1 est le nom utilisé dans le code lors d’appel de méthodes propres à cette instance, ou bien quand on doit récupérer ses attributs. Eolien est le type de centrale crée (il existe pour le moment Nucléaire, Eolien, et Achat) au sein des parenthèses, il faut mettre dans le bon ordre les paramètres de la centrale. On commence par la production maximale théorique exprimée en W, ensuite la quantité de CO2 produite par W. Market est le nom de la plateforme qui gère les prix de production et d’achat dans notre programme (objet de type Market) et dans le cas de l’éolien, nous avons également en paramètre la plateforme de météo (bruxelles) pour pourvoir récupérer la force du vent et ainsi produire de l’énergie en fonction de ce dernier.
 
-À présent, nous pouvons assigner la centrale à une ligne électrique. Si vous souhaitez raccorder la centrale à une ligne existante, il suffit d’ajouter le bloc suivant dans la partie. 
+À présent, nous pouvons assigner la centrale à une ligne électrique. Si vous souhaitez raccorder la centrale à une ligne existante, il suffit d’ajouter le bloc suivant dans la partie: 
 
 « ASIGNATION DES LIGNES & GESTION ERREURS SURCHARGES COTE PRODUCTION »
 
 Dans le cas de l’éolien nous pouvons choisir de désactiver sa production en pleine simulation avec cette condition que nous détaillerons plus tard.
+```csharp
+if (status_x1 == true){
+```
+Il faut commencer par placer dans la variable la valeur de production en appelant la méthode Get_prod() de l’objet x1 :
+```csharp
+double Xo1 = x1.Get_prod();
+```
+Nous assignons la ligne l1 avec la méthode ligne_in() et nous mettons en paramètres la production de la centrale :
+```csharp
+Xo1 = l1.Ligne_in(Xo1);
+```
+Il est également nécessaire d’ajouter cette production à la production totale se trouvant dans la variable prod_tot :
+```csharp
+prod_tot += Eo1;
+```
+Cette partie gère l’affichage de message quand il y a une surcharge au niveau de la ligne véhiculant la production de x1 en précisant l’endroit et le moment ou la surcharge s’est passée :
+```csharp
+if (Xo1 == 0)
+{
+   erreurs += DateTime.Now.ToString();
+   erreurs += errors.Line_Overload(l1);
+   erreurs += "\n";
+}
+```
+Par défaut, il existe déjà une centrale éolienne donc dans les ligne suivante nous devons incrémenter les valeurs de Co2 émis, du cout de production ainsi que la production de l’ensemble des centrales éoliennes:
+
+```csharp
+prix_eolien += x1.Get_prix();
+co2_eolien += x1.Get_co2();
+prod_eolien += Xo1;
+```
+Dans cette condition nous affichons un message lorsque la centrale est désactivée durant la simulation :
+```csharp
+else
+{
+    erreurs += DateTime.Now.ToString();
+    erreurs += errors.Deactivate(x1);
+    erreurs += "\n";
+}
+```
+Si x1 est un type de centrale déjà existant, il n’y a plus de manipulations s à faire.
+Cependant, s’il s’agit d’un nouveau type de centrale, il faudra créer quelques variables en plus avant de passer dans la classe view_graphe.
+Il faut créer une variables associées au cout de production, au CO2 ainsi qu’à la production au-dessus du constructeur public Update() :
+```csharp
+public double prix_fusion;
+public double co2_fusion;
+public double prod_fusion;
+```
+Dans le cas où cette centrale doit pouvoir être arrêtée durant la simulation, il faut ajouter une variable booléenne dont nous changerons l’état dans la classe view_graphe :
+```csharp
+public bool status_x1 = true;
+```
+Il faut également ajouter la production de ce type de centrale dans la variable totale à la fin de la classe :
+```csharp
+total += prod_fusion ;
+```
+À présent nous pouvons passer à la classe view_graphe.
+Dans la partie AFFICHAGE, nous devons créer un nouveau type de centrale et y afficher ses infos. Nous utilisons un richTextBox rtbMessage pour faire cela :
+```csharp
+rtbMessage.AppendText("Fusion: "
+    + up.prix_fusion.ToString() + " € "      //prix_x1
+    + up.co2_fusion.ToString() + " g "       //co2_x1
+    + up.prod_fusion.ToString() + " W "      //prod-x1
+    + "\n");
+```
+Pour gérer l’état d’une centrale, il suffit de créer un checkbox qui sera nommé comme la centrale. Il faut créer une méthode qui sera semblable à celle-ci :
+```csharp
+public void cb_x1_CheckedChanged(object sender, EventArgs e) 
+{
+   if (cb_x1.Checked)
+   {
+       up.status_x1 = true;
+   }
+   else
+   {
+       up.status_x1 = false;
+   }
+}
+```
+
+## Nouveau type de centrale
 
 
 
 
 
+
+
+
+## Ajout consommateur
+Si l’utilisateur souhaite ajouter un nouveau consommateur, il y a deux possibilités, soit il est d’un type déjà existant, soit il sera d’un nouveau type.
+Nous allons procéder à l’ajout d’un consommateur de type aléatoire nommé lambda à titre d’exemple.
+Dans la classe update, il faut créer la variable associée à la consommation :
+```csharp
+public double conso_lambda;
+```
+Ensuite il faut déclarer le nom du consommateur avant de créer un objet de type consommateur :
+```csharp
+Consommateur lambda;
+```
+À présent nous pouvons créer une instance de lambda. En paramètre, il faut indiquer la consommation maximale théorique (1000W dans ce cas) ainsi que son nom qui sera affiché dans la fenêtre de simulation :
+```csharp
+lambda = new Consommateur_random(1000, "lambda");
+```
+
+Dans la partie:
+ASIGNATION DES LIGNES & GESTION ERREURS SURCHARGES COTE CONSOMMATION, 
+nous ajoutons ce bloc pour assigner une ligne à ce consommateur lambda :
+
+Il faut commencer par placer dans la variable la valeur de consommation en appelant la méthode Get_conso() de l’objet lambda :
+```csharp
+double lam = lambda.Get_conso();
+```
+Nous assignons la ligne l4 avec la méthode ligne_in() et nous mettons en paramètres la consommation de lambda :
+```csharp
+lam = l4.Ligne_in(lam);
+```
+Il est également nécessaire d’ajouter cette production à la production totale se trouvant dans la variable prod_tot :
+```csharp
+prod_tot += Eo1;
+```
+Cette partie gère l’affichage de message quand il y a une surcharge au niveau de la ligne véhiculant la production de x1 en précisant l’endroit et le moment ou la surcharge s’est passée :
+```csharp
+if (lam == 0)
+{
+   erreurs += DateTime.Now.ToString();
+   erreurs += errors.Line_Overload(l4);
+   erreurs += "\n";
+}
+```
+Pour terminer, il faut ajouter la consommation de ce lambda :
+```csharp
+conso_tot += lam;
+conso_lambda = lam;
+```
+il nous reste plus qu’a passer à la classe view_graphe pour afficher le résultat de la consommation de lambda dans la partie AFFICHAGE :
+```csharp
+rtbMessage.AppendText("lambda: "
+    + up.conso_lambda.ToString() + " W"  //conso_lambda
+    + "\n");
+```
+
+## Nouveau type de consommateur
+
+## Créer de nouveaux messages (info, erreurs) 
+Pour afficher les messages, nous avons une classe Errors. Chaque message est affiché en appelant une des méthodes s’y trouvant.
+Ensuite nous récupérons ces erreurs et le ajoutons à notre variables erreurs pour les afficher via la classe view_graphe.
+Les méthodes que vous allez créer doivent renvoyer une chaine de caractères pour que cela puisse fonctionner.
+
+
+
+
+
+
+## --------------------------------------------------------------------------------------------------
 
 ## Diagrame de classe 
 ![diagrame](Documents/diagrame.png)
