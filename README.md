@@ -10,7 +10,7 @@ Un système de marché permet de gérer les prix unitaires pour plusieurs types 
 
 Lors du développement de ce projet, nous avons décidé de créer trois types de producteurs d’énergie sans pour autant limiter ce nombre à l’avenir (nucléaire, éolien, achat à l’étrangers).
 Pour créer une centrale d’un type connu, il faut ajouter du code dans la classe Update :
-Il faut commencer par déclarer le nom de la centrale (x1) au-dessus du constructeur public *update()* :
+Il faut commencer par déclarer le nom de la centrale (x1) au-dessus du constructeur *Update()* :
 ```csharp
 Centrale x1 ;
 ```
@@ -18,7 +18,7 @@ Il faut également ajouter une variable pour stocker la valeur de production :
 ```csharp
 double Xo1;
 ```
-Ensuite, il faut créer une instance au sein du constructeur public *Update()* :
+Ensuite, il faut créer une instance au sein du constructeur *Update()* :
 ```csharp
 x1 = new Eolien(2000, 1, "x1", market, bruxelles);
 ```
