@@ -269,5 +269,8 @@ Les méthodes que vous allez créer doivent renvoyer une chaine de caractères p
 ![diagrame](Documents/diagrame.png)
 
 
+## Diagrame de sequence 
+![diagrame sequence](Documents/diagrame_sequence.png)
+
 
 
