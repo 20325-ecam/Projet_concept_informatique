@@ -111,8 +111,9 @@ public void cb_x1_CheckedChanged(object sender, EventArgs e)
 
 ## Nouveau type de centrale
 
-Dans le cas de la création d’une nouvelle Eolienne 
-Premièrement il faut savoir que toutes les centrales sont reliées à la classe Centrale. Donc pour connaitre les différentes méthodes déjà utilisables il suffit de parcourir la classe Centrale, et dans le cas ou aucune méthode ne convient il faudra d’abord la crée dans la Classe centrale.  
+Dans le cas de la création d’une nouvelle Eolienne.
+
+Premièrement il faut savoir que toutes les centrales héritent de la classe mère Centrale. Donc pour connaitre les différentes méthodes existante il suffit de parcourir la classe Centrale, et dans le cas ou aucune méthode ne convient il faudra d’abord la crée dans la Classe centrale.  
 Toutes les centrales ont une déclaration de base qui est similaire.
 ```csharp
 public class Fusion : Centrale  //classe pour créer/gérer une source d'énergie 
