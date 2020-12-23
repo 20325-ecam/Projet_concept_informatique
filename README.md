@@ -270,7 +270,7 @@ Les méthodes que vous allez créer doivent renvoyer une chaine de caractères p
 
 
 ## Diagrame de sequence 
-![diagram sequence](Documents/diagram sequence.png)
+![diagram](Documents/diagramsequence.png)
 
 
 
