@@ -1,10 +1,37 @@
 # Projet POO 20325 20194
 
-Ce projet consiste en une realisation d'une simulation d'un reseau électrique. 
+Ce projet est une plateforme développée en C# destinée à des chercheurs qui désirent simuler un réseau électrique à l’échelle désirée.
+Ce dernier possède une plateforme facile à modifier. 
+Il est possible d’ajouter des sources productrices d’énergie, créer de nouveaux types de producteurs énergétiques, ajouter autant de consommateurs que l’on désire, créer de nouveaux types de consommateurs.  
+Un système de météo est présent qui permet de simuler 3 paramètres : la force du vent, l’ensoleillement ainsi que la température. 
+Un système de marché permet de gérer les prix unitaires pour plusieurs types d’énergies ainsi que le prix auquel l’électricité est achetée depuis l’étrangers.
+
+## Production
+
+Lors du développement de ce projet, nous avons décidé de créer trois types de producteurs d’énergie sans pour autant limiter ce nombre à l’avenir (nucléaire, éolien, achat à l’étrangers).
+Pour créer une centrale d’un type connu, il faut ajouter du code dans la classe Update :
+Il faut commencer par déclarer le nom de la centrale (x1) au-dessus du constructeur public *update()* :
+```csharp
+Centrale x1 ;
+```
+Il faut également ajouter une variable pour stocker la valeur de production :
+```csharp
+double Xo1;
+```
+Ensuite, il faut créer une instance au sein du constructeur public *Update()* :
+```csharp
+x1 = new Eolien(2000, 1, "x1", market, bruxelles);
+```
+x1 est le nom utilisé dans le code lors d’appel de méthodes, ou bien quand on doit récupérer ses attributs. Eolien est le type de centrale crée (il existe pour le moment Nucléaire, Eolien, et Achat) au sein des parenthèses, il faut mettre dans le bon ordre les paramètres de la centrale. On commence par la production maximale théorique exprimée en W, ensuite la quantité de CO2 produite par W. Market est le nom de la plateforme qui gère les prix de production et d’achat dans notre programme (objet de type Market) et dans le cas de l’éolien, nous avons également en paramètre la plateforme de météo (bruxelles) pour pourvoir récupérer la force du vent et ainsi produire de l’énergie en fonction de ce dernier.
+
+À présent, nous pouvons assigner la centrale à une ligne électrique. Si vous souhaitez raccorder la centrale à une ligne existante, il suffit d’ajouter le bloc suivant dans la partie « ASIGNATION DES LIGNES & GESTION ERREURS SURCHARGES COTE PRODUCTION »
+Dans le cas de l’éolien nous pouvons choisir de désactiver sa production en pleine simulation avec cette condition que nous détaillerons plus tard.
 
 
 
-dossier repenant tous les documents lier au projet
+
+
+
 ## Diagrame de classe 
 ![diagrame](Documents/diagrame.png)
 
