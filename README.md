@@ -121,7 +121,7 @@ public class Fusion : Centrale  //classe pour créer/gérer une source d'énergi
    public double price;
    public Fusion (double max_prod, double co2, string name, Market market) : base(max_prod, co2, name)
    {
-      this.price = market.Get_n_price();  //récupération du prix KWh du marché
+      this.price = market.Get_x_price();  //récupération du prix KWh du marché
    }
    public override double Get_prod() // production
    {
@@ -142,14 +142,15 @@ public class Fusion : Centrale  //classe pour créer/gérer une source d'énergi
 }
 ```
 Dans le cas d’une centrale nucléaire il n’y a pas besoin de plus, cependant si cette centrale est influencée par la météo, par exemple, il faudra rajouter des méthodes. 
-1.	Le cas où la méthode existe déjà. 
+
+Dans le cas où la méthode existe déjà. 
 Si la méthode est déjà présente dans la classe centrale il suffit simplement de la rajouter dans la nouvelle classe et de rajouter les paramètres qui y sont lier. 
-Par exemple pour avoir une valeur de vent il faut rajouter la méthode Get_vent() pour cela il faut rajouter plusieurs chose. 
+Par exemple pour avoir une valeur de vent il faut rajouter la méthode *Get_vent()* pour cela il faut rajouter plusieurs chose. 
 Une variable globale à la classe.
 ```csharp
 Float wind = 0 ;
 ```
-Ensuite dans la déclaration de la classe il faut rajouter l’appel de la classe Meteo car c’est a cette endroit la que l’on récupèrera notre variable de vent.  Puis il faut ajouter le methode Get_wind() de Meteo et l’assigner a notre variable globale crée plus tôt. Cela nous donne.
+Ensuite dans la déclaration de la classe il faut rajouter l’appel de la classe Meteo car c’est a cette endroit la que l’on récupèrera notre variable de vent.  Puis il faut ajouter le methode *Get_wind()* de Meteo et l’assigner a notre variable globale crée plus tôt. Cela nous donne.
 ```csharp
 public Fusion (double max_prod, int co2, string name, Market market , Meteo meteo) : base(max_prod, co2, name)
 {
@@ -158,7 +159,7 @@ public Fusion (double max_prod, int co2, string name, Market market , Meteo mete
    this.price = market.Get_x_price();  //récupération du prix KWh du marché
 }
 ```
-Ensuite il nous suffit simplement de rajouter la methode Get_vent().
+Ensuite il nous suffit simplement de rajouter la methode *Get_vent()*.
 ```csharp
 public override float Get_vent(Meteo meteo)
 {
@@ -166,7 +167,7 @@ public override float Get_vent(Meteo meteo)
    return wind;
 }
 ```
-En plus de cela il faudra modifié la méthode Get_prod() car la puissance délivré par une éolienne dépend de la vitesse du vent. Donc cela deviendra : 
+En plus de cela il faudra modifié la méthode *Get_prod()* car la puissance délivré par une éolienne dépend de la vitesse du vent. Donc cela deviendra : 
 ```csharp
 public override double Get_prod() // production
 {
@@ -185,9 +186,6 @@ Si la centrale rajoutée n’existe pas encore, il est très probable qu’il fa
 ```csharp
 this.price = market.Get_x_price();
 ```
-
-
-------------------------------------------------------------------------------------------------------------
 
 
 
