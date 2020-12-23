@@ -248,23 +248,42 @@ rtbMessage.AppendText("lambda: "
 ```
 
 ## Nouveau type de consommateur
-
+Si vous souhiatez ajouter un nouveau type de consommateur ayant un différent type de régime de consommation, il faut se baser sur la classe consommateur_random.
+sachant que cette furutre classe héritera de la classe mère *Consommateur*, il faut le préciser :
+```csharp
+public class Consommateur_nouveau : Consommateur     // classe pour créer un consommateur 
+{
+  public Consommateur_nouveau(float max_conso, string name) : base(max_conso, name)
+  {
+  }
+```
+La méthode *Get_conso()* sera surchargée et c'est dedans que vous devrez mettre le comportement que va adopter ce nouveau type de consommateur:
+```csharp
+public override float Get_conso() // renvoie la consommation aléatoire
+{
+   //Votre code pour gérer la consommation de ce consommateur
+   return x;
+}
+```
+Si vous voulez azdopter d'autres méthodes hérités vous pouvez simplement les ajouter sans les modifier comme ci-dessous:
+```csharp
+public override string Get_status()
+{
+   return base.Get_status();
+}
+public override string Get_name()
+{
+   return base.Get_name();
+}
+```
 
 ## Créer de nouveaux messages (info, erreurs) 
 Pour afficher les messages, nous avons une classe Errors. Chaque message est affiché en appelant une des méthodes s’y trouvant.
 Ensuite nous récupérons ces erreurs et le ajoutons à notre variables erreurs pour les afficher via la classe view_graphe.
 Les méthodes que vous allez créer doivent renvoyer une chaine de caractères pour que cela puisse fonctionner.
 
-
-
-
-
 ## Diagrame de classe 
 ![diagrame](Documents/diagrame.png)
 
-
 ## Diagrame de sequence 
 ![diagram](Documents/diagramsequence.png)
-
-
-
