@@ -130,7 +130,7 @@ public double Get_f_price()
 }
 ```
 
-Premièrement il faut savoir que toutes les classes centrales héritent de la classe mère *Centrale*. Donc pour connaitre les différentes méthodes existantes sans devoir en créer de nouvelles innutilement, il vousvsuffit de parcourir la classe mère Centrale. Dans le cas ou aucune méthode ne vous convient il faudra d’abord la crée dans la classe *Centrale* pour pouvoir la surcharger dans la classe adéquate.  
+Il faut savoir que toutes les classes centrales héritent de la classe mère *Centrale*. Donc pour connaitre les différentes méthodes existantes sans devoir en créer de nouvelles innutilement, il vousvsuffit de parcourir la classe mère Centrale. Dans le cas ou aucune méthode ne vous convient il faudra d’abord la crée dans la classe *Centrale* pour pouvoir la surcharger dans la classe adéquate.  
 Toutes les centrales ont une déclaration de base qui est similaire:
 ```csharp
 public class Fusion : Centrale  //classe pour créer/gérer une source d'énergie 
@@ -160,7 +160,7 @@ public class Fusion : Centrale  //classe pour créer/gérer une source d'énergi
 ```
  Si votre nouveau type de centrale dépends d'un paramètre non présent, issu de la météo par exemple, il faudra rajouter des quelques lignes de code. 
 
-Cas n°1: la méthode existe déjà. 
+
 Si la méthode est déjà présente dans la classe centrale il suffit simplement de la rajouter dans la nouvelle classe et de rajouter les paramètres qui y sont liés. 
 Pour avoir la vitesse du vent, il faut rajouter la méthode *Get_vent()* ainsi que d'autres éléments. 
 Il nous faut une variable globale à la classe pour stocker la valeur reçue via la méthode *Get_vent()*.
@@ -194,10 +194,6 @@ public override double Get_prod() // production
 ```
 
 
-
-
-
-
 ## Ajout consommateur
 Si l’utilisateur souhaite ajouter un nouveau consommateur, il y a deux possibilités, soit il est d’un type déjà existant, soit il sera d’un nouveau type.
 Nous allons procéder à l’ajout d’un consommateur de type aléatoire nommé lambda à titre d’exemple.
@@ -214,7 +210,7 @@ Consommateur lambda;
 lambda = new Consommateur_random(1000, "lambda");
 ```
 
-Dans la partie:
+Dans la partie
 ASIGNATION DES LIGNES & GESTION ERREURS SURCHARGES COTE CONSOMMATION, 
 nous ajoutons ce bloc pour assigner une ligne à ce consommateur lambda :
 
@@ -253,6 +249,7 @@ rtbMessage.AppendText("lambda: "
 
 ## Nouveau type de consommateur
 
+
 ## Créer de nouveaux messages (info, erreurs) 
 Pour afficher les messages, nous avons une classe Errors. Chaque message est affiché en appelant une des méthodes s’y trouvant.
 Ensuite nous récupérons ces erreurs et le ajoutons à notre variables erreurs pour les afficher via la classe view_graphe.
@@ -261,9 +258,6 @@ Les méthodes que vous allez créer doivent renvoyer une chaine de caractères p
 
 
 
-
-
-## --------------------------------------------------------------------------------------------------
 
 ## Diagrame de classe 
 ![diagrame](Documents/diagrame.png)
