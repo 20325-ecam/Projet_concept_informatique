@@ -2,7 +2,7 @@
 
 Ce projet est une plateforme développée en C# destinée à des chercheurs qui désirent simuler un réseau électrique à diverses échelles.
 Ce dernier possède une plateforme facile à modifier. 
-Il est possible d’ajouter des sources productrices d’énergie, créer de nouveaux types de producteurs énergétiques, ajouter autant de consommateurs que l’on désire, créer de nouveaux types de consommateurs.  
+Il est possible d’ajouter des sources productrices d’énergie, créer de nouveaux types de producteurs énergétiques, ajouter autant de consommateurs que l’on désire et de créer de nouveaux types de consommateurs.  
 Un système de météo est présent qui permet de simuler 3 paramètres : la force du vent, l’ensoleillement ainsi que la température. 
 Un système de marché permet de gérer les prix unitaires pour plusieurs types d’énergies ainsi que le prix auquel l’électricité est achetée depuis l’étrangers.
 
@@ -69,7 +69,7 @@ else
     erreurs += "\n";
 }
 ```
-Si x1 est un type de centrale déjà existant, il n’y a plus de manipulations s à faire.
+Si x1 est un type de centrale déjà existant, il n’y a plus de manipulations à faire.
 Cependant, s’il s’agit d’un nouveau type de centrale, il faudra créer quelques variables en plus avant de passer dans la classe *view_graphe*.
 Il faut créer une variables associées au coût de production, au CO2 ainsi qu’à la production avant le constructeur de la classe *Update* :
 ```csharp
@@ -110,10 +110,10 @@ public void cb_x1_CheckedChanged(object sender, EventArgs e)
 ```
 ## Création d'un nouveau type de producteur d'énergie
 
-Si vous ne trouvez pas votre bonheur dans les types de centrales exiqtantes, il vous est possible d'en créer des nouvelles très facilement.
+Si vous ne trouvez pas votre bonheur dans les types de centrales existantes, il vous est possible d'en créer des nouvelles très facilement.
 
 Lors de la création d’un nouveau type de centrale, il est impératif d’ajouter le prix de production au W dans la classe Market. Nous allons reprendre l’exemple d’une centrale à fusion.
-Il faut ajouter une attribut qui va stocker l’information sur le prix au-dessus du constructeur public Market() ;
+Il faut ajouter un attribut qui va stocker l’information sur le prix au-dessus du constructeur public Market() ;
 ```csharp
 public double f_price;
 ```
@@ -130,7 +130,7 @@ public double Get_f_price()
 }
 ```
 
-Il faut savoir que toutes les classes centrales héritent de la classe mère *Centrale*. Donc pour connaitre les différentes méthodes existantes sans devoir en créer de nouvelles innutilement, il vousvsuffit de parcourir la classe mère Centrale. Dans le cas ou aucune méthode ne vous convient il faudra d’abord la crée dans la classe *Centrale* pour pouvoir la surcharger dans la classe adéquate.  
+Il faut savoir que toutes les classes centrales héritent de la classe mère *Centrale*. Donc pour connaitre les différentes méthodes existantes sans devoir en créer de nouvelles innutilement, il vous suffit de parcourir la classe mère Centrale. Dans le cas ou aucune méthode ne vous convient il faudra d’abord la crée dans la classe *Centrale* pour pouvoir la surcharger dans la classe adéquate.  
 Toutes les centrales ont une déclaration de base qui est similaire:
 ```csharp
 public class Fusion : Centrale  //classe pour créer/gérer une source d'énergie 
@@ -184,7 +184,7 @@ public override float Get_vent(Meteo meteo)
    return wind;
 }
 ```
-Si la vitesse du vent imapcte la production d'électricité, il faut absolument penser à modifier la méthode *Get_prod()* et modifier comme vous le souhaitez: 
+Si la vitesse du vent impacte la production d'électricité, il faut absolument penser à modifier la méthode *Get_prod()* et modifier comme vous le souhaitez: 
 ```csharp
 public override double Get_prod() // production
 {
@@ -194,7 +194,7 @@ public override double Get_prod() // production
 ```
 
 
-## Ajout d'un producteur d'énergie
+## Ajout d'un Consommateur d'énergie
 Si l’utilisateur souhaite ajouter un nouveau consommateur, il y a deux possibilités, soit il est d’un type déjà existant, soit il sera d’un nouveau type.
 Nous allons procéder à l’ajout d’un consommateur de type aléatoire nommé lambda à titre d’exemple.
 Dans la classe update, il faut créer la variable associée à la consommation :
@@ -249,7 +249,7 @@ rtbMessage.AppendText("lambda: "
 
 ## Création d'un nouveau type de consommateur d'énergie
 Si vous souhiatez ajouter un nouveau type de consommateur ayant un différent type de régime de consommation, il faut se baser sur la classe consommateur_random.
-sachant que cette furutre classe héritera de la classe mère *Consommateur*, il faut le préciser :
+sachant que cette future classe héritera de la classe mère *Consommateur*, il faut le préciser :
 ```csharp
 public class Consommateur_nouveau : Consommateur     // classe pour créer un consommateur 
 {
@@ -265,7 +265,7 @@ public override float Get_conso() // renvoie la consommation aléatoire
    return x;
 }
 ```
-Si vous voulez azdopter d'autres méthodes hérités vous pouvez simplement les ajouter sans les modifier comme ci-dessous:
+Si vous voulez adopter d'autres méthodes hérités vous pouvez simplement les ajouter sans les modifier comme ci-dessous:
 ```csharp
 public override string Get_status()
 {
@@ -279,7 +279,7 @@ public override string Get_name()
 
 ## Création de nouveaux messages (info, erreurs) 
 Pour afficher les messages, nous avons une classe Errors. Chaque message est affiché en appelant une des méthodes s’y trouvant.
-Ensuite nous récupérons ces erreurs et le ajoutons à notre variables erreurs pour les afficher via la classe view_graphe.
+Ensuite nous récupérons ces erreurs et les ajoutons à notre variables erreurs pour les afficher via la classe view_graphe.
 Les méthodes que vous allez créer doivent renvoyer une chaine de caractères pour que cela puisse fonctionner.
 
 ## Diagrame de classe 
