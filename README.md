@@ -1,6 +1,6 @@
 # Projet POO 20325 & 20194
 
-Ce projet est une plateforme développée en C# destinée à des chercheurs qui désirent simuler un réseau électrique à diverses échelles.
+Ce projet est une plateforme développée en C# destinée à des chercheurs désirant simuler un réseau électrique à diverses échelles.
 Ce dernier possède une plateforme facile à modifier. 
 Il est possible d’ajouter des sources productrices d’énergie, créer de nouveaux types de producteurs énergétiques, ajouter autant de consommateurs que l’on désire et de créer de nouveaux types de consommateurs.  
 Un système de météo est présent qui permet de simuler 3 paramètres : la force du vent, l’ensoleillement ainsi que la température. 
