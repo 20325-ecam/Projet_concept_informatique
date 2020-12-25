@@ -1,4 +1,4 @@
-# Projet POO 20325 20194
+# Projet POO 20325 & 20194
 
 Ce projet est une plateforme développée en C# destinée à des chercheurs qui désirent simuler un réseau électrique à diverses échelles.
 Ce dernier possède une plateforme facile à modifier. 
@@ -283,7 +283,9 @@ Ensuite nous récupérons ces erreurs et les ajoutons à notre variables erreurs
 Les méthodes que vous allez créer doivent renvoyer une chaine de caractères pour que cela puisse fonctionner.
 
 ## Diagrame de classe 
+Ce diagramme reprends la structure des classes présentes dans notre projet.
 ![diagrame](Documents/diagrame.png)
 
 ## Diagrame de sequence 
+Ci-dessous se trouve un diagramme de séquence représentant toutes les interactions entre diverses classes pour simuler et afficher les informations sur la production d'électricité à partir s'une source éolienne.
 ![diagram](Documents/diagramsequence.png)
